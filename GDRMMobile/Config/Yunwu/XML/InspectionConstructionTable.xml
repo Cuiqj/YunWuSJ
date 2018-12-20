@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaseMapTable>
+    <!--所有尺寸单位以mm计算-->
+    <!--定义纸张尺寸-->
+    <Paper size="A4" width="595" height="842">
+<!--    <Paper size="A4" width="842" height="1000">-->
+        <!--定义纸张边距，上，左，右，下-->
+        <Margin top="0"  left="0" right="0" bottom="3" />
+        <orientation isPortrait="No" />
+    </Paper>
+    <!--所有缺省设置元素，default*之类均必不可少-->
+    <!--固定表格-->
+    <StaticTable>
+        <Lines>
+            <!--默认线宽-->
+            <defaultLineWidth>0.4</defaultLineWidth>
+            <!--       横线     -->
+            <line x1="149" y1="38" x2="154" y2="38" lineWidth="0.6"/>
+            <line x1="30" y1="45.5" x2="177" y2="45.5" lineWidth="0.6"/>    <!--      上线    -->
+            <line x1="30" y1="56" x2="177" y2="56" lineWidth="0.6"/>
+            <line x1="30" y1="64" x2="177" y2="64" lineWidth="0.6"/>
+            <line x1="30" y1="72" x2="177" y2="72" lineWidth="0.6"/>
+            <!--       图片及备注     -->
+            <line x1="30" y1="124" x2="177" y2="124" lineWidth="0.6"/>
+            <line x1="30" y1="134" x2="177" y2="134" lineWidth="0.6"/>
+            <line x1="30" y1="186" x2="177" y2="186" lineWidth="0.6"/>
+            <line x1="30" y1="196" x2="177" y2="196" lineWidth="0.6"/>
+            <line x1="30" y1="248" x2="177" y2="248" lineWidth="0.6"/>
+            <line x1="30" y1="258" x2="177" y2="258" lineWidth="0.6"/>  <!--      底线    -->
+            <!--       竖线    -->
+            <line x1="30" y1="45.5" x2="30" y2="258" lineWidth="0.6"/>     <!--      左线    -->
+            <line x1="47" y1="45.5" x2="47" y2="72" lineWidth="0.6"/>
+            <line x1="90" y1="45.5" x2="90" y2="72" lineWidth="0.6"/>
+            <line x1="104" y1="45.5" x2="104" y2="258" lineWidth="0.6"/>
+            <line x1="143" y1="45.5" x2="143" y2="72" lineWidth="0.6"/>
+            <line x1="177" y1="45.5" x2="177" y2="258" lineWidth="0.6"/>    <!--      右线    -->
+        </Lines>
+        <Texts>
+            <defaultFontSize>19</defaultFontSize>
+            <!--标题:-->
+            <Text>
+                <text>构 造 物 检 查 记 录 表</text>
+                <fontSize>19</fontSize>
+                <isBold>YES</isBold>
+                <origin x="0" y="20" />
+                <size width="595" height="6" />
+                <alignment>center</alignment>
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>表单编号:</text>
+                <origin x="132" y="35" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>-LZ-5-001</text>
+                <origin x="155" y="35" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>巡查时间：</text>
+                <origin x="32" y="42" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>年</text>
+                <origin x="60" y="42" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>月</text>
+                <origin x="69" y="42" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>日</text>
+                <origin x="78" y="42" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>序号</text>
+                <origin x="34" y="50" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>1</text>
+                <origin x="36" y="58.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>2</text>
+                <origin x="36" y="66.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>检查时间</text>
+                <origin x="62" y="48" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>（时分至时分）</text>
+                <origin x="55.5" y="52" />
+                <size width="120" height="5" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>天气</text>
+                <origin x="93" y="50" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>责任区起止桩号</text>
+                <origin x="110" y="50" />
+                <size width="150" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>检查人员</text>
+                <origin x="152" y="50" />
+                <size width="100" height="6" />
+            </Text>
+        </Texts>
+    </StaticTable>
+    <DataTable>
+        <!--设置默认字体-->
+        <DefaultFontSize>10</DefaultFontSize>
+        <!--时间-->
+        <!--年-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="51" y="40" />
+            <size width="10" height = "6"/>
+            <content>
+<!--                <text>2018</text>-->
+                <data>
+                    <attributeName>inspectiondate</attributeName>
+                    <mode>yyyy</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--月-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="64.5" y="40" />
+            <size width="8" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>inspectiondate</attributeName>
+                    <mode>MM</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--日-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="73.5" y="40" />
+            <size width="8" height = "6"/>
+            <content>
+<!--                <text>10</text>-->
+                <data>
+                    <attributeName>inspectiondate</attributeName>
+                    <mode>dd</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--检查时间 开始-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="55" y="57" />
+            <size width="43" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>timestart1</attributeName>
+                    <mode>HH:mm</mode>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="66.5" y="57" />
+            <size width="43" height = "6"/>
+            <content>
+                <text>至</text>
+<!--                <data>-->
+<!--                    <attributeName>timestart1</attributeName>-->
+<!--                    <mode>HH:mm</mode>-->
+<!--                </data>-->
+            </content>
+        </UITextField>
+        <!--检查时间 结束-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="71" y="57" />
+            <size width="19" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>timeend1</attributeName>
+                    <mode>HH:mm</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--天气-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="95" y="57" />
+            <size width="5" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>weather1</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--责任区起止桩号-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="105.5" y="55" />
+            <size width="16" height = "10"/>
+            <alignment>right</alignment>
+            <content>
+                <data>
+                    <attributeName>stationstart1_text</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="121" y="57" />
+            <size width="5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <text>至</text>
+                <!--                <data>-->
+                <!--                    <attributeName>timestart1</attributeName>-->
+                <!--                    <mode>HH:mm</mode>-->
+                <!--                </data>-->
+            </content>
+        </UITextField>
+        <!--责任区起止桩号-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="125.5" y="55" />
+            <size width="16" height = "10"/>
+            <alignment>left</alignment>
+            <content>
+                <data>
+                    <attributeName>stationend1_text</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--检查时间 开始-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="55" y="65" />
+            <size width="43" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>timestart2</attributeName>
+                    <mode>HH:mm</mode>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="66.5" y="65" />
+            <size width="43" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>middlestring</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--检查时间 结束-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="71" y="65" />
+            <size width="19" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>timeend2</attributeName>
+                    <mode>HH:mm</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--天气-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="95" y="65" />
+            <size width="5" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>weather2</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--责任区起止桩号-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="105.5" y="63" />
+            <size width="16" height = "10"/>
+            <alignment>right</alignment>
+            <content>
+                <data>
+                    <attributeName>stationstart2_text</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="121" y="65" />
+            <size width="5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>middlestring</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--责任区起止桩号-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="125.5" y="63" />
+            <size width="16" height = "10"/>
+            <alignment>left</alignment>
+            <content>
+                <data>
+                    <attributeName>stationend2_text</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--第一张图片 -->
+        <UIImgView>
+            <origin x="30" y="72.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo0</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第一张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="31" y="125" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark0</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+        <!--第二张图片 -->
+        <UIImgView>
+            <origin x="104" y="72.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo1</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第二张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="105" y="125" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark1</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+        <!--第三张图片 -->
+        <UIImgView>
+            <origin x="30" y="134.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo2</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第三张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="31" y="188" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark2</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+        <!--第四张图片 -->
+        <UIImgView>
+            <origin x="104" y="134.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo3</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第四张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="105" y="188" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark3</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+        <!--第五张图片 -->
+        <UIImgView>
+            <origin x="30" y="196.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo4</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第五张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="31" y="250" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark4</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+        <!--第六张图片 -->
+        <UIImgView>
+            <origin x="104" y="196.5" />
+            <size width="73" height="51" />
+            <content>
+                <data>
+                    <attributeName>inspection_photo5</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UIImgView>
+        <!--第六张图片的备注-->
+        <UITextView>
+            <fontSize>10</fontSize>
+            <origin x="105" y="250" />
+            <size width="72" height="10" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>13</lineHeight>
+            <content>
+                <data>
+                    <attributeName>inspection_photo_remark5</attributeName>
+                    <entityName></entityName>
+                </data>
+            </content>
+        </UITextView>
+    </DataTable>
+</CaseMapTable>
