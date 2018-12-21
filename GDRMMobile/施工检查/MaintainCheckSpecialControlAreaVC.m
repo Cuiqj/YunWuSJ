@@ -31,7 +31,6 @@
 @implementation MaintainCheckSpecialControlAreaVC
 //保存数据
 - (void)btnsaveData{
-    self.CheckSpecialArea.project_address = self.textproject_address.text;
     self.CheckSpecial.name = self.trxtUser.text;
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
@@ -60,11 +59,20 @@
     
     self.CheckSpecialArea.other = self.textother.text;
     self.CheckSpecialArea.recheck = self.textrecheck.text;
+    
+    self.CheckSpecialArea.project_address = self.textproject_address.text;
+    self.CheckSpecialArea.manage_unit = self.textmanage_unit.text;
+    
     [[AppDelegate App]saveContext];
 }
 //展示空或者加载内容
 - (void)zhanshiforspecialIDOrNot:(NSString *)showname{
-    self.textproject_address.text = self.CheckSpecialArea.project_address;
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = showname ? self.CheckSpecialArea.project_address : plan.project_address;
+    self.textmanage_unit.text = showname ? self.CheckSpecialArea.manage_unit : [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
+    
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
     [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
@@ -91,14 +99,19 @@
     self.textother_regulation_4.text = showname ? self.CheckSpecialArea.other_regulation_4 : @"";
     self.textother.text = showname ? self.CheckSpecialArea.other : @"";
     self.textrecheck.text = showname ? self.CheckSpecialArea.recheck : @"";
+    
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = plan.project_address;
+    self.textmanage_unit.text = [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
     // Do any additional setup after loading the view.
     self.scrollview.contentSize = CGSizeMake(790, 645);
 //    [self.attachmentButton setHidden:YES];
-    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
-    self.textproject_address.text = plan.project_address;
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableviewList.dataSource = self;
@@ -202,6 +215,7 @@
         self.CheckSpecial = [MaintainCheckSpecial MaintainCheckSpecialforMyid:self.specialID];
         self.CheckSpecialArea = [MaintainCheckSpecialControlArea MaintainCheckSpecialControlAreaforspecialID:self.CheckSpecial.myid];
         [self btnsaveData];
+        self.dataarray =[MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"2"];
         [self.tableviewList reloadData];
         [self tableView:self.tableviewList didSelectRowAtIndexPath:self.selectedindexpath];
         return;
@@ -212,11 +226,12 @@
         self.CheckSpecial.maintain_plan_id = self.planID;
         self.CheckSpecial.type = @"2";
         self.CheckSpecialArea = [MaintainCheckSpecialControlArea newDataObjectWithEntityName:@"MaintainCheckSpecialControlArea"];
-        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-        self.CheckSpecialArea.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
+        self.CheckSpecialArea.special_check_id = self.specialID;
+//        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+//        self.CheckSpecialArea.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
         //路段名称
-        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
-        self.CheckSpecialArea.project_address = plan.project_address;
+//        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+//        self.CheckSpecialArea.project_address = plan.project_address;
         self.CheckSpecialArea.special_check_id = self.specialID;
         [self btnsaveData];
         [[AppDelegate App] saveContext];
@@ -231,7 +246,7 @@
     self.specialID = @"";
     self.CheckSpecial = nil;
     self.CheckSpecialArea = nil;
-    [self zhanshiforspecialIDOrNot:@""];
+    [self zhanshiforspecialIDOrNot:nil];
     [self.tableviewList deselectRowAtIndexPath:self.selectedindexpath animated:NO];
 }
 

@@ -63,9 +63,9 @@
     self.textUser.text = showname ? self.CheckSpecial.name : @"";
     self.textspecial_item.text = showname? self.CheckSpecialTraffic.special_item : @"";
     self.textremark.text = showname ? self.CheckSpecialTraffic.remark : @"";
-    self.textdirection.text = plan.project_direction;
-    self.textconstruct_org.text = plan.construct_org;
-    self.textconstruct_name.text = plan.org_principal;
+    self.textdirection.text = showname ? self.CheckSpecialTraffic.direction : plan.project_direction;
+    self.textconstruct_org.text = showname ? self.CheckSpecialTraffic.construct_org : plan.construct_org;
+    self.textconstruct_name.text = showname ? self.CheckSpecialTraffic.construct_name : plan.org_principal;
     if(plan.station_end.integerValue != 0 && plan.station_start != 0){
         self.textstake_startandend.text = [NSString stringWithFormat:@"K%02ld+%03ldM-K%02ld+%03ldM",plan.station_start.integerValue/1000,plan.station_start.integerValue%1000,plan.station_end.integerValue/1000,plan.station_end.integerValue%1000];
     }else if (plan.station_end == 0 && plan.station_start.integerValue != 0) {
@@ -77,6 +77,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.labelstake_startanded setHidden:YES];
+    [self.textstake_startandend setHidden:YES];
+    
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableviewList.dataSource = self;
@@ -164,6 +167,7 @@
         self.CheckSpecial = [MaintainCheckSpecial MaintainCheckSpecialforMyid:self.specialID];
         self.CheckSpecialTraffic = [MaintainCheckSpecialTrafficSecurityFacility MaintainCheckSpecialTrafficSecurityFacilityforspecialID:self.CheckSpecial.myid];
         [self btnsaveData];
+        self.dataarray =[MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"5"];
         [self.tableviewList reloadData];
         [self tableView:self.tableviewList didSelectRowAtIndexPath:self.selectedindexpath];
         return;
@@ -174,11 +178,7 @@
         self.CheckSpecial.maintain_plan_id = self.planID;
         self.CheckSpecial.type = @"5";
         self.CheckSpecialTraffic = [MaintainCheckSpecialTrafficSecurityFacility newDataObjectWithEntityName:@"MaintainCheckSpecialTrafficSecurityFacility"];
-//        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-//        self.CheckSpecialTraffic.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
-        //路段名称
-//        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
-//        self.CheckSpecialTraffic.project_address = plan.project_address;
+
         self.CheckSpecialTraffic.special_check_id = self.specialID;
         [self btnsaveData];
         [[AppDelegate App] saveContext];

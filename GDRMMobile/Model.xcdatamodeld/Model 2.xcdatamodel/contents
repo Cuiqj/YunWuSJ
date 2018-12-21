@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G29" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1618" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="AtonementNotice" representedClassName="AtonementNotice" syncable="YES">
         <attribute name="case_desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="caseinfo_id" optional="YES" attributeType="String" syncable="YES"/>
@@ -703,6 +703,7 @@
         <attribute name="date_start" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="is_finish" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="org_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="org_principal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="project_address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="project_direction" optional="YES" attributeType="String" syncable="YES"/>
@@ -1155,7 +1156,7 @@
         <element name="MaintainCheckSpecialJob" positionX="90" positionY="162" width="128" height="555"/>
         <element name="MaintainCheckSpecialScence" positionX="81" positionY="153" width="128" height="405"/>
         <element name="MaintainCheckSpecialTrafficSecurityFacility" positionX="90" positionY="162" width="128" height="225"/>
-        <element name="MaintainPlan" positionX="117" positionY="189" width="128" height="270"/>
+        <element name="MaintainPlan" positionX="117" positionY="189" width="128" height="285"/>
         <element name="MaintainPlanCheck" positionX="126" positionY="198" width="128" height="435"/>
         <element name="MatchLaw" positionX="160" positionY="192" width="128" height="105"/>
         <element name="MatchLawDetails" positionX="160" positionY="192" width="128" height="120"/>

@@ -27,6 +27,9 @@
 @property (nonatomic, retain) NSNumber * station_start;
 @property (nonatomic, retain) NSNumber * station_end;
 @property (nonatomic, retain) NSString * project_direction;
+@property (nonatomic, retain) NSString * org_id;
+
+
 +(NSArray*) allMaintainPlan;
 +(NSString*)maintainPlanNameForID:(NSString*)maintainID;
 +(MaintainPlan*)maintainPlanInfoForID:(NSString*)maintainID;

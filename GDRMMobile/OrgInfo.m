@@ -70,4 +70,21 @@
     return [context executeFetchRequest:fetchRequest error:nil];
 }
 
++ (NSString *)orgInfoFororgshortname:(NSString *)orgID{
+    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+    NSEntityDescription *entity=[NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest=[[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"myid == %@",orgID]];
+    NSArray *temp=[context executeFetchRequest:fetchRequest error:nil];
+    if (temp.count>0) {
+        id obj=[temp objectAtIndex:0];
+        //return [obj name];
+        return [obj valueForKey:@"orgshortname"];
+    } else {
+        return @"";
+    }
+}
+
+
 @end

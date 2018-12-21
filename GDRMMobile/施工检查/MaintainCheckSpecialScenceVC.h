@@ -14,6 +14,11 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableviewList;
 @property (nonatomic, retain) NSString * planID;
 
+//施工路段
+@property (weak, nonatomic) IBOutlet UITextField *textproject_address;
+//管理单位
+@property (weak, nonatomic) IBOutlet UITextField *textmanage_unit;
+
 @property (weak, nonatomic) IBOutlet UITextField *textdate;
 @property (weak, nonatomic) IBOutlet UITextField *textUser;
 

@@ -13,10 +13,17 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableviewList;
 @property (nonatomic, retain) NSString * planID;
 
+//施工路段方向
+@property (weak, nonatomic) IBOutlet UITextField *textdirection;
 
-@property (weak, nonatomic) IBOutlet UILabel *textdirection;
-@property (weak, nonatomic) IBOutlet UILabel *textconstruct_org;
-@property (weak, nonatomic) IBOutlet UILabel *textconstruct_name;
+//施工单位
+@property (weak, nonatomic) IBOutlet UITextField *textconstruct_org;
+
+//施工负责人
+@property (weak, nonatomic) IBOutlet UITextField *textconstruct_name;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *labelstake_startanded;
 @property (weak, nonatomic) IBOutlet UILabel *textstake_startandend;
 
 @property (weak, nonatomic) IBOutlet UITextField *textdate;

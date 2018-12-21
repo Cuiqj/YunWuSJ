@@ -82,4 +82,19 @@
     return [[context executeFetchRequest:fetchRequest error:nil] lastObject] ;
 }
 
++ (InspectionRecord *)RecordsForInspection_relationid:(NSString *)relationid{
+    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+    NSEntityDescription *entity=[NSEntityDescription entityForName:@"InspectionRecord" inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest=[[NSFetchRequest alloc] init];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"relationid == %@ && relationType == %@",relationid,@"过站记录"];
+    fetchRequest.predicate=predicate;
+    fetchRequest.entity=entity;
+    NSArray *fetchResult=[context executeFetchRequest:fetchRequest error:nil];
+    if (fetchResult.count>0) {
+        return [fetchResult objectAtIndex:0];
+    } else {
+        return nil;
+    }
+}
+
 @end

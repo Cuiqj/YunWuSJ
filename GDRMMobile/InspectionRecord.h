@@ -31,4 +31,7 @@
 
 + (NSArray *)recordsForInspection:(NSString *)inspectionID;
 + (InspectionRecord* )lastRecordsForInspection:(NSString *)inspectionID;
+
++ (InspectionRecord *)RecordsForInspection_relationid:(NSString *)relationid;
+
 @end

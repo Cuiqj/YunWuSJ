@@ -51,13 +51,21 @@
     self.CheckSpecialScence.lighting_facility = self.textlighting_facility.text;
     self.CheckSpecialScence.workspace_doorway = self.textworkspace_doorway.text;
     self.CheckSpecialScence.tunnel_construct = self.texttunnel_construct.text;
-    
     self.CheckSpecialScence.other = self.textother.text;
     self.CheckSpecialScence.recheck = self.textrecheck.text;
+    //主表获取或修改过数据保存
+//    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.CheckSpecialScence.project_address = self.textproject_address.text;
+    self.CheckSpecialScence.manage_unit = self.textmanage_unit.text;
     [[AppDelegate App] saveContext];
 }
 //展示空或者加载内容
 - (void)zhanshiforspecialIDOrNot:(NSString *)showname{
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = showname ? self.CheckSpecialScence.project_address : plan.project_address;
+    self.textmanage_unit.text = showname ? self.CheckSpecialScence.manage_unit : [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
+    
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
     [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
@@ -82,6 +90,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = plan.project_address;
+    self.textmanage_unit.text = [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
     // Do any additional setup after loading the view.
     self.scrollview.contentSize = CGSizeMake(790, 651);
 //    [self.attachmentButton setHidden:YES];
@@ -126,7 +139,7 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     //删除数据库数据            检查内容删除
-    id obj=[self.dataarray objectAtIndex:indexPath.row];
+//    id obj=[self.dataarray objectAtIndex:indexPath.row];
     MaintainCheckSpecial * special = (MaintainCheckSpecial *)self.dataarray[indexPath.row];
     if ([special.myid isEqualToString:self.specialID]) {
         self.specialID = @"";
@@ -137,8 +150,10 @@
     for (id photo in photos) {
         [context deleteObject:photo];
     }
-    [context deleteObject:self.CheckSpecialScence];
-    [context deleteObject:obj];
+    if (self.CheckSpecialScence) {
+        [context deleteObject:self.CheckSpecialScence];
+    }
+    [context deleteObject:special];
     [[AppDelegate App] saveContext];
     self.dataarray = [MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"3"];
     [self.tableviewList reloadData];
@@ -187,6 +202,7 @@
         self.CheckSpecial = [MaintainCheckSpecial MaintainCheckSpecialforMyid:self.specialID];
         self.CheckSpecialScence = [MaintainCheckSpecialScence MaintainCheckSpecialScenceforspecialID:self.CheckSpecial.myid];
         [self btnsaveData];
+        self.dataarray =[MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"3"];
         [self.tableviewList reloadData];
         [self tableView:self.tableviewList didSelectRowAtIndexPath:self.selectedindexpath];
         return;
@@ -197,14 +213,10 @@
         self.CheckSpecial.maintain_plan_id = self.planID;
         self.CheckSpecial.type = @"3";
         self.CheckSpecialScence = [MaintainCheckSpecialScence newDataObjectWithEntityName:@"MaintainCheckSpecialScence"];
-        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-        self.CheckSpecialScence.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
-        //路段名称
-        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
-        self.CheckSpecialScence.project_address = plan.project_address;
         self.CheckSpecialScence.special_check_id = self.specialID;
-        [self btnsaveData];
         [[AppDelegate App] saveContext];
+        [self btnsaveData];
+        
     }
     self.dataarray =[MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"3"];
     [self.tableviewList reloadData];
@@ -216,7 +228,7 @@
     self.specialID = @"";
     self.CheckSpecial = nil;
     self.CheckSpecialScence = nil;
-    [self zhanshiforspecialIDOrNot:@""];
+    [self zhanshiforspecialIDOrNot:nil];
     [self.tableviewList deselectRowAtIndexPath:self.selectedindexpath animated:NO];
 }
 

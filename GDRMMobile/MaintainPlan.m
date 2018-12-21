@@ -26,6 +26,7 @@
 @dynamic realy_end_time;
 @dynamic is_finish;
 @dynamic project_direction;
+@dynamic org_id;
 
 +(NSArray *)allMaintainPlan{
     NSManagedObjectContext *moc=  [[AppDelegate App] managedObjectContext];

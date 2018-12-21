@@ -34,6 +34,8 @@
 @property (nonatomic,retain) UIPopoverController *pickerPopover;
 @property (nonatomic,retain) NSString            * RecordID;
 @property (nonatomic,retain) NSIndexPath         * selectedRecordIndex;
+//巡查时过站记录和巡查记录关联中间值
+@property (nonatomic,retain) NSString * infpectionpath_id;
 
 //判断当前显示的巡查是否是正在进行的巡查
 @property (nonatomic,assign) BOOL isCurrentInspection;
@@ -227,7 +229,15 @@ InspectionCheckState inspectionState;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     id obj=[self.data objectAtIndex:indexPath.row];
+    InspectionRecord * record;
+    if (self.state == kPath){
+        InspectionPath * path = (InspectionPath *)obj;
+        record = [InspectionRecord RecordsForInspection_relationid:path.myid];
+    }
     NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+    if (record){
+        [context deleteObject:record];
+    }
     [context deleteObject:obj];
     [self.data removeObjectAtIndex:indexPath.row];
     [[AppDelegate App] saveContext];
@@ -409,8 +419,9 @@ InspectionCheckState inspectionState;
             newPath.checktime    = [dateFormatter dateFromString:self.textCheckTime.text];
             newPath.stationname  = self.textStationName.text;
             newPath.inspectionid = self.inspectionID;
+            self.infpectionpath_id = newPath.myid;
+           
             [[AppDelegate App] saveContext];
-            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否生成巡查记录?" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
             [alert show];
             
@@ -437,9 +448,11 @@ InspectionCheckState inspectionState;
     if (buttonIndex == 1) {
         //过站记录生成巡查记录
         InspectionRecord *inspectionRecord=[InspectionRecord newDataObjectWithEntityName:@"InspectionRecord"];
-        inspectionRecord.relationid     = @"0";
+        inspectionRecord.relationid     = self.infpectionpath_id;
         inspectionRecord.inspection_id  = self.inspectionID;
         inspectionRecord.roadsegment_id = @"0";
+        inspectionRecord.relationType = @"过站记录";
+        
         
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];

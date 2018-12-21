@@ -66,10 +66,19 @@
     self.CheckSpecialJob.maintain_construct_9 = self.textmaintain_construct_9.text;
     self.CheckSpecialJob.other = self.textother.text;
     self.CheckSpecialJob.recheck = self.textviewrecheck.text;
+    
+    self.CheckSpecialJob.project_address = self.textproject_address.text;
+    self.CheckSpecialJob.manage_unit = self.textmanage_unit.text;
+    
     [[AppDelegate App] saveContext];
 }
 //展示空或着内容
 - (void)zhanshiforspecialIDOrNot:(NSString *)showname{
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = showname ? self.CheckSpecialJob.project_address : plan.project_address;
+    self.textmanage_unit.text = showname ? self.CheckSpecialJob.manage_unit : [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
     [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
@@ -105,6 +114,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = plan.project_address;
+    self.textmanage_unit.text = [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
     // Do any additional setup after loading the view.
 //    [self.ButtonFuJian setHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -272,6 +286,7 @@
         self.CheckSpecial = [MaintainCheckSpecial MaintainCheckSpecialforMyid:self.specialID];
         self.CheckSpecialJob = [MaintainCheckSpecialJob MaintainCheckSpecialJobforspecialID:self.CheckSpecial.myid];
         [self btnsaveData];
+        self.dataarray = [MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"1"];
         [self.tableviewList reloadData];
         [self tableView:self.tableviewList didSelectRowAtIndexPath:self.selectedindexpath];
         return;
@@ -282,12 +297,13 @@
         self.CheckSpecial.maintain_plan_id = self.planID;
         self.CheckSpecial.type = @"1";
         self.CheckSpecialJob = [MaintainCheckSpecialJob newDataObjectWithEntityName:@"MaintainCheckSpecialJob"];
-        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-        self.CheckSpecialJob.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
+        self.CheckSpecialJob.special_check_id = self.specialID;
+//        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+//        self.CheckSpecialJob.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
         //路段名称
         MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
         self.CheckSpecialJob.project_address = plan.project_address;
-        self.CheckSpecialJob.special_check_id = self.specialID;
+        self.CheckSpecialJob.manage_unit = [OrgInfo orgInfoFororgshortname:plan.org_id];
         [self btnsaveData];
         [[AppDelegate App] saveContext];
     }
@@ -300,7 +316,7 @@
     self.specialID = @"";
     self.CheckSpecial = nil;
     self.CheckSpecialJob = nil;
-    [self zhanshiforspecialIDOrNot:@""];
+    [self zhanshiforspecialIDOrNot:nil];
     [self.tableviewList deselectRowAtIndexPath:self.selectedindexpath animated:NO];
 }
 

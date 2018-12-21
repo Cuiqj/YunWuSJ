@@ -37,4 +37,7 @@
 + (OrgInfo *)orgInfoForOrgID:(NSString *)orgID;
 + (OrgInfo *)orgInfoForSelected;
 + (NSArray *)allOrgInfo;
+
+
++ (NSString *)orgInfoFororgshortname:(NSString *)orgID;
 @end

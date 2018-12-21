@@ -42,10 +42,18 @@
     self.CheckSpecialFinish.traffic_security_facility = self.texttraffic_security_facility.text;
     self.CheckSpecialFinish.other = self.textother.text;
     self.CheckSpecialFinish.recheck = self.textrecheck.text;
+    
+    self.CheckSpecialFinish.project_address = self.textproject_address.text;
+    self.CheckSpecialFinish.manage_unit = self.textmanage_unit.text;
     [[AppDelegate App] saveContext];
 }
 //展示空或者加载内容
 - (void)zhanshiforspecialIDOrNot:(NSString *)showname{
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = showname ? self.CheckSpecialFinish.project_address : plan.project_address;
+    self.textmanage_unit.text = showname ? self.CheckSpecialFinish.manage_unit : [OrgInfo orgInfoFororgshortname:plan.org_id];
+    
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
     [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
@@ -63,6 +71,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self.attachmentButton setHidden:YES];
+    self.scrollview.contentSize = CGSizeMake(790, 481);
+    
+    MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+    self.textproject_address.text = plan.project_address;
+    self.textmanage_unit.text = [OrgInfo orgInfoFororgshortname:plan.org_id];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableviewList.dataSource = self;
@@ -73,7 +86,24 @@
     self.textdate.tag = 555;
     self.textfinish_date.tag = 666;
     self.textUser.tag = 777;
+    
+    self.textdate.delegate = self;
+    self.textUser.delegate = self;
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField.tag==666) {
+        [self SelectDate:self.textfinish_date];
+        return NO;
+    }else if (textField.tag==555) {
+        [self SelectDate:self.textdate];
+        return NO;
+    }else if (textField.tag==777){
+        [self SelectUser:self.textUser];
+        return NO;
+    }
+    return YES;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -150,6 +180,7 @@
         self.CheckSpecial = [MaintainCheckSpecial MaintainCheckSpecialforMyid:self.specialID];
         self.CheckSpecialFinish = [MaintainCheckSpecialFinish MaintainCheckSpecialFinishforspecialID:self.CheckSpecial.myid];
         [self btnsaveData];
+        self.dataarray =[MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"4"];
         [self.tableviewList reloadData];
         [self tableView:self.tableviewList didSelectRowAtIndexPath:self.selectedindexpath];
         return;
@@ -163,8 +194,8 @@
         NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
         self.CheckSpecialFinish.manage_unit = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
         //路段名称
-        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
-        self.CheckSpecialFinish.project_address = plan.project_address;
+//        MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
+//        self.CheckSpecialFinish.project_address = plan.project_address;
         self.CheckSpecialFinish.special_check_id = self.specialID;
         [self btnsaveData];
         [[AppDelegate App] saveContext];
@@ -179,7 +210,7 @@
     self.specialID = @"";
     self.CheckSpecial = nil;
     self.CheckSpecialFinish = nil;
-    [self zhanshiforspecialIDOrNot:@""];
+    [self zhanshiforspecialIDOrNot:nil];
     [self.tableviewList deselectRowAtIndexPath:self.selectedindexpath animated:NO];
 }
 
