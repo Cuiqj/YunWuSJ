@@ -30,9 +30,9 @@
 #endif
 
 #ifdef DEBUG
-//#define NSLog(...) NSLog(__VA_ARGS__)
+#define NSLog(...) NSLog(__VA_ARGS__)
 #else
-//#define NSLog(...) {}
+#define NSLog(...)
 #endif
 
 #define ARC_ENABLED
@@ -54,6 +54,7 @@
 //#define VERSION_NUMBER @2018032001
 #define VERSION_TIME @"2018年12月26日"
 #define VERSION_NUMBER @2018122601
+
 
 /*
  *add by lxm

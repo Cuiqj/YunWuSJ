@@ -561,7 +561,7 @@ BOOL _wasKeyboardManagerEnabled;
     else if (textField ==self.textStationStartM) {
         self.textStationEndM.text = textField.text;
     }else if (textField == self.textSide){
-        if([self.roadSegmentID isEqualToString:@"666666666"]){
+        if([self.roadSegmentID isEqualToString:@"666666666"] || [self.roadSegmentID isEqualToString:@"0"]){
             Sfz *iShoufz = [Sfz aSfzForID:self.sfzID];
             if(iShoufz.station_start.integerValue == 0 || [iShoufz.station_start isEmpty]){
                 return YES;
@@ -820,6 +820,7 @@ BOOL _wasKeyboardManagerEnabled;
 
 //新增案件按钮
 - (IBAction)btnNewCase:(id)sender;{
+
     self.SwitchNumber.on = YES;
     self.caseInfo      = nil;
     self.citizenInfo   = nil;
@@ -1029,10 +1030,6 @@ BOOL _wasKeyboardManagerEnabled;
     BaoxianCaseViewController * baoxian = [mainStoryboard instantiateViewControllerWithIdentifier:@"BaoxianCase"];
     baoxian.caseID = self.caseID;
     [self.navigationController pushViewController:baoxian animated:YES];
-    
-   
-    
-    
 }
 
 //选择路段级路段号
@@ -1400,9 +1397,9 @@ BOOL _wasKeyboardManagerEnabled;
         }else{
             self.textRoadSegment.text=[RoadSegment roadNameFromSegment:self.caseInfo.roadsegment_id];
             self.roadSegmentID = self.caseInfo.roadsegment_id;
-            if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"]){
-                self.textRoadSegment.text = @"收费站";
-            }
+//            if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"]){
+//                self.textRoadSegment.text = @"收费站";
+//            }
         }
         self.sfzID          = self.caseInfo.sfz_id;
         self.textPlace.text = self.caseInfo.place;

@@ -315,10 +315,20 @@ enum kUISwitchTag {
     [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
     self.textCar.text           = accidentInfo.car;
     self.textInfocom.text       = accidentInfo.infocome;
-    if ([accidentInfo.location isEqualToString:@"收费站"]) {
+    self.textlocation.text      =  [RoadSegment roadNameFromSegment:accidentInfo.location];
+    if([accidentInfo.location isEqualToString:@"0"]){
+        self.textlocation.text = @"收费站";
+    }
+    if ([accidentInfo.location isEqualToString:@"0"]) {
+        self.labelThirdplace.text = @"匝道出口";
+        self.labelSecondPlace.text = @"收费站名称";
+        
         self.textSecondPlace.text = accidentInfo.tollstation;
         self.textThirdPlace.text = accidentInfo.ramp;
     }else{
+        self.labelThirdplace.text = @"事故位置";
+        self.labelSecondPlace.text = @"事故方向";
+        
         self.textSecondPlace.text = accidentInfo.direction;
         self.textThirdPlace.text = accidentInfo.place;
     }
@@ -338,7 +348,6 @@ enum kUISwitchTag {
     self.textCheckUser.text = accidentInfo.tra_name;
     self.accident_class.text = accidentInfo.accident_class;
     self.textRemark.text        = accidentInfo.remark;
-    self.textlocation.text      = accidentInfo.location;
     self.textClstart.text       = [ formatter stringFromDate:accidentInfo.handle_starttime];
     self.textClend.text         = [ formatter stringFromDate:accidentInfo.handle_endtime];
     self.textbadcar_sum.text = [NSString stringWithFormat:@"%d",accidentInfo.badcar_sum.intValue];
@@ -480,7 +489,7 @@ enum kUISwitchTag {
     [dateFormatter setLocale:[NSLocale currentLocale]];
     [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
     tr.org_id=[[OrgInfo orgInfoForSelected] valueForKey:@"myid"];
-    tr.location      = self.textlocation.text;
+    tr.location      = self.roadSegmentID;
     tr.rel_id        = @"0";
     tr.car           = self.textCar.text.uppercaseString;
     tr.infocome      = self.textInfocom.text;
@@ -557,6 +566,9 @@ enum kUISwitchTag {
 //    if(![self.accidentID isEmpty]){
 //        [self btnSave:nil];
 //    }
+    self.labelThirdplace.text = @"事故位置";
+    self.labelSecondPlace.text = @"事故方向";
+    
     self.accidentID             = nil;
     self.textCar.text           = @"";
     self.textInfocom.text       = @"";
@@ -933,7 +945,8 @@ enum kUISwitchTag {
 - (void)setRoadSegment:(NSString *)aRoadSegmentID roadName:(NSString *)roadName{
     self.roadSegmentID        = aRoadSegmentID;
     self.textlocation.text = roadName;
-    if ([aRoadSegmentID isEqualToString:@"666666666"]) {
+    if ([aRoadSegmentID isEqualToString:@"666666666"] || [aRoadSegmentID isEqualToString:@"0"]) {
+        self.roadSegmentID        = @"0";
         self.labelThirdplace.text = @"匝道出口";
         self.labelSecondPlace.text = @"收费站名称";
     }else{

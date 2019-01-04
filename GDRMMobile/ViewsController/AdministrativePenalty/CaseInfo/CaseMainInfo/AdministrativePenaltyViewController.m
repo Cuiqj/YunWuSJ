@@ -14,6 +14,7 @@
 #import "CaseInfo.h"
 #import "CaseProveInfo.h"
 
+#import "Sfz.h"
 
 #define WIDTH_OFF_SET 654.0
 #define HEIGHT_OFF_SET 0
@@ -782,7 +783,7 @@ BOOL _wasKeyboardManagerEnabled;
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         self.textHappenDate.text=[formatter stringFromDate:self.caseInfo.happen_date];
         self.textRoadSegment.text=[RoadSegment roadNameFromSegment:self.caseInfo.roadsegment_id];
-        if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"]){
+        if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"] || [self.caseInfo.roadsegment_id isEqualToString:@"0"]){
             self.textRoadSegment.text = @"收费站";
         }
         self.roadSegmentID=self.caseInfo.roadsegment_id;
@@ -1067,12 +1068,23 @@ BOOL _wasKeyboardManagerEnabled;
 
 //选择方向
 - (IBAction)selectRoadSide:(UITextField *)sender {
-    [self roadSegmentPickerPresentPickerState:kRoadSide fromRect:sender.frame];
+    if([self.textRoadSegment.text isEqualToString:@"收费站"]){
+        [self roadSegmentPickerPresentPickerState:kShoufz fromRect:sender.frame];
+    }else{
+        [self roadSegmentPickerPresentPickerState:kRoadSide fromRect:sender.frame];
+    }
+//    [self roadSegmentPickerPresentPickerState:kRoadSide fromRect:sender.frame];
 }
 
 //选择位置
 - (IBAction)selectRoadPlace:(UITextField *)sender {
-    [self roadSegmentPickerPresentPickerState:kRoadPlace fromRect:sender.frame];
+    
+    if([self.textRoadSegment.text isEqualToString:@"收费站"]){
+        [self roadSegmentPickerPresentPickerState:kZadao fromRect:sender.frame];
+    }else{
+        [self roadSegmentPickerPresentPickerState:kRoadPlace fromRect:sender.frame];
+    }
+    
 }
 
 //路段选择弹窗
@@ -1199,6 +1211,17 @@ BOOL _wasKeyboardManagerEnabled;
 
 - (void)setRoadSide:(NSString *)side{
     self.textSide.text=side;
+}
+- (void)setShoufz:(NSString*) sfzname sfzID:(NSString*)sfzID{
+    //    选择为收费站名称
+//    self.sfzID                   = sfzID;
+    Sfz * iShoufz   = [Sfz aSfzForID:sfzID];
+    self.textStationStartKM.text=[NSString stringWithFormat:@"%02d", iShoufz.station_start.integerValue/1000];
+    self.textStationStartM.text=[NSString stringWithFormat:@"%03d",iShoufz.station_start.integerValue%1000];
+    self.textStationEndKM.text=[NSString stringWithFormat:@"%02d",iShoufz.station_end.integerValue/1000];
+    self.textStationEndM.text=[NSString stringWithFormat:@"%03d",iShoufz.station_end.integerValue%1000];
+    //        self.caseInfo.roadsegment_id = iShoufz.roadsegment_id;
+    self.textSide.text           = sfzname;
 }
 
 //显示所选时间

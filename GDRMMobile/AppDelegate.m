@@ -39,8 +39,7 @@
     [self setFileAddress:nil];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     //程序首次已经完成启动时执行
     [self initServer];
     _mapManager = [[BMKMapManager alloc] init];
@@ -153,13 +152,8 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    
     // 处理推送消息
-    
     NSLog(@"userinfo:%@",userInfo);
-    
-    
-    
     NSLog(@"收到推送消息:%@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]);
     
 }
