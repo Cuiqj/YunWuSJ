@@ -980,7 +980,7 @@ InspectionCheckState inspectionState;
     inspectionRecord.start_time     = trafficRecord.happentime;
     inspectionRecord.station        = trafficRecord.station;
     NSString* stationString ;
-    if ([trafficRecord.location isEqualToString:@"收费站"]) {
+    if ([trafficRecord.location isEqualToString:@"0"]) {
         stationString = [NSString stringWithFormat:@"%@%@",trafficRecord.tollstation,trafficRecord.ramp];
     }else if(trafficRecord.station_end.integerValue == trafficRecord.station.integerValue){
         stationString = [NSString stringWithFormat:@"K%02ld+%03ldM", trafficRecord.station.integerValue/1000, trafficRecord.station.integerValue%1000];
@@ -1027,7 +1027,7 @@ InspectionCheckState inspectionState;
 //        remark = [remark stringByAppendingFormat:@"，事故方向：%@", trafficRecord.fix];
 //    }
     if (stationString) {
-        if ([trafficRecord.location isEqualToString:@"收费站"]) {
+        if ([trafficRecord.location isEqualToString:@"0"]) {
             remark = [remark stringByAppendingFormat:@"，事故发生地点：%@", stationString];
         }else{
             remark = [remark stringByAppendingFormat:@"，事故发生地点（桩号）：%@", stationString];
