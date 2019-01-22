@@ -67,7 +67,7 @@
 //    data.myid=@"666666666";
     id data = @{
                 @"name":@"收费站",
-                @"myid":@"666666666",
+                @"myid":@"0",
                 @"place_prefix1":@"收费站"
                 };
 //    [data setName:@"收费站" ];

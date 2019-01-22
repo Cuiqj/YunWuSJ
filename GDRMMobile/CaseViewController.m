@@ -561,7 +561,7 @@ BOOL _wasKeyboardManagerEnabled;
     else if (textField ==self.textStationStartM) {
         self.textStationEndM.text = textField.text;
     }else if (textField == self.textSide){
-        if([self.roadSegmentID isEqualToString:@"666666666"] || [self.roadSegmentID isEqualToString:@"0"]){
+        if([self.roadSegmentID isEqualToString:@"0"]){
             Sfz *iShoufz = [Sfz aSfzForID:self.sfzID];
             if(iShoufz.station_start.integerValue == 0 || [iShoufz.station_start isEmpty]){
                 return YES;
@@ -1039,7 +1039,7 @@ BOOL _wasKeyboardManagerEnabled;
 
 //选择方向
 - (IBAction)selectRoadSide:(UITextField *)sender {
-    if([self.roadSegmentID isEqualToString:@"666666666"]){
+    if([self.roadSegmentID isEqualToString:@"0"]){
         [self roadSegmentPickerPresentPickerState:kShoufz fromRect:sender.frame];
     }else{
         [self roadSegmentPickerPresentPickerState:kRoadSide fromRect:sender.frame];
@@ -1048,7 +1048,7 @@ BOOL _wasKeyboardManagerEnabled;
 
 //选择位置
 - (IBAction)selectRoadPlace:(UITextField *)sender {
-    if([self.roadSegmentID isEqualToString:@"666666666"]){
+    if([self.roadSegmentID isEqualToString:@"0"]){
         [self roadSegmentPickerPresentPickerState:kZadao fromRect:sender.frame];
     }else{
         [self roadSegmentPickerPresentPickerState:kRoadPlace fromRect:sender.frame];
@@ -1393,11 +1393,11 @@ BOOL _wasKeyboardManagerEnabled;
         self.textWeatheer.text  = self.caseInfo.weater;
         if(self.caseInfo.sfz_id.integerValue!=0){
             self.textRoadSegment.text=@"收费站";
-            self.roadSegmentID=@"666666666";
+            self.roadSegmentID=@"0";
         }else{
             self.textRoadSegment.text=[RoadSegment roadNameFromSegment:self.caseInfo.roadsegment_id];
             self.roadSegmentID = self.caseInfo.roadsegment_id;
-//            if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"]){
+//            if([self.caseInfo.roadsegment_id isEqualToString:@"0"]){
 //                self.textRoadSegment.text = @"收费站";
 //            }
         }

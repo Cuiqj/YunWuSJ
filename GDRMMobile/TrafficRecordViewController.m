@@ -945,7 +945,7 @@ enum kUISwitchTag {
 - (void)setRoadSegment:(NSString *)aRoadSegmentID roadName:(NSString *)roadName{
     self.roadSegmentID        = aRoadSegmentID;
     self.textlocation.text = roadName;
-    if ([aRoadSegmentID isEqualToString:@"666666666"] || [aRoadSegmentID isEqualToString:@"0"]) {
+    if ([aRoadSegmentID isEqualToString:@"0"]) {
         self.roadSegmentID        = @"0";
         self.labelThirdplace.text = @"匝道出口";
         self.labelSecondPlace.text = @"收费站名称";

@@ -185,9 +185,6 @@
     if (!isBlank) {
         Inspection *newInspection=[Inspection newDataObjectWithEntityName:@"Inspection"];
         NSString *newInspectionID=newInspection.myid;
-        if ([newInspection.yjzb isEqualToString:@"巡查设备齐全完好"]) {
-            newInspection.yjzb = @"巡查设备齐全完好。";
-        }
         NSString *last = [newInspection.yjzb substringFromIndex:newInspection.yjzb.length-1];
         if (![last isEqualToString:@"。"]) {
             newInspection.yjzb = [NSString stringWithFormat:@"%@。",newInspection.yjzb];

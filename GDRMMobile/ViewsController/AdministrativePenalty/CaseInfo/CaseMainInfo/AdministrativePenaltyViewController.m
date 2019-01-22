@@ -783,7 +783,7 @@ BOOL _wasKeyboardManagerEnabled;
         [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
         self.textHappenDate.text=[formatter stringFromDate:self.caseInfo.happen_date];
         self.textRoadSegment.text=[RoadSegment roadNameFromSegment:self.caseInfo.roadsegment_id];
-        if([self.caseInfo.roadsegment_id isEqualToString:@"666666666"] || [self.caseInfo.roadsegment_id isEqualToString:@"0"]){
+        if([self.caseInfo.roadsegment_id isEqualToString:@"0"]){
             self.textRoadSegment.text = @"收费站";
         }
         self.roadSegmentID=self.caseInfo.roadsegment_id;
