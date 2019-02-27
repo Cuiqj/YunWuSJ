@@ -27,8 +27,10 @@
 #import "InitServiceOrg.h"
 #import "InitPersonnelClass.h"
 #import "InitBridgeCheckItem.h"
+#import "InitRoadSegmentDirection.h"
 
-#define DOWNLOADCOUNT 30
+
+#define DOWNLOADCOUNT 31
 #define DOWNLOADFINISHNOTI @"DownLoadWorkFinished"
 
 #define WAITFORPARSER   self.stillParsing = 2;\

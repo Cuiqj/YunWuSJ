@@ -12,7 +12,7 @@
 - (void)downLoadCarCheckItems:(NSString *)orgID {
     WebServiceInit;
     //[service downloadDataSet:@"select * from UserInfo" orgid:orgID];
-    [service downloadDataSet:@"select * from CarCheckItems "  ];
+    [service downloadDataSet:@"select * from CarCheckItems"  ];
 }
 
 - (NSDictionary *)xmlParser:(NSString *)webString{

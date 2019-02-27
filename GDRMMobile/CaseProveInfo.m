@@ -68,6 +68,33 @@
     }
 }
 
+//添加记录人及勘验人
++(void)generateEventDescForcaseProveInfo:(CaseProveInfo *)caseProveInfo{
+    NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+    NSString *currentUserName=[[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
+    NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
+    if ([caseProveInfo.prover length] <= 0) {
+        if (inspectorArray.count < 1) {
+            // modified by cjl
+            if (caseProveInfo.prover == nil) {
+                caseProveInfo.prover = currentUserName;
+            }
+        } else {
+            NSString *inspectorName = @"";
+            for (NSString *name in inspectorArray) {
+                if ([inspectorName isEmpty]) {
+                    inspectorName = name;
+                } else {
+                    inspectorName = [inspectorName stringByAppendingFormat:@"、%@",name];
+                }
+            }
+            caseProveInfo.prover = inspectorName;
+        }
+    }
+    if (caseProveInfo.recorder == nil) {
+        caseProveInfo.recorder = currentUserName;
+    }
+}
 //勘验检查情况及结果
 + (NSString *)generateEventDescForCase:(NSString *)caseID{
     CaseInfo *caseInfo=[CaseInfo caseInfoForID:caseID];
@@ -621,18 +648,20 @@
     //伤亡情况
     NSString *caseStatusString = @"";
     if (caseInfo.fleshwound_sum.integerValue == 0 && caseInfo.badwound_sum.integerValue == 0 && caseInfo.death_sum.integerValue == 0) {
-        caseStatusString = [caseStatusString stringByAppendingString:@"无人员伤亡。"];
+        caseStatusString = [caseStatusString stringByAppendingString:@"无人员伤亡，"];
     } else {
         if (caseInfo.fleshwound_sum.integerValue != 0) {
-            caseStatusString = [caseStatusString stringByAppendingFormat:@"轻伤%@人。",caseInfo.fleshwound_sum];
+            caseStatusString = [caseStatusString stringByAppendingFormat:@"轻伤%@人，",caseInfo.fleshwound_sum];
         }
         if (caseInfo.badwound_sum.integerValue != 0) {
-            caseStatusString = [caseStatusString stringByAppendingFormat:@"重伤%@人。",caseInfo.badwound_sum];
+            caseStatusString = [caseStatusString stringByAppendingFormat:@"重伤%@人，",caseInfo.badwound_sum];
         }
         if (caseInfo.death_sum.integerValue != 0) {
-            caseStatusString = [caseStatusString stringByAppendingFormat:@"死亡%@人。",caseInfo.death_sum];
+            caseStatusString = [caseStatusString stringByAppendingFormat:@"死亡%@人，",caseInfo.death_sum];
         }
     }
+    caseStatusString = [caseStatusString substringToIndex:caseStatusString.length-1];
+    caseStatusString = [NSString stringWithFormat:@"%@。",caseStatusString];
     return caseStatusString;
 }
 

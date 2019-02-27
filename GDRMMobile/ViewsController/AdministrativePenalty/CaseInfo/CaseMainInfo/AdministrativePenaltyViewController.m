@@ -987,7 +987,8 @@ BOOL _wasKeyboardManagerEnabled;
         caseProveInfo.prover = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
     }
     caseProveInfo.recorder = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
-    
+    [CaseProveInfo generateEventDescForcaseProveInfo:caseProveInfo];
+  
     [[AppDelegate App] saveContext];
 }
 
@@ -1097,6 +1098,9 @@ BOOL _wasKeyboardManagerEnabled;
         icPicker.tableView.frame=CGRectMake(0, 0, 150, 243);
         icPicker.pickerState=state;
         icPicker.delegate=self;
+        if(state == kRoadSide){
+            icPicker.roadsegment_id = self.roadSegmentID;
+        }
         self.caseInfoPickerpopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.caseInfoPickerpopover setPopoverContentSize:CGSizeMake(150, 243)];
         [self.caseInfoPickerpopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

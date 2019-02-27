@@ -790,7 +790,7 @@ InspectionCheckState inspectionState;
     [self reloadRecordData];
 }
 */
-- (void) createRecodeByCaseID:(NSString *)caseID{
+- (void)createRecodeByCaseID:(NSString *)caseID{
     CaseProveInfo * caseProveInfo = [CaseProveInfo proveInfoForCase:caseID];
     if ([caseID isEmpty]) {
         return;
@@ -1002,6 +1002,8 @@ InspectionCheckState inspectionState;
     }else if ([trafficRecord.infocome isEqualToString:@"路政"]) {
         //        remark = [NSString stringWithFormat:@"%@巡查至%@K%@路段发现有交通事故。", timeStr, inspectionRecord.fix, trafficRecord.station];
         remark = [NSString stringWithFormat:@"%@巡查至方向%@发现交通事故，", timeStr, stationString];
+    }else{
+        remark = [NSString stringWithFormat:@"%@通过%@发现交通事故，", timeStr,trafficRecord.infocome];
     }
     
     if (trafficRecord.car.length) {
@@ -1139,12 +1141,13 @@ InspectionCheckState inspectionState;
     
     [dateFormatter setDateFormat:@"HH时mm分"];
     NSString *timeString=[dateFormatter stringFromDate:inspectionRecord.start_time];
-    NSMutableString *remark=[[NSMutableString alloc] initWithFormat:@"%@巡至%@往%@方向K%@+%@m处时，发生",timeString, [RoadSegment roadNameFromSegment:caseInfo.roadsegment_id], caseInfo.side, [caseInfo station_start_km], [caseInfo station_start_m]];
+    NSMutableString *remark=[[NSMutableString alloc] initWithFormat:@"%@巡至%@往%@方向K%@+%@M处时，发生",timeString, [RoadSegment roadNameFromSegment:caseInfo.roadsegment_id], caseInfo.side, [caseInfo station_start_km], [caseInfo station_start_m]];
     //[remark appendFormat:@"%@接报，%@到场，",timeString,timeString];
     //[remark appendFormat:@"经现场勘验检查认定%@的事实为,",desc]; //NSString [alloc stringByAppendingFormat:@"经现场勘验检查认定（案由）的事实为,"
     //[remark appendString:@"经现场勘验检查认定"];
     remark= [NSString stringWithFormat:@"%@",remark];
     remark = [remark stringByReplacingOccurrencesOfString:@"K00+000M" withString:@""];
+    remark = [[NSMutableString alloc] initWithString:remark];
     [remark appendString:desc];
     NSArray *deformArray=[CaseDeformation deformationsForCase:caseID forCitizen:@"保险案件"];
     NSString *deformsString=@"";

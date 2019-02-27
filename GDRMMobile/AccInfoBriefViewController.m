@@ -270,10 +270,12 @@ typedef enum {
     NSInteger deathNum=[_textdeath.text integerValue];
     NSInteger badwoundNum=[_textbadwound.text integerValue];
     NSInteger fleshwoundNum=[_textfleshwound.text integerValue];
-    if (fleshwoundNum>0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
+    if (fleshwoundNum>=0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
         _textCaseStyle.text= @"轻微事故";
     } else if (badwoundNum<=2 && deathNum==0) {
          _textCaseStyle.text = @"一般事故";
+    }  else if (fleshwoundNum>2 && badwoundNum==0 && deathNum==0) {
+        _textCaseStyle.text = @"一般事故";
     } else if (badwoundNum<11 && deathNum==0) {
         _textCaseStyle.text = @"重大事故";
     } else if (badwoundNum<8 && deathNum==1) {
@@ -282,7 +284,11 @@ typedef enum {
         _textCaseStyle.text = @"重大事故";
     } else {
         _textCaseStyle.text = @"特大事故";
-    }   
+    }
+//    轻微事故：是指一次造成轻伤1至2人
+//    一般事故：是指一次造成重伤1至2人，或者轻伤3人以上，
+//    重大事故：是指一次造成死亡1至2人，或者重伤3人以上10人以下，
+//    特大事故：是指一次造成死亡3人以上，或者重伤11人以上，或者死亡1人，同时重伤8人以上，或者死亡2人，同时重伤5人以上
 }
 
 //是否停驶

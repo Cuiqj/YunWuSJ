@@ -505,6 +505,9 @@
         icPicker.tableView.frame    = CGRectMake(0, 0, 150, 243);
         icPicker.pickerState        = state;
         icPicker.delegate           = self;
+        if(state == kRoadSide){
+            icPicker.roadsegment_id = self.roadSegmentID;
+        }
         self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.pickerPopover setPopoverContentSize:CGSizeMake(150, 243)];
         if (self.descState == kAddNewRecord) {

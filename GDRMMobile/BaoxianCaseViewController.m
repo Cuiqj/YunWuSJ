@@ -485,7 +485,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
         [dsVC showdate:self.textHappenDate.text];
     } else if ([segueIdentifier isEqualToString:@"toDeformInfoEditor"]) {
         DeformationInfoViewController *diVC = segue.destinationViewController;
-        //diVC.delegate = self;
+//        diVC.delegate = self;
         diVC.caseID                         = self.caseID;
     } else if ([segueIdentifier isEqualToString:@"toInquireInfoEditor"]) {
         InquireInfoViewController *iiVC = segue.destinationViewController;
@@ -806,8 +806,6 @@ self.labelPhotoIndex.alpha  = 1.0;\
                                 [self.infoView addGestureRecognizer:longPressGesture];
                             }];
             [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(hideLabelWithAnimation) userInfo:nil repeats:NO];
-            
-            
             /*
              self.paintBriefVC.caseID = self.caseID;
              [UIView transitionWithView:self.infoView duration:0.3
@@ -1040,6 +1038,9 @@ self.labelPhotoIndex.alpha  = 1.0;\
         icPicker.tableView.frame    = CGRectMake(0, 0, 150, 243);
         icPicker.pickerState        = state;
         icPicker.delegate           = self;
+        if(state == kRoadSide){
+            icPicker.roadsegment_id = self.roadSegmentID;
+        }
         self.caseInfoPickerpopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.caseInfoPickerpopover setPopoverContentSize:CGSizeMake(150, 243)];
         [self.caseInfoPickerpopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -1433,7 +1434,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
     [self loadCaseDocList:caseID];
     [self loadCasePhotoForCase:caseID];
     //[self.accInfoBriefVC loadDataForCase:caseID];
-    self.segInfoPage.selectedSegmentIndex = 1;
+    self.segInfoPage.selectedSegmentIndex = 0;
     /*
     self.deformInfoVC.caseID = self.caseID;
     [UIView transitionWithView:self.infoView duration:0.3
@@ -1629,6 +1630,11 @@ self.labelPhotoIndex.alpha  = 1.0;\
         caseProveInfo.prover = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
     }
     caseProveInfo.recorder = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
+  
+    [CaseProveInfo generateEventDescForcaseProveInfo:caseProveInfo];
+    
+//    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+//    [context deleteObject:caseProveInfo];
     
     [[AppDelegate App] saveContext];
 }

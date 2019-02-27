@@ -37,6 +37,9 @@ enum kPageInfo {
     }
     if (![self.caseID isEmpty]) {
         self.caseInquire = [CaseInquire inquireForCase:self.caseID];
+//        用来测试询问笔录    删除表使其重新生成新的表
+//        NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+//        [context deleteObject:self.caseInquire];
         if (self.caseInquire) {
             [self pageLoadInfo];
         }

@@ -33,7 +33,7 @@
 #import "RoadInspectViewController.h"
 #import <AipOcrSdk/AipOcrSdk.h>
 
-@interface CaseViewController : UIViewController<UITextFieldDelegate,CaseIDHandler,DatetimePickerHandler,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate,RoadSegmentPickerDelegate,ReloadPaintDelegate,AipOcrDelegate,UIPopoverPresentationControllerDelegate,UIPopoverPresentationControllerDelegate>
+@interface CaseViewController : UIViewController<UITextFieldDelegate,CaseIDHandler,DatetimePickerHandler,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIScrollViewDelegate,RoadSegmentPickerDelegate,ReloadPaintDelegate,AipOcrDelegate,UIPopoverPresentationControllerDelegate,UIPopoverPresentationControllerDelegate,ListSelectPopoverDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel            *payLabel;
 @property (weak, nonatomic) IBOutlet UITextField        *textCasemark2;
@@ -52,6 +52,11 @@
 @property (weak, nonatomic) IBOutlet UITextField        *textAutoNumber;     //所选车号
 @property (weak, nonatomic) IBOutlet UILabel            *labelPhotoIndex;
 @property (weak, nonatomic) IBOutlet UITextField        *textCaseDesc;
+
+//事故消息来源
+- (IBAction)accident_originClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *textaccident_origin;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segInfoPage;
 @property (weak, nonatomic) IBOutlet UIScrollView       *infoView;
 @property (weak, nonatomic) IBOutlet UIButton           *uiButtonEdit;            //编辑

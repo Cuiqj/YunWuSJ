@@ -110,6 +110,8 @@ enum kUISwitchTag {
     self.textbadcar_sum.keyboardType= UIKeyboardTypeNumberPad;
     self.textCheckUser.tag = 178;
     self.accident_class.tag = 177;
+    self.texttunnelNUM.tag     = 128;
+    self.texttunnelNUM.delegate = self;
     
     self.roadSegmentID = @"0";
     //text fields tag
@@ -135,6 +137,7 @@ enum kUISwitchTag {
 //    self.textLost.tag          = 121;
 //    self.textIsend.tag         = 122;
 //    self.textPaytype.tag       = 123;
+    
     self.textRemark.tag        = 124;
     self.textClstart.tag       = 125;
     self.textClend.tag         = 126;
@@ -181,9 +184,12 @@ enum kUISwitchTag {
 //    }
     if (textField.tag==100 || textField.tag==555 || textField.tag == 116 || textField.tag == 117 || textField.tag == 118 || textField.tag == 127 || textField.tag == 121 || textField.tag == 122 || textField.tag == 124 || textField.tag == 136 || textField.tag == 137 ||textField.tag == 189 || textField.tag == 188||textField.tag == 187 || textField.tag == 186 || textField.tag == 140) {
         return YES;
+    }else if(textField.tag == 128){
+        return NO;
     }else{
         return NO;
     }
+    return YES;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -340,6 +346,7 @@ enum kUISwitchTag {
     self.textProperty.text      = accidentInfo.property;
     self.textType.text          = accidentInfo.case_type;
     self.textHappentime.text    = [formatter stringFromDate:accidentInfo.happentime];
+    [formatter setDateFormat:@"HH时mm分"];
     self.textseal_road.text = accidentInfo.seal_road;
     self.textZjend.text         = [ formatter stringFromDate:accidentInfo.save_starttime];
     self.textZjstart.text =[ formatter stringFromDate: accidentInfo.save_endtime ];
@@ -356,6 +363,9 @@ enum kUISwitchTag {
     self.textdeath_sum.text = [NSString stringWithFormat:@"%d",accidentInfo.death_sum.intValue];
     self.textTrafficFlow.text = accidentInfo.traffic_flow;
     self.textcarType.text = accidentInfo.car_type;
+    self.textother_arrivetimestring.text = accidentInfo.other_arrivetime;
+    
+    self.texttunnelNUM.text = accidentInfo.tunnel.integerValue? @"是": @"否";
     self.textcaseReason.text = accidentInfo.case_reason;
     self.textCheckUser.text = accidentInfo.tra_name;
     self.accident_class.text = accidentInfo.accident_class;
@@ -511,11 +521,18 @@ enum kUISwitchTag {
     //重新保存信息
     tr.traffic_flow = self.textTrafficFlow.text;
     tr.car_type = self.textcarType.text;
+    if ([self.texttunnelNUM.text isEqualToString:@"是"]) {
+        tr.tunnel = @(1);
+    }else{
+        tr.tunnel = @(0);
+    }
+    tr.other_arrivetime = self.textother_arrivetimestring.text;
+    
     tr.case_reason = self.textcaseReason.text;
     tr.tra_name = self.textCheckUser.text;
     tr.accident_class = self.accident_class.text;
     tr.case_sort = self.textSort.text;
-    
+    [dateFormatter setDateFormat:@"HH时mm分"];
     if (self.switchZJCLDate.on) {
         tr.save_starttime = [dateFormatter dateFromString:self.textZjstart.text];
         tr.save_endtime   = [dateFormatter dateFromString:self.textZjend.text];
@@ -593,6 +610,8 @@ enum kUISwitchTag {
     self.textdeath_sum.text = @"";
     self.textTrafficFlow.text = @"";
     self.textcarType.text = @"";
+    self.textother_arrivetimestring.text = @"";
+    self.texttunnelNUM.text = @"";
     self.textcaseReason.text = @"";
     self.textCheckUser.text = @"";
     self.accident_class.text = @"";
@@ -670,8 +689,12 @@ enum kUISwitchTag {
         case 119:
             [self showDateSelect:sender];
             break;
+        case 128:
+            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"是", @"否", nil]];
+            break;
         case 111:
-            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"交警", @"监控", @"路政", nil]];
+            [self showListSelect:sender WithData:[Systype typeValueForCodeName:@"事故消息来源"]];
+//            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"交警", @"监控", @"路政", nil]];
             break;
         case 140:
             [self showListSelect:sender WithData:[Systype typeValueForCodeName:@"事故类别"]];
@@ -680,10 +703,11 @@ enum kUISwitchTag {
             [self showRoadSideSelect:sender];
             break;
         case 113:
-            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"轻微事故", @"一般事故", @"重大事故" , @"特大事故", nil]];
+            [self showListSelect:sender WithData:[Systype typeValueForCodeName:@"事故性质"]];
             break;
         case 114:
-            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"碰撞护栏及交通设施", @"碰撞停驶车辆", @"撞人", @"碰撞行驶车辆", @"翻车", @"其它", nil]];
+            [self showListSelect:sender WithData:[Systype typeValueForCodeName:@"事故类型"]];
+//            [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"碰撞护栏及交通设施", @"碰撞停驶车辆", @"撞人", @"碰撞行驶车辆", @"翻车", @"其它", nil]];
             break;
         case 123:
             [self showListSelect:sender WithData:[NSArray arrayWithObjects:@"直接赔偿", @"保险理赔", nil]];
@@ -704,6 +728,7 @@ enum kUISwitchTag {
     icPicker.tableView.frame = CGRectMake(0, 0, 150, 243);
     icPicker.pickerState     = kRoadSide;
     icPicker.delegate        = self;
+//    icPicker.roadsegment_id = self.roadSegmentID;
     self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
     [self.pickerPopover setPopoverContentSize:CGSizeMake(150, 243)];
     CGRect rect = sender.frame;
@@ -728,7 +753,10 @@ enum kUISwitchTag {
 -(void)showDateSelect:(UITextField *)sender{
     DateSelectController *datePicker=[self.storyboard instantiateViewControllerWithIdentifier:@"datePicker"];
     datePicker.delegate   = self;
-    datePicker.pickerType = 1;
+    datePicker.pickerType = 2;
+    if (self.KSelectedField == 115) {
+        datePicker.pickerType = 1;
+    }
     [datePicker showdate:sender.text];
     self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:datePicker];
     CGRect rect = sender.frame;
@@ -741,9 +769,15 @@ enum kUISwitchTag {
     if (![date isEmpty]) {
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"HH:mm"];
+        if (self.KSelectedField == 115) {
+            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        }
         NSDate *temp=[dateFormatter dateFromString:date];
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [dateFormatter setDateFormat:@"HH时mm分"];
+        if (self.KSelectedField == 115) {
+            [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        }
         dateString=[dateFormatter stringFromDate:temp];
     }
     switch (self.KSelectedField) {
@@ -780,6 +814,9 @@ enum kUISwitchTag {
             break;
         case 114:
             self.textType.text = data;
+            break;
+        case 128:
+            self.texttunnelNUM.text = data;
             break;
 //        case 123:
 //            self.textPaytype.text = data;
@@ -824,6 +861,20 @@ enum kUISwitchTag {
         [weakself.navigationController presentViewController:ac animated:YES completion:nil];
         return NO;
     }
+    if ([self.textInfocom.text isEmpty]) {
+        [[[UIAlertView alloc] initWithTitle:@"提示" message:@"事故消息来源不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+        return NO;
+    }
+    if ([self.textcaseReason.text isEmpty]) {
+        [[[UIAlertView alloc] initWithTitle:@"提示" message:@"事故原因不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+        return NO;
+    }
+    if ([self.textProperty.text isEmpty]) {
+        [[[UIAlertView alloc] initWithTitle:@"提示" message:@"事故性质不能为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+        return NO;
+    }
+   
+    
     if (self.switchZJCLDate.on) {
         if ([self.textZjstart.text isEmpty]) {
             [[[UIAlertView alloc] initWithTitle:@"拯救处理已选择" message:@"拯救处理开始时间不可为空" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
@@ -936,6 +987,27 @@ enum kUISwitchTag {
     self.textcarType.text = @"";
 }
 
+- (IBAction)textChanged:(id)sender {
+    NSInteger deathNum=[self.textdeath_sum.text integerValue];
+    NSInteger badwoundNum=[self.textbadwound_sum.text integerValue];
+    NSInteger fleshwoundNum=[self.textfleshwound_sum.text integerValue];
+    if (fleshwoundNum>=0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
+        self.textProperty.text = @"轻微事故";
+    } else if (badwoundNum<=2 && deathNum==0) {
+        self.textProperty.text = @"一般事故";
+    }  else if (fleshwoundNum>2 && badwoundNum==0 && deathNum==0) {
+        self.textProperty.text = @"一般事故";
+    } else if (badwoundNum<11 && deathNum==0) {
+        self.textProperty.text = @"重大事故";
+    } else if (badwoundNum<8 && deathNum==1) {
+        self.textProperty.text = @"重大事故";
+    } else if (badwoundNum<5 && deathNum==2) {
+        self.textProperty.text = @"重大事故";
+    } else {
+        self.textProperty.text = @"特大事故";
+    }
+}
+
 - (IBAction)textlocationCLick:(id)sender {
     UITextField * field = (UITextField *)sender;
     CGRect frame = CGRectMake(field.frame.origin.x+200, field.frame.origin.y, field.frame.size.width, field.frame.size.height);
@@ -964,6 +1036,9 @@ enum kUISwitchTag {
         icPicker.tableView.frame    = CGRectMake(0, 0, 150, 243);
         icPicker.pickerState        = state;
         icPicker.delegate           = self;
+        if(state == kRoadSide){
+            icPicker.roadsegment_id = self.roadSegmentID;
+        }
         self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.pickerPopover setPopoverContentSize:CGSizeMake(150, 243)];
         [self.pickerPopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];

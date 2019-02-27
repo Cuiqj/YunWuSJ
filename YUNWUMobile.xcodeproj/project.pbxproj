@@ -340,6 +340,8 @@
 		840D87331FA96C35009F38EF /* InspectInMapViewCOntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D87321FA96C35009F38EF /* InspectInMapViewCOntroller.m */; };
 		840F05DB212A57E30099AAF9 /* BridgeSpaceCheckSpecialB.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F05DA212A57E30099AAF9 /* BridgeSpaceCheckSpecialB.m */; };
 		840F05DE212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F05DD212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.m */; };
+		8415CD962224CC160020C4A3 /* InitRoadSegmentDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415CD952224CC160020C4A3 /* InitRoadSegmentDirection.m */; };
+		8415CD992224CD6C0020C4A3 /* RoadSegmentDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415CD982224CD6C0020C4A3 /* RoadSegmentDirection.m */; };
 		843A515C200C90EF00279362 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A515B200C90EF00279362 /* AipOcrSdk.framework */; };
 		8449A909204E3150009612BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8449A908204E3150009612BC /* Images.xcassets */; };
 		8457305C2192986000DF8D44 /* MaintainCheckSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457305B2192986000DF8D44 /* MaintainCheckSpecial.m */; };
@@ -1040,6 +1042,10 @@
 		840F05DA212A57E30099AAF9 /* BridgeSpaceCheckSpecialB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeSpaceCheckSpecialB.m; sourceTree = "<group>"; };
 		840F05DC212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeSpaceCheckSpecial.h; sourceTree = "<group>"; };
 		840F05DD212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BridgeSpaceCheckSpecial.m; sourceTree = "<group>"; };
+		8415CD942224CC160020C4A3 /* InitRoadSegmentDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitRoadSegmentDirection.h; sourceTree = "<group>"; };
+		8415CD952224CC160020C4A3 /* InitRoadSegmentDirection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitRoadSegmentDirection.m; sourceTree = "<group>"; };
+		8415CD972224CD6C0020C4A3 /* RoadSegmentDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoadSegmentDirection.h; sourceTree = "<group>"; };
+		8415CD982224CD6C0020C4A3 /* RoadSegmentDirection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoadSegmentDirection.m; sourceTree = "<group>"; };
 		843A515B200C90EF00279362 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipOcrSdk.framework; path = "../../Library/Developer/Xcode/DerivedData/GDRMMobile-ccubgkldojoojqegcfvsqeccobth/Build/Products/Debug-iphonesimulator/AipOcrSdk.framework"; sourceTree = "<group>"; };
 		8449A908204E3150009612BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YUNWUMobile/Images.xcassets; sourceTree = "<group>"; };
 		8457305A2192986000DF8D44 /* MaintainCheckSpecial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaintainCheckSpecial.h; sourceTree = "<group>"; };
@@ -2043,6 +2049,8 @@
 				339C7A5F1653809D00E86CED /* RoadAssetPrice.m */,
 				339C7A571653688400E86CED /* RoadSegment.h */,
 				339C7A581653688400E86CED /* RoadSegment.m */,
+				8415CD972224CD6C0020C4A3 /* RoadSegmentDirection.h */,
+				8415CD982224CD6C0020C4A3 /* RoadSegmentDirection.m */,
 				33ADC4DE1654A6CF007E3429 /* RoadWayClosed.h */,
 				33ADC4DF1654A6D0007E3429 /* RoadWayClosed.m */,
 				339C7A6C16538C5700E86CED /* UserInfo.h */,
@@ -2145,6 +2153,8 @@
 				337918511650DD0300500483 /* DataDownLoad.h */,
 				337918521650DD0300500483 /* DataDownLoad.m */,
 				B3CD53921546FD83000564FC /* InitCities.h */,
+				8415CD942224CC160020C4A3 /* InitRoadSegmentDirection.h */,
+				8415CD952224CC160020C4A3 /* InitRoadSegmentDirection.m */,
 				B3CD53931546FD83000564FC /* InitCities.m */,
 				847EDAB5219C1B5D00CDC739 /* InitPersonnelClass.h */,
 				847EDAB6219C1B5D00CDC739 /* InitPersonnelClass.m */,
@@ -3037,6 +3047,7 @@
 				337679161F13286400B53522 /* CarCheckItems.m in Sources */,
 				3316730D1EB9AA6C0090EDE7 /* ServiceCheckItems.m in Sources */,
 				33097FA11C968EAE00BD26DC /* CaseParkingNodePrintViewController.m in Sources */,
+				8415CD992224CD6C0020C4A3 /* RoadSegmentDirection.m in Sources */,
 				33ADA4BA153EB8B800624122 /* CaseProveInfoPrintViewController.m in Sources */,
 				3386EE5415466A290089D0EB /* CitizenInfoBriefViewController.m in Sources */,
 				33B2DEAB1CD83AE000DAF01E /* MMProgressHUDViewController.m in Sources */,
@@ -3246,6 +3257,7 @@
 				331673161EB9AAC60090EDE7 /* InitServiceCheckItems.m in Sources */,
 				840D87331FA96C35009F38EF /* InspectInMapViewCOntroller.m in Sources */,
 				33693F3919A1F637004D0ABC /* InspectionConstruction.m in Sources */,
+				8415CD962224CC160020C4A3 /* InitRoadSegmentDirection.m in Sources */,
 				3342558019A48DB80092832D /* InspectionConstructionCell.m in Sources */,
 				33626BE719A58554003B64EF /* AttachmentViewController.m in Sources */,
 				33559ECB19A59276002AB681 /* AttachmentCell.m in Sources */,

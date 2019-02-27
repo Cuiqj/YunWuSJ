@@ -10,6 +10,8 @@
 #import "Systype.h"
 #import "Sfz.h"
 
+#import "RoadSegmentDirection.h"
+
 @interface RoadSegmentPickerViewController ()
 @property (nonatomic,retain) NSArray *data;
 @end
@@ -20,24 +22,28 @@
 @synthesize pickerState = _pickerState;
 
 - (void)viewWillAppear:(BOOL)animated{
-    switch (self.pickerState) {
-        case kRoadSegment:
-            self.data=[RoadSegment allRoadSegmentsForCaseView];
-            break;
-        case kRoadSide:
-            self.data=[Systype typeValueForCodeName:@"方向"];
-            break;
-        case kRoadPlace:
-            self.data=[Systype typeValueForCodeName:@"位置"];
-            break;
-        case kShoufz:
-            self.data=[Sfz allShoufzName];
-            break;
-        case kZadao:
-            self.data=[self.delegate getZadao];
-            break;
-        default:
-            break;
+    if(self.roadsegment_id.length != 0 && self.pickerState == kRoadSide){
+        self.data = [RoadSegmentDirection roadsegmentdirection:self.roadsegment_id];
+    }else{
+        switch (self.pickerState) {
+            case kRoadSegment:
+                self.data=[RoadSegment allRoadSegmentsForCaseView];
+                break;
+            case kRoadSide:
+                self.data = nil;
+                break;
+            case kRoadPlace:
+                self.data=[Systype typeValueForCodeName:@"位置"];
+                break;
+            case kShoufz:
+                self.data=[Sfz allShoufzName];
+                break;
+            case kZadao:
+                self.data=[self.delegate getZadao];
+                break;
+            default:
+                break;
+        }
     }
     [super viewWillAppear:animated];
 }
@@ -80,7 +86,10 @@
         cell.textLabel.text=[[self.data objectAtIndex:indexPath.row] valueForKey:@"place_prefix1"];
     } else if(self.pickerState==kShoufz) {
         cell.textLabel.text=[[self.data objectAtIndex:indexPath.row] valueForKey:@"sfz_name"];
-    }  else{
+    }else if(self.pickerState==kRoadSide){
+        cell.textLabel.text=[[self.data objectAtIndex:indexPath.row] valueForKey:@"direction"];
+    }
+    else{
         if(self.data.count>indexPath.row)
           cell.textLabel.text=[self.data objectAtIndex:indexPath.row];
     }
@@ -101,7 +110,7 @@
             [self.delegate setRoadPlace:[self.data objectAtIndex:indexPath.row]];
             break;
         case kRoadSide:
-            [self.delegate setRoadSide:[self.data objectAtIndex:indexPath.row]];
+            [self.delegate setRoadSide:[[self.data objectAtIndex:indexPath.row] valueForKey:@"direction"]];
             break;
         case kShoufz:
             [self.delegate setShoufz:[[self.data objectAtIndex:indexPath.row]valueForKey:@"sfz_name"] sfzID:[[self.data objectAtIndex:indexPath.row]valueForKey:@"myid"]];

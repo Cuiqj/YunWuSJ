@@ -13,7 +13,8 @@
 - (void)awakeFromNib{
     
     [super awakeFromNib];
-    CGFloat SpeScale = ([UIScreen mainScreen].bounds.size.width == 414) ? 1.1: ([UIScreen mainScreen].bounds.size.width == 320) ? 0.85 : 1;
+    CGFloat SpeScale = ([UIScreen mainScreen].bounds.size.width == 414) ? 1.1: ([UIScreen mainScreen].bounds.size.width == 320) ? 0.85: 1;
+//    ([UIScreen mainScreen].bounds.size.width == 375) ? 1: 1.2;
     self.constant = roundf(self.constant * SpeScale);
 }
 

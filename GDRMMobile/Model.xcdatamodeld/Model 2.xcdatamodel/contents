@@ -92,6 +92,7 @@
         <attribute name="document_path" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="CaseInfo" representedClassName="CaseInfo" syncable="YES">
+        <attribute name="accident_origin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="badcar_sum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="badwound_sum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="body_side" optional="YES" attributeType="String" syncable="YES"/>
@@ -488,8 +489,8 @@
         <attribute name="inspect_times" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="inspectionid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isuploaded" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="mileage_after_trans" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="mileage_before_trans" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mileage_after_trans" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="mileage_before_trans" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="other_illegal" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="personnel_class" optional="YES" attributeType="String" syncable="YES"/>
@@ -920,6 +921,11 @@
         <attribute name="station_end" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="station_start" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
     </entity>
+    <entity name="RoadSegmentDirection" syncable="YES">
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roadsegment_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="RoadWayClosed" representedClassName="RoadWayClosed" syncable="YES">
         <attribute name="closed_reason" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="closed_result" optional="YES" attributeType="String" syncable="YES"/>
@@ -1055,6 +1061,7 @@
         <attribute name="lost" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="org_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="other_arrivetime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paytype" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="property" optional="YES" attributeType="String" syncable="YES"/>
@@ -1070,6 +1077,7 @@
         <attribute name="tollstation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tra_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="traffic_flow" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tunnel" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wdsituation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weather" optional="YES" attributeType="String" syncable="YES"/>
@@ -1113,7 +1121,7 @@
         <element name="CaseCount" positionX="160" positionY="192" width="128" height="105"/>
         <element name="CaseDeformation" positionX="0" positionY="0" width="128" height="225"/>
         <element name="CaseDocuments" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="CaseInfo" positionX="0" positionY="0" width="128" height="570"/>
+        <element name="CaseInfo" positionX="0" positionY="0" width="128" height="585"/>
         <element name="CaseInquire" positionX="0" positionY="0" width="128" height="285"/>
         <element name="CaseLawInfo" positionX="81" positionY="153" width="128" height="225"/>
         <element name="CaseMap" positionX="160" positionY="192" width="128" height="165"/>
@@ -1183,9 +1191,10 @@
         <element name="Systype" positionX="0" positionY="0" width="128" height="120"/>
         <element name="Table101" positionX="81" positionY="153" width="128" height="150"/>
         <element name="Task" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="TrafficRecord" positionX="160" positionY="192" width="128" height="750"/>
+        <element name="TrafficRecord" positionX="160" positionY="192" width="128" height="780"/>
         <element name="UploadedRecordList" positionX="160" positionY="192" width="128" height="90"/>
         <element name="UserInfo" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Zd" positionX="81" positionY="153" width="128" height="135"/>
+        <element name="RoadSegmentDirection" positionX="81" positionY="153" width="128" height="90"/>
     </elements>
 </model>

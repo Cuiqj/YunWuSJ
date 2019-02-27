@@ -24,6 +24,9 @@ typedef enum {
 @property (weak, nonatomic                       ) UIPopoverController       *pickerPopover;
 @property (weak, nonatomic                       ) id<RoadSegmentPickerDelegate> delegate;
 @property (weak, nonatomic  )void(^setRoadsegment) (  RoadSegment              *);
+
+@property (nonatomic,retain) NSString * roadsegment_id;
+
 @end
 
 @protocol RoadSegmentPickerDelegate <NSObject>

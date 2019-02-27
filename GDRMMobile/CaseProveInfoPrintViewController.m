@@ -71,33 +71,7 @@ static NSString * const xmlName = @"ProveInfoTable";
     if (caseProveInfo.end_date_time==nil) {
         caseProveInfo.end_date_time=[NSDate date];
     }
-    
-    NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-    NSString *currentUserName=[[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
-    NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
-    if ([caseProveInfo.prover length] <= 0) {
-        if (inspectorArray.count < 1) {
-            // modified by cjl
-            if (caseProveInfo.prover == nil) {
-                caseProveInfo.prover = currentUserName;
-            }
-        } else {
-            NSString *inspectorName = @"";
-            for (NSString *name in inspectorArray) {
-                if ([inspectorName isEmpty]) {
-                    inspectorName = name;
-                } else {
-                    inspectorName = [inspectorName stringByAppendingFormat:@"、%@",name];
-                }
-            }
-            caseProveInfo.prover = inspectorName;
-        }
-    }
-    
-    if (caseProveInfo.recorder == nil) {
-        caseProveInfo.recorder = currentUserName;        
-    }
-
+    [CaseProveInfo generateEventDescForcaseProveInfo:caseProveInfo];
     if ([caseProveInfo.event_desc length] <= 0) {
         caseProveInfo.event_desc = [CaseProveInfo generateEventDescForCase:self.caseID];
 //        caseProveInfo.event_desc = [CaseProveInfo generateEventDesc:self.caseID];

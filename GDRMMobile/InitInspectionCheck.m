@@ -63,17 +63,17 @@
 //    [service downloadDataSet:@"select * from Status"];
     [service downloadDataSet:[NSString stringWithFormat: @"select * from Status where org_id=%@ ",orgID]];
 }
-
 - (NSDictionary *)xmlParser:(NSString *)webString{
     return [self autoParserForDataModel:@"CheckStatus" andInXMLString:webString];
 }
 @end
 
-@implementation InitCheckItems
 
+@implementation InitCheckItems
 - (void)downloadCheckItems:(NSString *)orgID{
     WebServiceInit;
-    [service downloadDataSet:@"select * from CheckItems" ];
+    [service downloadDataSet:[NSString stringWithFormat: @"select * from CheckItems where org_id=%@ ",orgID]];
+//    [service downloadDataSet:@"select * from CheckItems" ];
 }
 - (NSDictionary *)xmlParser:(NSString *)webString{
     return [self autoParserForDataModel:@"CheckItems" andInXMLString:webString];

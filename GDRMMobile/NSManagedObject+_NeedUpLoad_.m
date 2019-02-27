@@ -371,7 +371,7 @@
 //    UIImage *image        = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
 //    image=[UIImage imageWithContentsOfFile:photo.photopath];
     UIImage * image = [[UIImage alloc] initWithContentsOfFile:photoPath];
-    NSData *data          = UIImageJPEGRepresentation(image, 1);// UIImageJPGRepresentation(image);
+    NSData *data          = UIImageJPEGRepresentation(image, 0.5);// UIImageJPGRepresentation(image);
     NSString *stringImage = [NSString base64forData:data];
     casePhotoStr          = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
     return casePhotoStr;

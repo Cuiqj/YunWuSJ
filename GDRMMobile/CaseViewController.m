@@ -7,7 +7,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 #import "IQKeyboardManager.h"
-
+#import "ListSelectViewController.h"
 #import "CaseViewController.h"
 #import "CaseServiceFiles.h"
 #import "FileCode.h"
@@ -1065,6 +1065,9 @@ BOOL _wasKeyboardManagerEnabled;
         icPicker.tableView.frame    = CGRectMake(0, 0, 150, 243);
         icPicker.pickerState        = state;
         icPicker.delegate           = self;
+        if(state == kRoadSide){
+            icPicker.roadsegment_id = self.roadSegmentID;
+        }
         self.caseInfoPickerpopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.caseInfoPickerpopover setPopoverContentSize:CGSizeMake(150, 243)];
         [self.caseInfoPickerpopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
@@ -1391,6 +1394,7 @@ BOOL _wasKeyboardManagerEnabled;
         self.textCasemark2.text = self.caseInfo.case_mark2;
         self.textCasemark3.text = self.caseInfo.case_mark3;
         self.textWeatheer.text  = self.caseInfo.weater;
+        self.textaccident_origin.text = self.caseInfo.accident_origin;
         if(self.caseInfo.sfz_id.integerValue!=0){
             self.textRoadSegment.text=@"收费站";
             self.roadSegmentID=@"0";
@@ -1449,7 +1453,7 @@ BOOL _wasKeyboardManagerEnabled;
 - (void)saveCaseInfoForCase:(NSString *)caseID{
     self.caseInfo.myid = caseID;
     //extern NSString *my_org_id;
-    
+    self.caseInfo.accident_origin = self.textaccident_origin.text;
     OrgInfo *selectedorg          = [OrgInfo orgInfoForSelected];
     self.caseInfo.organization_id = selectedorg.myid;
     self.caseInfo.case_type_id    = CaseTypeIDDefault;
@@ -1506,12 +1510,6 @@ BOOL _wasKeyboardManagerEnabled;
             break;
     }
 }
-
-
-
-
-
-
 - (void)saveCaseProveInfoForCase:(NSString *)caseID{
     CaseProveInfo *caseProveInfo = [CaseProveInfo proveInfoForCase:caseID];
     if (!caseProveInfo) {
@@ -1613,6 +1611,10 @@ BOOL _wasKeyboardManagerEnabled;
         caseProveInfo.prover = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
     }
     caseProveInfo.recorder = [[NSUserDefaults standardUserDefaults] objectForKey:@"USERKEY"];
+    
+    [CaseProveInfo generateEventDescForcaseProveInfo:caseProveInfo];
+//    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+//    [context deleteObject:caseProveInfo];
     
     [[AppDelegate App] saveContext];
 }
@@ -2020,5 +2022,34 @@ IMAGE.frame.size.height)]
         return NO;
     }
     return  YES;
+}
+- (IBAction)accident_originClick:(id)sender {
+//    if ([self.caseListpopover isPopoverVisible]) {
+//        [self.caseListpopover dismissPopoverAnimated:YES];
+//    } else {
+//        CaseListViewController *caseListVC=[self.storyboard instantiateViewControllerWithIdentifier:@"CaseListView"];
+//        caseListVC.caseType  = CaseTypeIDDefault;
+//        self.caseListpopover=[[UIPopoverController alloc] initWithContentViewController:caseListVC];
+//        caseListVC.delegate  = self;
+//        caseListVC.myPopover = self.caseListpopover;
+//        [self.caseListpopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//    }
+    if ([self.caseListpopover isPopoverVisible]) {
+        [self.caseListpopover dismissPopoverAnimated:YES];
+    } else {
+        ListSelectViewController *listPicker=[self.storyboard instantiateViewControllerWithIdentifier:@"ListSelectPoPover"];
+        listPicker.delegate = self;
+        listPicker.data     = [Systype typeValueForCodeName:@"事故消息来源"];
+        self.caseListpopover=[[UIPopoverController alloc] initWithContentViewController:listPicker];
+        UITextField * field = sender;
+        CGRect rect         = field.frame;
+        [self.caseListpopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+        listPicker.pickerPopover = self.caseListpopover;
+    }
+}
+- (void)setSelectData:(NSString *)data{
+    self.textaccident_origin.text = data;
+    self.caseInfo = [CaseInfo caseInfoForID:self.caseID];
+    self.caseInfo.accident_origin = data;
 }
 @end

@@ -41,6 +41,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     //程序首次已经完成启动时执行
+//    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+//    CGFloat height = [UIScreen mainScreen].bounds.size.height;
     [self initServer];
     _mapManager = [[BMKMapManager alloc] init];
     //启动地图引擎

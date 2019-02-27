@@ -73,6 +73,7 @@
             WAITFORPARSER
             InitRoadSegment *initRoad = [[InitRoadSegment alloc] init];
             [initRoad downloadRoadSegment:orgID];
+            
             WAITFORPARSER
             InitRoadAssetPrice *initRoadAssetPrice = [[InitRoadAssetPrice alloc] init];
             [initRoadAssetPrice downloadRoadAssetPrice:orgID];
@@ -88,11 +89,14 @@
             WAITFORPARSER
             InitCheckItems *icheckItems = [[InitCheckItems alloc] init];
             [icheckItems downloadCheckItems:orgID];
-            
-            
+
             WAITFORPARSER
             InitCheckType *iCheckType = [[InitCheckType alloc] init];
             [iCheckType downLoadCheckType:orgID];
+            WAITFORPARSER
+            InitRoadSegmentDirection * initRoadSegmentDirection = [[InitRoadSegmentDirection alloc] init];
+            [initRoadSegmentDirection downloadRoadSegmentDirection:orgID];
+            
             WAITFORPARSER
             InitCheckHandle *iCheckHandle = [[InitCheckHandle alloc] init];
             [iCheckHandle downLoadCheckHandle:orgID];
@@ -103,6 +107,7 @@
             InitCheckStatus *iCheckStatus = [[InitCheckStatus alloc] init];
             [iCheckStatus downLoadCheckStatus:orgID];
             WAITFORPARSER
+            
             InitSystype *iSystype = [[InitSystype alloc] init];
             [iSystype downloadSysType:orgID];
             WAITFORPARSER
@@ -118,10 +123,10 @@
             InitMatchLawDetails *iMatchLawDetails = [[InitMatchLawDetails alloc] init];
             [iMatchLawDetails downloadMatchLawDetails:orgID];
             WAITFORPARSER
+            
+            
             InitLawBreakingAction *iLawBreakingAction = [[InitLawBreakingAction alloc] init];
             [iLawBreakingAction downloadLawBreakingAction:orgID];
-            
-            
             WAITFORPARSER
             InitOrgInfo *iOrgInfo = [[InitOrgInfo alloc] init];
             [iOrgInfo downLoadOrgInfo:orgID];
@@ -135,6 +140,7 @@
             InitMaintainPlan  *iMaintianPlan = [[InitMaintainPlan alloc] init];
             [iMaintianPlan downMaintainPlan:orgID];
             WAITFORPARSER
+            
             InitSfz *isfz = [[InitSfz alloc] init];
             [isfz downLoadSfz:orgID];
             WAITFORPARSER
@@ -150,6 +156,7 @@
             InitCarCheckItems *iCarCheckItems=[[InitCarCheckItems alloc]init];
             [iCarCheckItems downLoadCarCheckItems:orgID];
             WAITFORPARSER
+            
             InitPersonnelClass * Personnelclass = [[InitPersonnelClass alloc] init];
             [Personnelclass downloadPersonnelClass:orgID];
             

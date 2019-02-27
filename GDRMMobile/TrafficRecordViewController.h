@@ -53,6 +53,7 @@
 
 //封道情况
 @property (weak, nonatomic) IBOutlet UITextField *textseal_road;
+
 @property (weak, nonatomic) IBOutlet UITextField *textbadcar_sum;
 @property (weak, nonatomic) IBOutlet UITextField *textfleshwound_sum;
 @property (weak, nonatomic) IBOutlet UITextField *textbadwound_sum;
@@ -110,6 +111,12 @@
 - (IBAction)RemoveUserCLassDataCLick:(id)sender;
 - (IBAction)DeleteCarNumnerClick:(id)sender;
 
+- (IBAction)textChanged:(id)sender;
+
+//隧道     是为1 否为0
+@property (weak, nonatomic) IBOutlet UITextField *texttunnelNUM;
+//其他部门到达时间
+@property (weak, nonatomic) IBOutlet UITextField *textother_arrivetimestring;
 
 
 

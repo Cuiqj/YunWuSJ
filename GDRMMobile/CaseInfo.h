@@ -61,6 +61,8 @@ typedef enum:NSUInteger {
 @property (nonatomic, retain) NSString * insurance_no;
 @property (nonatomic, retain) NSString * sfz_id;
 
+//事故消息来源
+@property (nonatomic, retain) NSString * accident_origin;
 
 //读取案号对应的案件信息记录
 +(CaseInfo *)caseInfoForID:(NSString *)caseID;

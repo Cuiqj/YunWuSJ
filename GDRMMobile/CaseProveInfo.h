@@ -55,4 +55,8 @@
 - (NSString *) recorder_org_duty;
 - (NSString *)caseMapRemark;
 + (NSString *)generateEventDesc:(NSString *)caseID;
+
+
+//添加勘验人及记录人
++(void)generateEventDescForcaseProveInfo:(CaseProveInfo *)caseProveInfo;
 @end

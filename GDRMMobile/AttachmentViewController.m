@@ -351,11 +351,11 @@
 }
 - (IBAction)btnAddNew:(UIButton *)sender {
     self.photos = [[CasePhoto casePhotos:self.constructionId]mutableCopy];
-    if([self.photos count] >= 6){
-        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"只能添加最多6个附件" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alter show];
-        return;
-    }
+//    if([self.photos count] >= 6){
+//        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"只能添加最多6个附件" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//        [alter show];
+//        return;
+//    }
     self.photo_name.text = @"";
     self.photoView.image = nil;
     self.remark.text = @"";

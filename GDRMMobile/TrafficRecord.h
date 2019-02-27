@@ -52,7 +52,7 @@
 //事故处理时间（结束
 @property (nonatomic, retain) NSDate * handle_endtime;
 //其他部门到达时间
-@property (nonatomic, retain) NSDate * other_arrivetime;
+@property (nonatomic, retain) NSString * other_arrivetime;
 //事故班组
 @property (nonatomic, retain) NSString * accident_class;
 //轻伤人数
@@ -88,7 +88,8 @@
 ////是否事故处理
 @property (nonatomic, strong) NSNumber * issg;
 
-
+//隧道       是存1    否存0
+@property (nonatomic, strong) NSNumber * tunnel;
 
 
 @property (nonatomic, retain) NSString * clend;
