@@ -113,6 +113,10 @@
             [self.delegate setRoadSide:[[self.data objectAtIndex:indexPath.row] valueForKey:@"direction"]];
             break;
         case kShoufz:
+            if([self.addroadsegment_id_shoufeizhan isEqualToString:@"收费站"]){
+                [self.delegate setRoadSide:[[self.data objectAtIndex:indexPath.row]valueForKey:@"sfz_name"]];
+                break;
+            }
             [self.delegate setShoufz:[[self.data objectAtIndex:indexPath.row]valueForKey:@"sfz_name"] sfzID:[[self.data objectAtIndex:indexPath.row]valueForKey:@"myid"]];
             break;
         default:

@@ -26,6 +26,7 @@ typedef enum {
 @property (weak, nonatomic  )void(^setRoadsegment) (  RoadSegment              *);
 
 @property (nonatomic,retain) NSString * roadsegment_id;
+@property (nonatomic,retain) NSString * addroadsegment_id_shoufeizhan;
 
 @end
 

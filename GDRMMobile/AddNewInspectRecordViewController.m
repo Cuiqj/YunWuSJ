@@ -508,6 +508,10 @@
         if(state == kRoadSide){
             icPicker.roadsegment_id = self.roadSegmentID;
         }
+        if([self.roadSegmentID isEqualToString:@"0"] && state == kRoadSide){
+            icPicker.pickerState = kShoufz;
+            icPicker.addroadsegment_id_shoufeizhan = @"收费站";
+        }
         self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
         [self.pickerPopover setPopoverContentSize:CGSizeMake(150, 243)];
         if (self.descState == kAddNewRecord) {

@@ -121,7 +121,6 @@
 		3373F0C715E5D767004B86A4 /* CheckStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373F0C615E5D767004B86A4 /* CheckStatus.m */; };
 		3373F0CA15E5D768004B86A4 /* CheckHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373F0C915E5D767004B86A4 /* CheckHandle.m */; };
 		3373F0CD15E5D768004B86A4 /* CheckReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3373F0CC15E5D768004B86A4 /* CheckReason.m */; };
-		3375203C1681521C008D8729 /* 公路安全保护条例.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3375203B1681521C008D8729 /* 公路安全保护条例.pdf */; };
 		337679131F13240D00B53522 /* InitCarCheckItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 337679121F13240D00B53522 /* InitCarCheckItems.m */; };
 		337679161F13286400B53522 /* CarCheckItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 337679151F13286400B53522 /* CarCheckItems.m */; };
 		337679191F13286500B53522 /* CheckInstitutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 337679181F13286500B53522 /* CheckInstitutions.m */; };
@@ -227,14 +226,6 @@
 		33A9032914FDD7E6006587A7 /* case-画图-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A9031E14FDD7E6006587A7 /* case-画图-bg.png */; };
 		33A9032A14FDD7E6006587A7 /* case-文书-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A9031F14FDD7E6006587A7 /* case-文书-bg.png */; };
 		33A9032D14FDD7F9006587A7 /* outer-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 33A9032C14FDD7F9006587A7 /* outer-icon.png */; };
-		33A9035B14FDD86B006587A7 /* 广东省公路条例.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035214FDD86B006587A7 /* 广东省公路条例.pdf */; };
-		33A9035C14FDD86B006587A7 /* 中华人民共和国公路管理条例.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035314FDD86B006587A7 /* 中华人民共和国公路管理条例.pdf */; };
-		33A9035D14FDD86B006587A7 /* 中华人民共和国道路交通安全法.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035414FDD86B006587A7 /* 中华人民共和国道路交通安全法.pdf */; };
-		33A9035E14FDD86B006587A7 /* 路政管理规定.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035514FDD86B006587A7 /* 路政管理规定.pdf */; };
-		33A9035F14FDD86B006587A7 /* 中华人民共和国公路法.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035614FDD86B006587A7 /* 中华人民共和国公路法.pdf */; };
-		33A9036014FDD86B006587A7 /* 损坏公路路产赔补偿标准.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035714FDD86B006587A7 /* 损坏公路路产赔补偿标准.pdf */; };
-		33A9036114FDD86B006587A7 /* 广东省路政档案管理办法.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035814FDD86B006587A7 /* 广东省路政档案管理办法.pdf */; };
-		33A9036314FDD86B006587A7 /* 广东省路政许可实施办法.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 33A9035A14FDD86B006587A7 /* 广东省路政许可实施办法.pdf */; };
 		33A9037214FDDC5B006587A7 /* LawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A9037114FDDC5B006587A7 /* LawViewController.m */; };
 		33A9DF6C1664570700C7CE8E /* DDXMLNode+CDATA.m in Sources */ = {isa = PBXBuildFile; fileRef = 33A9DF6B1664570700C7CE8E /* DDXMLNode+CDATA.m */; };
 		33AB0FE71655CEC3005A2BE8 /* CaseMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AB0FE61655CEC3005A2BE8 /* CaseMap.m */; };
@@ -402,6 +393,7 @@
 		84A1E54D204CD87400CEA458 /* AipOcrSdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84A1E54B204CD87400CEA458 /* AipOcrSdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84A74CC91E8BE1AE00EC02EF /* AlertViewWithProgressbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A74CC81E8BE1AE00EC02EF /* AlertViewWithProgressbar.m */; };
 		84B0D609200C98E400CC5F62 /* InitBasicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B0D608200C98E400CC5F62 /* InitBasicData.m */; };
+		84B95726222D0EB700AF3318 /* 法律 in Resources */ = {isa = PBXBuildFile; fileRef = 84B95725222D0EB700AF3318 /* 法律 */; };
 		84BDFB8C20045FEF006F0193 /* VersionUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDFB8B20045FEF006F0193 /* VersionUpdate.m */; };
 		84E5EC3820298A0A00A4AE44 /* JAProductTakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5EC3620298A0A00A4AE44 /* JAProductTakeViewController.m */; };
 		84E5EC3920298A0A00A4AE44 /* JAProductTakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E5EC3720298A0A00A4AE44 /* JAProductTakeViewController.xib */; };
@@ -676,7 +668,6 @@
 		3373F0C915E5D767004B86A4 /* CheckHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckHandle.m; sourceTree = "<group>"; };
 		3373F0CB15E5D768004B86A4 /* CheckReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckReason.h; sourceTree = "<group>"; };
 		3373F0CC15E5D768004B86A4 /* CheckReason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckReason.m; sourceTree = "<group>"; };
-		3375203B1681521C008D8729 /* 公路安全保护条例.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "公路安全保护条例.pdf"; sourceTree = "<group>"; };
 		337679111F13240D00B53522 /* InitCarCheckItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitCarCheckItems.h; sourceTree = "<group>"; };
 		337679121F13240D00B53522 /* InitCarCheckItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitCarCheckItems.m; sourceTree = "<group>"; };
 		337679141F13286400B53522 /* CarCheckItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCheckItems.h; sourceTree = "<group>"; };
@@ -854,14 +845,6 @@
 		33A9031E14FDD7E6006587A7 /* case-画图-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "case-画图-bg.png"; sourceTree = "<group>"; };
 		33A9031F14FDD7E6006587A7 /* case-文书-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "case-文书-bg.png"; sourceTree = "<group>"; };
 		33A9032C14FDD7F9006587A7 /* outer-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "outer-icon.png"; path = "../outer-icon.png"; sourceTree = "<group>"; };
-		33A9035214FDD86B006587A7 /* 广东省公路条例.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "广东省公路条例.pdf"; sourceTree = "<group>"; };
-		33A9035314FDD86B006587A7 /* 中华人民共和国公路管理条例.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "中华人民共和国公路管理条例.pdf"; sourceTree = "<group>"; };
-		33A9035414FDD86B006587A7 /* 中华人民共和国道路交通安全法.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "中华人民共和国道路交通安全法.pdf"; sourceTree = "<group>"; };
-		33A9035514FDD86B006587A7 /* 路政管理规定.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "路政管理规定.pdf"; sourceTree = "<group>"; };
-		33A9035614FDD86B006587A7 /* 中华人民共和国公路法.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "中华人民共和国公路法.pdf"; sourceTree = "<group>"; };
-		33A9035714FDD86B006587A7 /* 损坏公路路产赔补偿标准.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "损坏公路路产赔补偿标准.pdf"; sourceTree = "<group>"; };
-		33A9035814FDD86B006587A7 /* 广东省路政档案管理办法.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "广东省路政档案管理办法.pdf"; sourceTree = "<group>"; };
-		33A9035A14FDD86B006587A7 /* 广东省路政许可实施办法.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "广东省路政许可实施办法.pdf"; sourceTree = "<group>"; };
 		33A9037014FDDC5B006587A7 /* LawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawViewController.h; sourceTree = "<group>"; };
 		33A9037114FDDC5B006587A7 /* LawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawViewController.m; sourceTree = "<group>"; };
 		33A9037314FDDC6E006587A7 /* CaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseViewController.h; sourceTree = "<group>"; };
@@ -1142,6 +1125,7 @@
 		84A74CC81E8BE1AE00EC02EF /* AlertViewWithProgressbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithProgressbar.m; sourceTree = "<group>"; };
 		84B0D607200C98E400CC5F62 /* InitBasicData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitBasicData.h; sourceTree = "<group>"; };
 		84B0D608200C98E400CC5F62 /* InitBasicData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitBasicData.m; sourceTree = "<group>"; };
+		84B95725222D0EB700AF3318 /* 法律 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "法律"; sourceTree = "<group>"; };
 		84BDFB8A20045FEF006F0193 /* VersionUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionUpdate.h; sourceTree = "<group>"; };
 		84BDFB8B20045FEF006F0193 /* VersionUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionUpdate.m; sourceTree = "<group>"; };
 		84E5EC3520298A0A00A4AE44 /* JAProductTakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAProductTakeViewController.h; sourceTree = "<group>"; };
@@ -2134,15 +2118,7 @@
 		33A9035114FDD858006587A7 /* 法律法规 */ = {
 			isa = PBXGroup;
 			children = (
-				3375203B1681521C008D8729 /* 公路安全保护条例.pdf */,
-				33A9035214FDD86B006587A7 /* 广东省公路条例.pdf */,
-				33A9035314FDD86B006587A7 /* 中华人民共和国公路管理条例.pdf */,
-				33A9035414FDD86B006587A7 /* 中华人民共和国道路交通安全法.pdf */,
-				33A9035514FDD86B006587A7 /* 路政管理规定.pdf */,
-				33A9035614FDD86B006587A7 /* 中华人民共和国公路法.pdf */,
-				33A9035714FDD86B006587A7 /* 损坏公路路产赔补偿标准.pdf */,
-				33A9035814FDD86B006587A7 /* 广东省路政档案管理办法.pdf */,
-				33A9035A14FDD86B006587A7 /* 广东省路政许可实施办法.pdf */,
+				84B95725222D0EB700AF3318 /* 法律 */,
 			);
 			name = "法律法规";
 			sourceTree = "<group>";
@@ -2814,6 +2790,7 @@
 				33A09AFD14FB12090096BA1D /* login-btn-信息.png in Resources */,
 				33A09AFE14FB12090096BA1D /* login-btn-许可.png in Resources */,
 				33A09AFF14FB12090096BA1D /* login-btn-巡查.png in Resources */,
+				84B95726222D0EB700AF3318 /* 法律 in Resources */,
 				33A9032114FDD7E6006587A7 /* 同步-bg.png in Resources */,
 				33A9032214FDD7E6006587A7 /* 法律-bg.png in Resources */,
 				8477DB831FD68EFA00CC8241 /* FSActionSheet_cancel@3x.png in Resources */,
@@ -2831,16 +2808,8 @@
 				846ABFA4219A789E0005A422 /* 交通救援.png in Resources */,
 				84ED1B141FCC07D600BA89E8 /* 识别.png in Resources */,
 				33A9032D14FDD7F9006587A7 /* outer-icon.png in Resources */,
-				33A9035B14FDD86B006587A7 /* 广东省公路条例.pdf in Resources */,
-				33A9035C14FDD86B006587A7 /* 中华人民共和国公路管理条例.pdf in Resources */,
-				33A9035D14FDD86B006587A7 /* 中华人民共和国道路交通安全法.pdf in Resources */,
-				33A9035E14FDD86B006587A7 /* 路政管理规定.pdf in Resources */,
 				84E5EC4320298B1100A4AE44 /* JAPTakeMainVC.xib in Resources */,
-				33A9035F14FDD86B006587A7 /* 中华人民共和国公路法.pdf in Resources */,
 				84E5ECC2202C2CBE00A4AE44 /* TrafficAssistVC.xib in Resources */,
-				33A9036014FDD86B006587A7 /* 损坏公路路产赔补偿标准.pdf in Resources */,
-				33A9036114FDD86B006587A7 /* 广东省路政档案管理办法.pdf in Resources */,
-				33A9036314FDD86B006587A7 /* 广东省路政许可实施办法.pdf in Resources */,
 				332FB44715B7E7DB007CC89F /* 案件信息-bg.png in Resources */,
 				332FB44815B7E7DB007CC89F /* 服务器参数设置 -bg.png in Resources */,
 				332FB44915B7E7DB007CC89F /* 勘验图文字备注-bg.png in Resources */,
@@ -2867,7 +2836,6 @@
 				33949C66165B5AB300CD6464 /* framebg.png in Resources */,
 				3316731B1EB9B2890090EDE7 /* SecondStoryboard.storyboard in Resources */,
 				331E22C61E024285008FC832 /* InquireTable2GZX.xml in Resources */,
-				3375203C1681521C008D8729 /* 公路安全保护条例.pdf in Resources */,
 				339BC5BA16BF5914002AE80F /* simsun.ttc in Resources */,
 				330AD2B81E56D16600913004 /* 违法登记.png in Resources */,
 				339BC5BB16BF5914002AE80F /* simfangGBK.ttf in Resources */,

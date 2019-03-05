@@ -918,7 +918,7 @@ InspectionCheckState inspectionState;
 //构造物检查描述
 - (void)createRecodeInspectionConstruction:(InspectionConstruction *)inspectionconstruction{
     NSArray * array  = [self inspectionphoto:inspectionconstruction.myid];
-    NSString *remark;
+    NSString *remark =@"";
     if ([array count] > 0) {
         for (int i = 0; i< [array count]; i++) {
             CasePhoto * casePhoto = [array objectAtIndex:i];
