@@ -163,7 +163,7 @@
             
             
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             [dateFormatter setLocale:[NSLocale currentLocale]];
             NSString *startTime = [dateFormatter stringFromDate:[NSDate date]];
             
@@ -219,7 +219,7 @@
             ParkingNode *parkingNode=[parkingArray objectAtIndex:0];
             self.textParkingLocation.text=parkingNode.instrument_name;
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             [dateFormatter setLocale:[NSLocale currentLocale]];
             [self parkingChanged:self.swithIsParking];
         } else {

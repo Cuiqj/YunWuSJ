@@ -53,7 +53,7 @@ static NSString * xmlName = @"CaseCountTable";
     //CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
     Citizen *citizen = [Citizen citizenForCitizenName:nil nexus:@"当事人" case:self.caseID];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     
     //self.labelCaseAddress.text = caseInfo.full_happen_place;

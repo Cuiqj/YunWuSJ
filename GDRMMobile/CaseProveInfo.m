@@ -106,7 +106,7 @@
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     NSString *happenDate=[dateFormatter stringFromDate:caseInfo.happen_date];
     
     NSNumberFormatter *numFormatter=[[NSNumberFormatter alloc] init];
@@ -415,7 +415,7 @@
     //案件发生时间
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];       //改了格式
+    [dateFormatter setDateFormat:Date_version_yyyy];       //改了格式
     NSString *happenDate = [dateFormatter stringFromDate:caseInfo.happen_date];
     
     //桩号
@@ -595,7 +595,7 @@
     //案件发生时间
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];       //改了格式
+    [dateFormatter setDateFormat:Date_version_yyyy];       //改了格式
     NSString *happenDate = [dateFormatter stringFromDate:caseInfo.happen_date];
     
     //桩号
@@ -734,7 +734,7 @@
     //案件发生时间
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];       //改了格式
+    [dateFormatter setDateFormat:Date_version_yyyy];       //改了格式
     NSString *happenDate = [dateFormatter stringFromDate:caseInfo.happen_date];
     
     //桩号
@@ -1017,7 +1017,7 @@
     NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     //案发时间字符串
     NSString *happenDate=[dateFormatter stringFromDate:caseInfo.happen_date];
     

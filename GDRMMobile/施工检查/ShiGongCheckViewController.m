@@ -151,7 +151,7 @@ typedef enum {
 //    MaintainPlanCheck * constructionInfo=[self.constructionList objectAtIndex:indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"MM月dd日HH时"];
+    [formatter setDateFormat:Date_version_m_smallsub];
 //    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
     MaintainPlan * maintainplan = self.constructionList[indexPath.row];
 //    cell.textLabel.text = [NSString stringWithFormat:@"%@  %@",maintainplan.project_name,[formatter stringFromDate:maintainplan.date_start]];
@@ -180,7 +180,7 @@ typedef enum {
     MaintainPlan * maintainplan = self.constructionList[indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
 //    self.check_date.text =[formatter stringFromDate:checkInfo.check_date];
 //    self.textchecker.text       = checkInfo.checker;
     self.maintainPlanID         = maintainplan.myid;

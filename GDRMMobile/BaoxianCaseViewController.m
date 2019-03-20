@@ -868,7 +868,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
     
     proveDate=[NSDate date];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSString *dateString=[dateFormatter stringFromDate:proveDate];
     NSString *yearString=[dateString substringToIndex:4];
@@ -1396,7 +1396,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
         
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
         [formatter setLocale:[NSLocale currentLocale]];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formatter setDateFormat:line_Date_version_yyyy];
         self.textHappenDate.text=[formatter stringFromDate:self.caseInfo.happen_date];
         self.textStationStartKM.text=[NSString stringWithFormat:@"%02d", self.caseInfo.station_start.integerValue/1000];
         self.textStationStartM.text=[NSString stringWithFormat:@"%03d",self.caseInfo.station_start.integerValue%1000];
@@ -1495,7 +1495,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
     }
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:line_Date_version_yyyy];
     if (![self.textHappenDate.text isEmpty]) {
         self.caseInfo.happen_date=[formatter dateFromString:self.textHappenDate.text];
     }else{
@@ -1572,7 +1572,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
     //在案件编辑页面传入参数
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:line_Date_version_yyyy];
     caseProveInfo.start_date_time=[formatter dateFromString:self.textHappenDate.text];
     if (caseProveInfo.end_date_time == nil) {
         caseProveInfo.end_date_time=[formatter dateFromString:self.textHappenDate.text];

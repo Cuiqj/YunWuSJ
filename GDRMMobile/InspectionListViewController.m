@@ -72,7 +72,7 @@
     Inspection *inspection = [self.data objectAtIndex:indexPath.row];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
+    [dateFormatter setDateFormat:Date_version_yyyy_small];
     NSString *dateString = [dateFormatter stringFromDate:inspection.date_inspection];
     cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@  %@",dateString,inspection.recorder_name];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",inspection.classe, inspection.inspection_place];

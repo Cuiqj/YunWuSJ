@@ -273,7 +273,7 @@ Boolean isSelectMuban;
         }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         self.textInquireDate.text = [dateFormatter stringFromDate:caseInquire.date_inquired];
         self.textFieldInquirer.text = caseInquire.inquirer_name;
         self.textFieldRecorder.text = caseInquire.recorder_name;
@@ -329,7 +329,7 @@ Boolean isSelectMuban;
         }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         self.textInquireDate.text = [dateFormatter stringFromDate:caseInquire.date_inquired];
         self.textFieldInquirer.text = caseInquire.inquirer_name;
         self.textFieldRecorder.text = caseInquire.recorder_name;
@@ -382,7 +382,7 @@ Boolean isSelectMuban;
         }
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         self.textInquireDate.text = [dateFormatter stringFromDate:caseInquire.date_inquired];
     } else {
         self.inquireTextView.text = [[Systype typeValueForCodeName:@"询问笔录固定用语"] lastObject];
@@ -440,7 +440,7 @@ Boolean isSelectMuban;
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     caseInquire.date_inquired=[dateFormatter dateFromString:self.textInquireDate.text];
     caseInquire.locality=self.textLocality.text;
     //分行显示，替换字符串\n 转换为\r\n
@@ -606,7 +606,7 @@ Boolean isSelectMuban;
     if (caseInfo) {
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
         [formatter setLocale:[NSLocale currentLocale]];
-        [formatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+        [formatter setDateFormat:Date_version_yyyy];
         dateString=[formatter stringFromDate:caseInfo.happen_date];
         if (dateString) {
             [self.caseInfoArray addObject:dateString];
@@ -685,7 +685,7 @@ Boolean isSelectMuban;
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     NSString *happenDate=[dateFormatter stringFromDate:caseInfo.happen_date];
     
     NSNumberFormatter *numFormatter=[[NSNumberFormatter alloc] init];
@@ -1001,7 +1001,7 @@ Boolean isSelectMuban;
     text = [text stringByReplacingOccurrencesOfString:@"#当事人地址#" withString:citizen.address];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];       //改了格式
+    [dateFormatter setDateFormat:Date_version_yyyy];       //改了格式
     NSString *happenDate = [dateFormatter stringFromDate:caseinfo.happen_date];
     text = [text stringByReplacingOccurrencesOfString:@"#案发时间#" withString:happenDate];
     text = [text stringByReplacingOccurrencesOfString:@"#事故原因#" withString:caseinfo.case_reason];

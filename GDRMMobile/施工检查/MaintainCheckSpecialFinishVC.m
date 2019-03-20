@@ -35,7 +35,7 @@
     self.CheckSpecial.name = self.textUser.text;
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.CheckSpecial.date = [dateformatter dateFromString:self.textdate.text];
     self.CheckSpecialFinish.finish_date = [dateformatter dateFromString:self.textfinish_date.text];
     self.CheckSpecialFinish.remove_rank = self.textremove_rank.text;
@@ -56,7 +56,7 @@
     
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.textfinish_date.text = showname ? [dateformatter stringFromDate:self.CheckSpecialFinish.finish_date] :@"";
     self.textdate.text = showname ? [dateformatter stringFromDate:self.CheckSpecial.date] : @"";
     self.textUser.text = showname ? self.CheckSpecial.name : @"";
@@ -141,7 +141,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     MaintainCheckSpecial * special = self.dataarray[indexPath.row];
     cell.textLabel.text = [formatter stringFromDate:special.date];
     cell.textLabel.backgroundColor=[UIColor clearColor];
@@ -256,7 +256,7 @@
     //    self.CheckSpecial.date = date;
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formator setDateFormat:Date_version_yyyy];
     if (self.Kselectedtag == 555) {
         self.textdate.text = [formator stringFromDate:date];
     }else if (self.Kselectedtag == 666){

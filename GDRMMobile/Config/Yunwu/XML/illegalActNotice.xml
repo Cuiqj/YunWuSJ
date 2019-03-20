@@ -165,7 +165,7 @@
                     <attributeName>senddate</attributeName>
                      <fontSize>15</fontSize>
                     <entityName></entityName>
-                    <mode>yyyy年MM月dd日hh时MM分</mode>
+                    <mode>yyyy年M月d日hh时MM分</mode>
 <!--                    yyyy年MM月dd日hh时MM分-->
                 </data>
             </content>

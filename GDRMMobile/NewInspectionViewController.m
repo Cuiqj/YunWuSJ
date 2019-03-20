@@ -192,7 +192,7 @@
         [[NSUserDefaults standardUserDefaults] setValue:newInspectionID forKey:INSPECTIONKEY];        
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formatter setDateFormat:line_Date_version_yyyy];
         [formatter setLocale:[NSLocale currentLocale]];
         newInspection.date_inspection=[formatter dateFromString:self.textDate.text];
         newInspection.time_start=[formatter dateFromString:self.textDate.text];

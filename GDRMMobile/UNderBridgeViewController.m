@@ -91,7 +91,7 @@ NSInteger status;
     self.RoadNametext.text = self.CheckSpecialB.road_name;
     NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     self.Ckecktimestarttext.text = [dateFormatter stringFromDate:self.CheckSpecialB.check_date];
     self.Endtimetext.text = [dateFormatter stringFromDate:self.CheckSpecialB.finish_date];
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
@@ -132,7 +132,7 @@ NSInteger status;
         [self saveBridgeSpaceCheckSpecialInfo];
         NSDateFormatter * formator =[[NSDateFormatter alloc]init];
         [formator setLocale:[NSLocale currentLocale]];
-        [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [formator setDateFormat:Date_version_yyyy];
         if (self.Ckecktimestarttext.text.length) {
             self.CheckSpecialB.check_date = [formator dateFromString:self.Ckecktimestarttext.text];
         }
@@ -233,16 +233,16 @@ NSInteger status;
 - (void)setDate:(NSString *)date{
     NSDateFormatter * formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy-MM-dd-HH:mm"];
+    [formator setDateFormat:line_Date_version_yyyy];
     NSDate * showdate =[formator dateFromString:date];
     if (currentTag == 888) {
         self.CheckSpecialB.check_date = [formator dateFromString:date];
-        [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [formator setDateFormat:Date_version_yyyy];
         self.Ckecktimestarttext.text = [formator stringFromDate:self.CheckSpecialB.check_date];
         self.Ckecktimestarttext.text = [formator stringFromDate:showdate];
     }else if (currentTag == 666){
         self.CheckSpecialB.finish_date = [formator dateFromString:date];
-        [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [formator setDateFormat:Date_version_yyyy];
         self.Endtimetext.text =[formator stringFromDate:showdate];
     }
 }
@@ -330,7 +330,7 @@ NSInteger status;
     BridgeSpaceCheckSpecialB * checkSpecialbcell = (BridgeSpaceCheckSpecialB *)self.DataArray[indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_m];
     NSString * str = [formatter stringFromDate:checkSpecialbcell.check_date];
     if (!str.length) {
         str = @"";

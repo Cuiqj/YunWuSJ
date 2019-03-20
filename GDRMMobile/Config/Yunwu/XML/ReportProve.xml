@@ -65,7 +65,7 @@
                 <data>
                     <attributeName>send_date</attributeName>
                     <entityName></entityName>
-                    <mode>yyyy年MM月dd日hh时MM分</mode>
+                    <mode>yyyy年M月d日hh时MM分</mode>
                 </data>
             </content>
         </UITextField>

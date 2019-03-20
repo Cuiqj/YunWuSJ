@@ -1817,7 +1817,7 @@ typedef enum {
                         case NSDateAttributeType:{
                             NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
                             [formatter setLocale:[NSLocale currentLocale]];
-                            [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+                            [formatter setDateFormat:Date_version_yyyy];
                             TBXMLElement *formatterElement=[TBXML childElementNamed:@"mode" parentElement:xmlElement];
                             NSString *dateString = @"";
                             if (formatterElement) {
@@ -1933,7 +1933,7 @@ typedef enum {
                
                 NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                 [formatter setLocale:[NSLocale currentLocale]];
-                [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+                [formatter setDateFormat:Date_version_yyyy];
                 TBXMLElement *formatterElement = [TBXML childElementNamed:@"mode" parentElement:xmlElement];
                 if (formatterElement) {
                     NSString *dateFormat = [TBXML textForElement:formatterElement];

@@ -87,7 +87,7 @@ enum kUISwitchTag {
     TrafficRecord  *constructionInfo=[self.roadWayClosedList objectAtIndex:indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     // cell.textLabel.text=[formatter stringFromDate:constructionInfo.inspectiondate];
 //    cell.textLabel.text=[formatter stringFromDate:constructionInfo.clstart];
     cell.textLabel.text=constructionInfo.car;
@@ -182,7 +182,7 @@ enum kUISwitchTag {
     
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     
     //[self.switchZJCLDate setTag:kUISwitchTagZJCLDate];
     //[self.switchSGCLDate setTag:kUISwitchTagSGCLDate];

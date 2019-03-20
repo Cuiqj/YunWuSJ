@@ -49,7 +49,7 @@ static NSString * xmlName = @"illegalActNotice";
         Citizen *citizen = [[ Citizen allCitizenNameForCase:self.caseID] objectAtIndex:0];
         NSDateFormatter *formater =[[NSDateFormatter alloc] init];
         [formater setLocale:[NSLocale currentLocale]];
-        [formater setDateFormat:@"yyyy年MM月dd日hh时mm分"];
+        [formater setDateFormat:Date_version_yyyy];
         self.textparty.text=citizen.party;
         self.textlocation.text=caseInfo.full_happen_place;
         self.textbuildingtype.text=@"";
@@ -91,7 +91,7 @@ static NSString * xmlName = @"illegalActNotice";
 -(void)setPastDate:(NSDate *)date withTag:(int)tag{
         NSDateFormatter *formater =[[NSDateFormatter alloc] init];
     [formater setLocale:[NSLocale currentLocale]];
-    [formater setDateFormat:@"yyyy年MM月dd日hh时mm分"];
+    [formater setDateFormat:Date_version_yyyy];
     self.textsenddate.text= [formater stringFromDate:date];
     self.senddate= date;
 }
@@ -101,7 +101,7 @@ static NSString * xmlName = @"illegalActNotice";
      
     NSDateFormatter *formater =[[NSDateFormatter alloc] init];
     [formater setLocale:[NSLocale currentLocale]];
-    [formater setDateFormat:@"yyyy年MM月dd日hh时mm分"];
+    [formater setDateFormat:Date_version_yyyy];
     
     //citizen = [Citizen citizenForCitizenName:self.caseLawInfo.party nexus:@"当事人" case:self.caseID];
     if(self.caseLawInfo){

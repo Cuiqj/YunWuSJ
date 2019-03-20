@@ -29,7 +29,7 @@ static NSString * xmlName = @"ReportProve";
     [super setCaseID:self.caseID];
     NSDateFormatter *formater =[[NSDateFormatter alloc] init];
     [formater setLocale:[NSLocale currentLocale]];
-    [formater setDateFormat:@"yyyy年MM月dd日"];
+    [formater setDateFormat:Date_version_yyyy_small];
     // Do any additional setup after loading the view.
     CGRect viewFrame = CGRectMake(0.0, 0.0, VIEW_FRAME_WIDTH, VIEW_FRAME_HEIGHT);
     self.view.frame = viewFrame;
@@ -86,14 +86,14 @@ static NSString * xmlName = @"ReportProve";
 -(void)setPastDate:(NSDate *)date withTag:(int)tag{
     NSDateFormatter *formater =[[NSDateFormatter alloc] init];
     [formater setLocale:[NSLocale currentLocale]];
-    [formater setDateFormat:@"yyyy年MM月dd日hh时mm分"];
+    [formater setDateFormat:Date_version_yyyy];
     self.textProveTime.text= [formater stringFromDate:date];
     self.senddate= date;
 }
 -(void)setDate:(NSString *)date{
     NSDateFormatter * formater =[[NSDateFormatter alloc] init];
     [formater setLocale:[NSLocale currentLocale]];
-    [formater setDateFormat:@"yyyy-MM-dd hh:mm"];
+    [formater setDateFormat:line_Date_version_yyyy];
     self.senddate= [formater dateFromString:date];
     self.textProveTime.text=date;
 }

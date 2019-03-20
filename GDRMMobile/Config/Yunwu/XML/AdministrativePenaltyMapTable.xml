@@ -218,7 +218,7 @@
             <content>
                 <data>
                     <attributeName>happen_date</attributeName>
-                    <mode>MM</mode>
+                    <mode>M</mode>
                 </data>
             </content>
         </UITextField>
@@ -229,7 +229,7 @@
             <content>
                 <data>
                     <attributeName>happen_date</attributeName>
-                    <mode>dd</mode>
+                    <mode>d</mode>
                 </data>
             </content>
         </UITextField>
@@ -353,7 +353,7 @@
             <content>
                 <data>
                     <attributeName>draw_time</attributeName>
-                    <mode>MM</mode>
+                    <mode>M</mode>
                 </data>
             </content>
         </UITextField>
@@ -364,7 +364,7 @@
             <content>
                 <data>
                     <attributeName>draw_time</attributeName>
-                    <mode>dd</mode>
+                    <mode>d</mode>
                 </data>
             </content>
         </UITextField>

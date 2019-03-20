@@ -48,7 +48,7 @@ typedef enum {
     inspectionRecord.relationType=@"丈量沿海";
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     NSDate *startDate=[dateFormatter dateFromString:self.textStartTime.text];
     NSDate *endDate=[dateFormatter dateFromString:self.textEndTime.text];
     inspectionRecord.start_time = startDate ;
@@ -93,7 +93,7 @@ typedef enum {
         if ([self.textEndTime.text isEmpty]) {
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             NSDateComponents *components = [[NSDateComponents alloc] init];
             [components setDay:7];
             NSCalendar *calendar=[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];

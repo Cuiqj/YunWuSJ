@@ -43,7 +43,7 @@
             self.textDraftMan.text = map.draftsman_name;
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setLocale:[NSLocale currentLocale]];
-            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [formatter setDateFormat:line_Date_version_yyyy];
             self.textDraftTime.text = [formatter stringFromDate:map.draw_time];
             self.textRoadType.text = map.road_type;
             self.remarkTextView.text = map.remark;
@@ -53,7 +53,7 @@
             self.textRoadType.text = @"沥青";
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
             [formatter setLocale:[NSLocale currentLocale]];
-            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [formatter setDateFormat:line_Date_version_yyyy];
             self.textDraftTime.text = [formatter stringFromDate:[NSDate date]];
             self.remarkTextView.text = [CaseProveInfo generateEventDescForCase:self.caseID];
         }
@@ -99,7 +99,7 @@
         casemap.road_type = self.textRoadType.text;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setLocale:[NSLocale currentLocale]];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formatter setDateFormat:line_Date_version_yyyy];
         casemap.draw_time = [formatter dateFromString:self.textDraftTime.text];
         casemap.draftsman_name = self.textDraftMan.text;
         [[AppDelegate App] saveContext];

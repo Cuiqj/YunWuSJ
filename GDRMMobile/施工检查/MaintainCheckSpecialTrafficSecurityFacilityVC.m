@@ -43,7 +43,7 @@
     self.CheckSpecial.name = self.textUser.text;
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.CheckSpecial.date = [dateformatter dateFromString:self.textdate.text];
     self.CheckSpecialTraffic.constr_start = [dateformatter dateFromString:self.textconstr_start.text];
     self.CheckSpecialTraffic.constr_end = [dateformatter dateFromString:self.textconstr_end.text];
@@ -56,7 +56,7 @@
     MaintainPlan * plan = [MaintainPlan maintainPlanInfoForID:self.planID];
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.textconstr_end.text = self.CheckSpecialTraffic.constr_end ? [dateformatter stringFromDate:self.CheckSpecialTraffic.constr_end] :[dateformatter stringFromDate:plan.date_end];
     self.textconstr_start.text = self.CheckSpecialTraffic.constr_start ? [dateformatter stringFromDate:self.CheckSpecialTraffic.constr_start] :[dateformatter stringFromDate:plan.date_start];
     self.textdate.text = showname ? [dateformatter stringFromDate:self.CheckSpecial.date] : @"";
@@ -130,7 +130,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     MaintainCheckSpecial * special = self.dataarray[indexPath.row];
     cell.textLabel.text = [formatter stringFromDate:special.date];
     cell.textLabel.backgroundColor=[UIColor clearColor];
@@ -239,7 +239,7 @@
     //    self.CheckSpecial.date = date;
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formator setDateFormat:Date_version_yyyy];
     if (self.Kselectedtag == 555) {
         self.textdate.text = [formator stringFromDate:date];
     }else if (self.Kselectedtag == 666){

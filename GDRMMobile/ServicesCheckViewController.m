@@ -125,7 +125,7 @@ typedef   enum {
             cell.textLabel.text = [ServiceOrg ServiceOrgNameforServiceNameID:servicecheck.servicename];
             NSDateFormatter *formator=[[NSDateFormatter alloc] init];
             [formator setLocale:[NSLocale currentLocale]];
-            [formator setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+            [formator setDateFormat:@"yyyy年M月d日 hh:mm"];
             cell.detailTextLabel.text=[formator stringFromDate:servicecheck.checkdate];
             if(servicecheck.isuploaded.boolValue){
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -468,7 +468,7 @@ typedef   enum {
 - (void) setPastDate:(NSDate *)date withTag:(int)tag{
     NSDateFormatter *formator=[[NSDateFormatter alloc] init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+    [formator setDateFormat:@"yyyy年M月d日 hh:mm"];
     self.textchecktime.text=[formator stringFromDate:date];
     self.checktime = date;
 }
@@ -504,7 +504,7 @@ typedef   enum {
 - (void) loadServiceCheck:(ServiceManage*)servicecheck{
     NSDateFormatter *formator=[[NSDateFormatter alloc] init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+    [formator setDateFormat:@"yyyy年M月d日 hh:mm"];
     serviceCheckID                = servicecheck.myid;
     checktime                     = servicecheck.checkdate;
     self.textchecktime.text=[formator stringFromDate: servicecheck.checkdate];
@@ -522,7 +522,7 @@ typedef   enum {
 - (void) loadCheckDeatail:(ServiceManageDetail*)checkdetail{
     NSDateFormatter *formator=[[NSDateFormatter alloc] init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日 hh:mm"];
+    [formator setDateFormat:@"yyyy年M月d日 hh:mm"];
     self.texttarget.text    = checkdetail.target;
     self.textitem.text      = checkdetail.item;
     self.labelstandard.text = checkdetail.standard;

@@ -71,9 +71,9 @@
 -(void)setDate:(NSString *)date{
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     NSDate *temp=[dateFormatter dateFromString:date];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时"];
+    [dateFormatter setDateFormat:Date_version_yyyy_smallsub];
     NSString *dateString=[dateFormatter stringFromDate:temp];
     self.textSendate.text = dateString;
 }
@@ -86,7 +86,7 @@
     construction.no = self.textNo.text;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setLocale:[NSLocale currentLocale]];
-    [dateFormat setDateFormat:@"yyyy年MM月dd日HH时"];
+    [dateFormat setDateFormat:Date_version_yyyy_smallsub];
     construction.sendate = [dateFormat dateFromString:self.textSendate.text];
     construction.sendNO = self.textSendNO.text;
     construction.sendname = self.textSendname.text;

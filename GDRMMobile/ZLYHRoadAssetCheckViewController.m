@@ -269,7 +269,7 @@ NSInteger currentTag;
         }
         NSDateFormatter *formator =[[NSDateFormatter alloc]init];
         [formator setLocale:[NSLocale currentLocale]];
-        [formator setDateFormat:@"yyyy年MM月dd日"];
+        [formator setDateFormat:Date_version_yyyy_small];
         cell.textLabel.text=[NSString stringWithFormat:@"%@", [formator stringFromDate:maindata.start_date]];
         //cell.detailTextLabel.text=[NSString stringWithFormat:@"%@ ",[[self.mainCheckListData objectAtIndex:indexPath.row] valueForKey:@"check_person"]];
         if (maindata.isuploaded.boolValue) {
@@ -422,7 +422,7 @@ NSInteger currentTag;
         [self.detailTableView reloadData];
         NSDateFormatter *formator =[[NSDateFormatter alloc]init];
         [formator setLocale:[NSLocale currentLocale]];
-        [formator setDateFormat:@"yyyy年MM月dd日"];
+        [formator setDateFormat:Date_version_yyyy_small];
         self.startTimeLabel.text = [formator stringFromDate: self.currentMainCheckData.start_date];
     }
     else if ([self.detailTableView isEqual:tableView]){

@@ -210,12 +210,12 @@ typedef enum _kTextFieldTag {
         }
         NSDate *startDate              = parkingNode.date_start;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [dateFormatter setDateFormat:Date_version_yyyy];
         [dateFormatter setLocale:[NSLocale currentLocale]];
         self.textFieldHappenDate.text = [dateFormatter stringFromDate:startDate];
         
         //最下面打印时间
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
+        [dateFormatter setDateFormat:Date_version_yyyy_small];
         self.textPrintDate.text = [dateFormatter stringFromDate:[NSDate date]];
         
         //线  路段

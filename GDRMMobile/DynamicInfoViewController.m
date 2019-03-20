@@ -243,7 +243,7 @@ typedef enum {
     self.textTitle.text = closeInfo.title;
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     self.textTimeStart.text=[formatter stringFromDate:closeInfo.time_start];
     self.textTimeEnd.text=[formatter stringFromDate:closeInfo.time_end];
     self.roadSegmentID            = closeInfo.roadsegment_id;
@@ -316,7 +316,7 @@ typedef enum {
             closeInfo.title         = self.textTitle.text;
             NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
             [formatter setLocale:[NSLocale currentLocale]];
-            [formatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+            [formatter setDateFormat:Date_version_yyyy];
             closeInfo.time_start=[formatter dateFromString:self.textTimeStart.text];
             closeInfo.time_end=[formatter dateFromString:self.textTimeEnd.text];
             closeInfo.roadsegment_id=[NSString stringWithFormat:@"%d", [self.roadSegmentID intValue]];
@@ -412,9 +412,9 @@ typedef enum {
                 datePicker.pickerType = 1;
                 NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
                 [dateFormatter setLocale:[NSLocale currentLocale]];
-                [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+                [dateFormatter setDateFormat:Date_version_yyyy];
                 NSDate *temp=[dateFormatter dateFromString:self.textTimeStart.text];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+                [dateFormatter setDateFormat:line_Date_version_yyyy];
                 [datePicker showdate:[dateFormatter stringFromDate:temp]];
                 self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:datePicker];
                 [self.pickerPopover presentPopoverFromRect:[self.view convertRect:sender.frame fromView:self.scrollContent] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
@@ -432,9 +432,9 @@ typedef enum {
                 datePicker.pickerType = 1;
                 NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
                 [dateFormatter setLocale:[NSLocale currentLocale]];
-                [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+                [dateFormatter setDateFormat:Date_version_yyyy];
                 NSDate *temp=[dateFormatter dateFromString:self.textTimeEnd.text];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+                [dateFormatter setDateFormat:line_Date_version_yyyy];
                 [datePicker showdate:[dateFormatter stringFromDate:temp]];
                 self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:datePicker];
                 [self.pickerPopover presentPopoverFromRect:[self.view convertRect:sender.frame fromView:self.scrollContent] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionRight animated:YES];
@@ -524,9 +524,9 @@ typedef enum {
 - (void)setDate:(NSString *)date{
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     NSDate *temp=[dateFormatter dateFromString:date];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     NSString *dateString=[dateFormatter stringFromDate:temp];
     switch (self.timeState) {
         case kStartTime:

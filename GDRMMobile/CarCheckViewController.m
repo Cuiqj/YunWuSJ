@@ -159,7 +159,7 @@ NSInteger currentTag;
 -(void)setDate:(NSString *)date{
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formator setDateFormat:line_Date_version_yyyy];
     switch (currentTag ){
         case 3:{
             self.textcheck_time.text=date;
@@ -228,7 +228,7 @@ NSInteger currentTag;
         }
         NSDateFormatter *formator =[[NSDateFormatter alloc]init];
         [formator setLocale:[NSLocale currentLocale]];
-        [formator setDateFormat:@"yyyy年MM月dd日"];
+        [formator setDateFormat:Date_version_yyyy_small];
         cell.textLabel.text=[NSString stringWithFormat:@"%@ %@",
                                     [formator stringFromDate: [[self.mainCheckListData objectAtIndex:indexPath.row]        valueForKey:@"check_time"]]
                                  ,[[self.mainCheckListData objectAtIndex:indexPath.row] valueForKey:@"carno"]];
@@ -324,7 +324,7 @@ NSInteger currentTag;
         self.textrecheck_person.text=self.currentMainCheckData.recheck_person;
         NSDateFormatter *formator =[[NSDateFormatter alloc]init];
         [formator setLocale:[NSLocale currentLocale]];
-        [formator setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formator setDateFormat:line_Date_version_yyyy];
         self.textcheck_time.text= [formator stringFromDate: self.currentMainCheckData.check_time];
         self.textrecheck_time.text= [formator stringFromDate: self.currentMainCheckData.recheck_time];
     }
@@ -370,7 +370,7 @@ NSInteger currentTag;
 - (IBAction)BtnSaveMain:(id)sender {
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formator setDateFormat:line_Date_version_yyyy];
     BOOL isnew=NO;
     if(self.currentMainCheckData==nil){
         isnew=YES;

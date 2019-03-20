@@ -166,7 +166,7 @@
         if (temp.count>0) {
             Inspection *inspection=[temp objectAtIndex:0];
             NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [formatter setDateFormat:line_Date_version_yyyy];
             [formatter setLocale:[NSLocale currentLocale]];
             //[formatter setTimeZone:[NSTimeZone systemTimeZone]];
             inspection.time_end=[formatter dateFromString:self.textEndDate.text];

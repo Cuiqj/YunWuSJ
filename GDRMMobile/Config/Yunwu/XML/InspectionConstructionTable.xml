@@ -157,7 +157,7 @@
             <content>
                 <data>
                     <attributeName>inspectiondate</attributeName>
-                    <mode>MM</mode>
+                    <mode>M</mode>
                 </data>
             </content>
         </UITextField>
@@ -170,7 +170,7 @@
 <!--                <text>10</text>-->
                 <data>
                     <attributeName>inspectiondate</attributeName>
-                    <mode>dd</mode>
+                    <mode>d</mode>
                 </data>
             </content>
         </UITextField>

@@ -82,7 +82,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     MaintainCheckDaily * CheckDaily;
     if (self.dataarray.count>0) {
         CheckDaily = self.dataarray[indexPath.row];
@@ -106,7 +106,7 @@
     self.dailyCheck = (MaintainCheckDaily *)self.dataarray[indexPath.row];
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.textdate.text = [dateformatter stringFromDate:self.dailyCheck.date];
     self.textdirection.text = self.dailyCheck.direction;
     self.textinspector.text = self.dailyCheck.inspector;
@@ -344,7 +344,7 @@
     self.dailyCheck.direction = self.textdirection.text;
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formator setDateFormat:Date_version_yyyy];
     self.dailyCheck.date = [formator dateFromString:self.textdate.text];
     if ([self.textconstr_nature1 isSelected]) {
         self.dailyCheck.constr_nature = @"长期作业";
@@ -486,7 +486,7 @@
     self.dailyCheck.date = date;
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formator setDateFormat:Date_version_yyyy];
     self.textdate.text = [formator stringFromDate:date];
 }
 

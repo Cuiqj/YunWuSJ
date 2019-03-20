@@ -62,7 +62,7 @@
         self.labelDraftMan.text = caseMap.draftsman_name;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [dateFormatter setDateFormat:Date_version_yyyy];
         self.labelDraftTime.text = [dateFormatter stringFromDate:caseMap.draw_time];
         NSArray *pathArray=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentPath=[pathArray objectAtIndex:0];

@@ -222,7 +222,7 @@ enum kUISwitchTag {
     TrafficRecord  *constructionInfo=[self.accidentList objectAtIndex:indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     // cell.textLabel.text=[formatter stringFromDate:constructionInfo.inspectiondate];
 //    cell.textLabel.text=[formatter stringFromDate:constructionInfo.clstart];
     cell.textLabel.text = constructionInfo.car;
@@ -318,7 +318,7 @@ enum kUISwitchTag {
     self.accidentID             = accidentInfo.myid;
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     self.textCar.text           = accidentInfo.car;
     self.textInfocom.text       = accidentInfo.infocome;
     self.textlocation.text      =  [RoadSegment roadNameFromSegment:accidentInfo.location];
@@ -497,7 +497,7 @@ enum kUISwitchTag {
     }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     tr.org_id=[[OrgInfo orgInfoForSelected] valueForKey:@"myid"];
     tr.location      = self.roadSegmentID;
     tr.rel_id        = @"0";
@@ -771,12 +771,12 @@ enum kUISwitchTag {
         [dateFormatter setLocale:[NSLocale currentLocale]];
         [dateFormatter setDateFormat:@"HH:mm"];
         if (self.KSelectedField == 115) {
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
         }
         NSDate *temp=[dateFormatter dateFromString:date];
         [dateFormatter setDateFormat:@"HH时mm分"];
         if (self.KSelectedField == 115) {
-            [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+            [dateFormatter setDateFormat:Date_version_yyyy];
         }
         dateString=[dateFormatter stringFromDate:temp];
     }

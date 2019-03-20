@@ -26,9 +26,9 @@
         _formatter=[[NSDateFormatter alloc] init];
         [_formatter setLocale:[NSLocale currentLocale]];
         if (_pickerType == 0) {
-            [_formatter setDateFormat : @"yyyy-MM-dd"];
+            [_formatter setDateFormat : @"yyyy-M-d"];
         } else if (_pickerType == 1) {
-            [_formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [_formatter setDateFormat:line_Date_version_yyyy];
         } else if (_pickerType == 2) {
             [_formatter setDateFormat:@"HH:mm"];
         }else{

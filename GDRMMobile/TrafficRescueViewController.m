@@ -39,7 +39,7 @@
     self.rescuerecord.patrol_person = self.textpatrol_person.text;
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.rescuerecord.notice_time = [dateformatter dateFromString:self.textnotice_time.text];
     self.rescuerecord.arrival_time = [dateformatter dateFromString:self.textarrival_time.text];
     self.rescuerecord.end_time = [dateformatter dateFromString:self.textend_time.text];
@@ -58,7 +58,7 @@
 //    self.textorg_id.text = [[Systype typeValueForCodeName:@"拯救公司名称"] objectAtIndex:0];
     NSDateFormatter * dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setLocale:[NSLocale currentLocale]];
-    [dateformatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateformatter setDateFormat:Date_version_yyyy];
     self.textnotice_time.text = showname ? [dateformatter stringFromDate:self.rescuerecord.notice_time] :@"";
     self.textarrival_time.text = showname ? [dateformatter stringFromDate:self.rescuerecord.arrival_time] :@"";
     self.textend_time.text = showname ? [dateformatter stringFromDate:self.rescuerecord.end_time] :@"";
@@ -119,7 +119,7 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     RescueRecord * rescue = self.dataarray[indexPath.row];
     cell.textLabel.text = [formatter stringFromDate:rescue.notice_time];
     cell.textLabel.backgroundColor=[UIColor clearColor];
@@ -163,7 +163,7 @@
     //    self.CheckSpecial.date = date;
     NSDateFormatter *formator =[[NSDateFormatter alloc]init];
     [formator setLocale:[NSLocale currentLocale]];
-    [formator setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formator setDateFormat:Date_version_yyyy];
     if (self.Kselectedtag == 555) {
         self.textnotice_time.text = [formator stringFromDate:date];
     }else if (self.Kselectedtag == 666){

@@ -154,7 +154,7 @@ typedef enum {
     InspectionConstruction *constructionInfo=[self.constructionList objectAtIndex:indexPath.row];
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     cell.textLabel.text=[formatter stringFromDate:constructionInfo.inspectiondate];
     cell.textLabel.backgroundColor=[UIColor clearColor];
     NSString *local=@"";
@@ -271,7 +271,7 @@ typedef enum {
     self.constructionID = constructionInfo.myid;
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     self.inspectionDate.text =[formatter stringFromDate:constructionInfo.inspectiondate];
     [formatter setDateFormat:@"HH:mm"];
     self.timeStart1.text = [formatter stringFromDate: constructionInfo.timestart1];
@@ -364,9 +364,9 @@ typedef enum {
     constructionInfo.inspectionor2 = self.inspectionor2.text;
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [formatter setDateFormat:Date_version_yyyy];
     constructionInfo.inspectiondate = [formatter dateFromString:self.inspectionDate.text];
-    [formatter setDateFormat:@"yyyy-MM-dd-HH:mm"];
+    [formatter setDateFormat:@"yyyy-M-d-HH:mm"];
     NSString * stringdate = [self.inspectionDate.text componentsSeparatedByString:@"日"][0];
     stringdate = [[stringdate stringByReplacingOccurrencesOfString:@"年" withString:@"-"] stringByReplacingOccurrencesOfString:@"月" withString:@"-"];
     constructionInfo.timestart1 = [formatter dateFromString:[NSString stringWithFormat:@"%@-%@",stringdate,self.timeStart1.text]];
@@ -411,9 +411,9 @@ typedef enum {
                 datePicker.pickerType = 1;
                 NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
                 [dateFormatter setLocale:[NSLocale currentLocale]];
-                [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+                [dateFormatter setDateFormat:Date_version_yyyy];
                 NSDate *temp=[dateFormatter dateFromString:self.inspectionDate.text];
-                [dateFormatter setDateFormat:@"yyyy-MM-dd-HH:mm"];
+                [dateFormatter setDateFormat:@"yyyy-M-d-HH:mm"];
                 [datePicker showdate:[dateFormatter stringFromDate:temp]];
                 self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:datePicker];
                 [self.pickerPopover presentPopoverFromRect:sender.frame inView:self.scrollContent permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
@@ -535,9 +535,9 @@ typedef enum {
         case kInspectionDate:{
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd-HH:mm"];
+            [dateFormatter setDateFormat:@"yyyy-M-d-HH:mm"];
             NSDate *temp=[dateFormatter dateFromString:date];
-            [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+            [dateFormatter setDateFormat:Date_version_yyyy];
             NSString *dateString=[dateFormatter stringFromDate:temp];
             self.inspectionDate.text = dateString;
         }

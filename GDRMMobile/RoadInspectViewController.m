@@ -261,7 +261,7 @@ InspectionCheckState inspectionState;
         InspectionPath *path = [self.data objectAtIndex:indexPath.row];
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         self.textCheckTime.text = [dateFormatter stringFromDate:path.checktime];
         
         NSString *tmp         = [path.stationname substringToIndex:2];
@@ -415,7 +415,7 @@ InspectionCheckState inspectionState;
             }
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             newPath.checktime    = [dateFormatter dateFromString:self.textCheckTime.text];
             newPath.stationname  = self.textStationName.text;
             newPath.inspectionid = self.inspectionID;
@@ -456,7 +456,7 @@ InspectionCheckState inspectionState;
         
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         inspectionRecord.start_time=[dateFormatter dateFromString:self.textCheckTime.text];
         [dateFormatter setDateFormat:DATE_FORMAT_HH_MM_COLON];
         [dateFormatter setDateFormat:@"HH时mm分"];
@@ -649,7 +649,7 @@ InspectionCheckState inspectionState;
         Inspection *inspection=[temp objectAtIndex:0];
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
         [formatter setLocale:[NSLocale currentLocale]];
-        [formatter setDateFormat:@"yyyy年MM月dd日"];
+        [formatter setDateFormat:Date_version_yyyy_small];
         self.labelInspectionInfo.text=[[NSString alloc] initWithFormat:@"%@   %@   巡查车辆:%@   巡查人:%@   记录人:%@",[formatter stringFromDate:inspection.date_inspection],inspection.weather,inspection.carcode,inspection.inspectionor_name,inspection.recorder_name];
     }
     for (UITextField *textField in self.pathView.subviews) {
@@ -991,7 +991,7 @@ InspectionCheckState inspectionState;
     NSString *remark                = @"";
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     [dateFormatter setDateFormat:@"HH时mm分"];
     NSString *timeStr = [dateFormatter stringFromDate:inspectionRecord.start_time];
     if ([trafficRecord.infocome isEqualToString:@"交警"]) {
@@ -1111,7 +1111,7 @@ InspectionCheckState inspectionState;
     NSString *remark                = DynamicInfo.closed_reason;
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     
     inspectionRecord.remark = remark;
     

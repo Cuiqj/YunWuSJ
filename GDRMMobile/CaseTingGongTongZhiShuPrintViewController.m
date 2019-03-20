@@ -91,7 +91,7 @@ static NSString * xmlName = @"TingGongTongZhiShu";
     self.textcitizen.text=stopNoticeInfo.citizen;
     //self.textsend_date.text=RectificationNoticeInfo.send_date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
+    [dateFormatter setDateFormat:Date_version_yyyy_small];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     // self.textsend_date.text = [dateFormatter stringFromDate:self.stopNoticeInfo.send_date];
     
@@ -207,7 +207,7 @@ static NSString * xmlName = @"TingGongTongZhiShu";
     
     self.stopNoticeInfo.send_date = date;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日"];
+    [dateFormatter setDateFormat:Date_version_yyyy_small];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     self.textsend_date.text = [dateFormatter stringFromDate:date];
     

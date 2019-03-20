@@ -98,12 +98,12 @@
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     // NSDate *temp=[dateFormatter dateFromString:date];
-    //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    //[dateFormatter setDateFormat:line_Date_version_yyyy];
     self.textDate.text=[dateFormatter stringFromDate:[NSDate date]];
     
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     self.textTimeStart.text =[dateFormatter stringFromDate:[NSDate date]];
     self.textBridgeStartTime.text = [dateFormatter stringFromDate:[NSDate date]];
     self.textBridgeEndTime.text=[dateFormatter stringFromDate:[NSDate date]];
@@ -328,7 +328,7 @@
             
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             inspectionRecord.start_time=[dateFormatter dateFromString:self.textDate.text];
             
             [dateFormatter setDateFormat:@"HH时mm分"];
@@ -364,7 +364,7 @@
         if (!isBlank) {
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             NSData * textTimeStart = [dateFormatter dateFromString:self.textTimeStart.text];
             [dateFormatter setDateFormat:@"HH时mm分"];
             NSString * time  = [dateFormatter stringFromDate:textTimeStart];
@@ -383,7 +383,7 @@
             inspectionRecord.relationid      = @"0";
 //            NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             inspectionRecord.start_time = [dateFormatter dateFromString:self.textTimeStart.text];
             inspectionRecord.remark     = self.textViewNormalDesc.text;
 //            [self.textViewNormalDesc.text stringByReplacingOccurrencesOfString:[self.textViewNormalDesc.text substringToIndex:11] withString:@"" ];
@@ -411,7 +411,7 @@
             inspectionRecord.relationType=@"桥下检查";
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             inspectionRecord.start_time = [dateFormatter dateFromString:self.textBridgeStartTime.text];
             inspectionRecord.end_time=[dateFormatter dateFromString:self.textBridgeEndTime.text];;
             [dateFormatter setDateFormat:@"HH时mm分"];
@@ -436,7 +436,7 @@
     else if (self.descState==kYiZhuanDuoNeng){
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         
         
         HelpWork *hw  = [HelpWork newDataObjectWithEntityName:@"HelpWork"];
@@ -854,9 +854,9 @@
     } else if(self.descState == kNormalDesc) {
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         NSDate *temp=[dateFormatter dateFromString:date];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         NSString *dateString=[dateFormatter stringFromDate:temp];
         if (self.isStartTime) { self.textTimeStart.text = dateString;}
         //else { self.textTimeEnd.text = dateString;}
@@ -864,9 +864,9 @@
     else if(self.descState==kUnderBridgeCheck){
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         NSDate *temp=[dateFormatter dateFromString:date];
-        //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        //[dateFormatter setDateFormat:line_Date_version_yyyy];
         NSString *dateString=[dateFormatter stringFromDate:temp];
         if (self.isStartTime) {
             self.textBridgeStartTime.text = dateString;
@@ -880,9 +880,9 @@
     else if (self.descState==kYiZhuanDuoNeng){
         NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:line_Date_version_yyyy];
         NSDate *temp=[dateFormatter dateFromString:date];
-        //[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        //[dateFormatter setDateFormat:line_Date_version_yyyy];
         NSString *dateString=[dateFormatter stringFromDate:temp];
         self.yzdnShiJian.text = dateString;
     }
@@ -970,7 +970,7 @@
 - (IBAction)btnFormNormalDesc:(id)sender {
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     NSData * textTimeStart = [dateFormatter dateFromString:self.textTimeStart.text];
     [dateFormatter setDateFormat:@"HH时mm分"];
     NSString * time  = [dateFormatter stringFromDate:textTimeStart];

@@ -237,7 +237,7 @@
             <content>
                 <data>
                     <attributeName>date_inquired</attributeName>
-                    <mode>yyyy年MM月dd日HH时mm分</mode>
+                    <mode>yyyy年M月d日HH时mm分</mode>
                 </data>
             </content>
         </UITextField>

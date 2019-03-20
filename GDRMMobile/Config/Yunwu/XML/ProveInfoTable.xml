@@ -260,7 +260,7 @@
                 <!--$F{start_date_time}-->
                 <data>
                     <attributeName>start_date_time</attributeName>
-                    <mode>yyyy年MM月dd日HH时mm分</mode>
+                    <mode>yyyy年M月d日HH时mm分</mode>
                 </data>
             </content>
         </UITextField>
@@ -280,7 +280,7 @@
                 <!--$F{end_date_time}-->
                 <data>
                     <attributeName>end_date_time</attributeName>
-                    <mode>yyyy年MM月dd日HH时mm分</mode>
+                    <mode>yyyy年M月d日HH时mm分</mode>
                 </data>
             </content>
         </UITextField>

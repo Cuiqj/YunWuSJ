@@ -249,7 +249,7 @@ typedef enum {
         if ([self.textEndTime.text isEmpty]) {
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
             [dateFormatter setLocale:[NSLocale currentLocale]];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             NSDateComponents *components = [[NSDateComponents alloc] init];
             [components setDay:7];
             NSCalendar *calendar=[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -499,7 +499,7 @@ typedef enum {
 //                self.textParkingLocation.text=self.textParkingLocation.placeholder;
 //            }
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             [dateFormatter setLocale:[NSLocale currentLocale]];
             if ([self.textStartTime.text isEmpty]) {
                 self.textStartTime.text=[dateFormatter stringFromDate:[NSDate date]];
@@ -570,7 +570,7 @@ typedef enum {
             self.textParkingLocation.text=parkingNode.instrument_name;
             self.textCarType.text=parkingNode.car_type;
             NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+            [dateFormatter setDateFormat:line_Date_version_yyyy];
             [dateFormatter setLocale:[NSLocale currentLocale]];
             self.textStartTime.text=[dateFormatter stringFromDate:parkingNode.date_start];
             self.textEndTime.text=[dateFormatter stringFromDate:parkingNode.date_end];

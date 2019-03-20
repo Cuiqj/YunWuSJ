@@ -71,7 +71,7 @@ enum kPageInfo {
 - (void)pageLoadInfo{
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];       //改了格式
+    [dateFormatter setDateFormat:Date_version_yyyy];       //改了格式
     self.textdate_inquired.text =[dateFormatter stringFromDate:self.caseInquire.date_inquired];
     self.caseInquire.locality = [self.caseInquire.locality stringByReplacingOccurrencesOfString:@"m" withString:@"M"];
     self.textlocality.text = self.caseInquire.locality;

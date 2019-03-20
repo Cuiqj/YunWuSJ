@@ -544,7 +544,7 @@ BOOL _wasKeyboardManagerEnabled;
     
     proveDate=[NSDate date];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [dateFormatter setDateFormat:line_Date_version_yyyy];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSString *dateString=[dateFormatter stringFromDate:proveDate];
     NSString *yearString=[dateString substringToIndex:4];
@@ -780,7 +780,7 @@ BOOL _wasKeyboardManagerEnabled;
         self.textCasemark3.text=self.caseInfo.case_mark3;
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
         [formatter setLocale:[NSLocale currentLocale]];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        [formatter setDateFormat:line_Date_version_yyyy];
         self.textHappenDate.text=[formatter stringFromDate:self.caseInfo.happen_date];
         self.textRoadSegment.text=[RoadSegment roadNameFromSegment:self.caseInfo.roadsegment_id];
         if([self.caseInfo.roadsegment_id isEqualToString:@"0"]){
@@ -868,7 +868,7 @@ BOOL _wasKeyboardManagerEnabled;
     self.caseInfo.sfz_id=@"0";
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:line_Date_version_yyyy];
     if (![self.textHappenDate.text isEmpty]) {
         self.caseInfo.happen_date=[formatter dateFromString:self.textHappenDate.text];
     }else{
@@ -959,7 +959,7 @@ BOOL _wasKeyboardManagerEnabled;
     //在案件编辑页面传入参数
     NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale currentLocale]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    [formatter setDateFormat:line_Date_version_yyyy];
     caseProveInfo.start_date_time=[formatter dateFromString:self.textHappenDate.text];
     if (caseProveInfo.end_date_time == nil) {
         caseProveInfo.end_date_time=[formatter dateFromString:self.textHappenDate.text];

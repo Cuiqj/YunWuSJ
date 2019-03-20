@@ -48,6 +48,17 @@
 #define ProcessNameDefault @"路政赔偿补偿案件一般程序"
 #define BREAK_TWO_RULES @"《中华人民共和国公路法》第四十六条、第五十二条"
 
+#define Date_version_yyyy @"yyyy年M月d日HH时mm分"
+#define line_Date_version_yyyy @"yyyy-MM-dd HH:mm"
+#define Date_version_yyyy_small @"yyyy年M月d日"
+#define Date_version_yyyy_smallsub @"yyyy年MM月dd日HH时"
+
+#define Date_version_m @"M月d日HH时mm分"
+#define Date_version_m_small @"M月d日"
+#define Date_version_m_smallsub @"M月d日HH时"
+
+#define Date_version_h @"HH时mm分"
+
 #define VERSION_NAME @"云梧路政"
 
 //#define VERSION_TIME @"2018年03月20号"

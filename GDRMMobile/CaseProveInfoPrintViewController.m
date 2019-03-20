@@ -157,7 +157,7 @@ static NSString * const xmlName = @"ProveInfoTable";
     }
     //勘验时间
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    [dateFormatter setDateFormat:Date_version_yyyy];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     self.textstart_date_time.text = [dateFormatter stringFromDate:self.caseProveInfo.start_date_time];
 //    self.caseProveInfo.start_date_time =
@@ -395,14 +395,14 @@ static NSString * const xmlName = @"ProveInfoTable";
         self.caseProveInfo.start_date_time = date;
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [dateFormatter setDateFormat:Date_version_yyyy];
         [dateFormatter setLocale:[NSLocale currentLocale]];
         self.textstart_date_time.text = [dateFormatter stringFromDate:self.caseProveInfo.start_date_time];
     }else if (tag == self.textend_date_time.tag) {
         self.caseProveInfo.end_date_time = date;
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+        [dateFormatter setDateFormat:Date_version_yyyy];
         [dateFormatter setLocale:[NSLocale currentLocale]];
         self.textend_date_time.text = [dateFormatter stringFromDate:self.caseProveInfo.end_date_time];
     }

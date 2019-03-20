@@ -379,7 +379,7 @@
             <content>
                 <data>
                     <attributeName>start_date_time</attributeName>
-                    <mode>MM</mode>
+                    <mode>M</mode>
                 </data>
             </content>
         </UITextView>
@@ -391,7 +391,7 @@
             <content>
                 <data>
                     <attributeName>start_date_time</attributeName>
-                    <mode>dd</mode>
+                    <mode>d</mode>
                 </data>
             </content>
         </UITextView>
@@ -492,7 +492,7 @@
             <content>
                 <data>
                     <attributeName>start_date_time</attributeName>
-                    <mode>MM</mode>
+                    <mode>M</mode>
                 </data>
             </content>
         </UITextView>
@@ -504,7 +504,7 @@
             <content>
                 <data>
                     <attributeName>start_date_time</attributeName>
-                    <mode>dd</mode>
+                    <mode>d</mode>
                 </data>
             </content>
         </UITextView>
