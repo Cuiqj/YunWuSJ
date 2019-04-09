@@ -116,7 +116,10 @@
 @property (nonatomic,assign) BOOL needsMove;
 
 @property (nonatomic, retain) NSString *inspectionID;
+@property (nonatomic, retain) NSString                  *sfzID;
+
 @property (nonatomic, assign) RoadInspectViewController *roadInspectVC;
+
 
 
 //处罚结果。 反馈

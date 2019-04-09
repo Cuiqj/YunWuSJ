@@ -15,6 +15,7 @@
 #import "CaseProveInfo.h"
 
 #import "Sfz.h"
+#import "Zd.h"
 
 #define WIDTH_OFF_SET 654.0
 #define HEIGHT_OFF_SET 0
@@ -1209,6 +1210,11 @@ BOOL _wasKeyboardManagerEnabled;
     self.textRoadSegment.text=roadName;
 }
 
+-(NSArray*) getZadao{
+    NSArray *data =[Zd ZdByShoufzID:self.sfzID];
+    return data;
+}
+
 - (void)setRoadPlace:(NSString *)place{
     self.textPlace.text=place;
 }
@@ -1218,7 +1224,7 @@ BOOL _wasKeyboardManagerEnabled;
 }
 - (void)setShoufz:(NSString*) sfzname sfzID:(NSString*)sfzID{
     //    选择为收费站名称
-//    self.sfzID                   = sfzID;
+    self.sfzID                   = sfzID;
     Sfz * iShoufz   = [Sfz aSfzForID:sfzID];
     self.textStationStartKM.text=[NSString stringWithFormat:@"%02d", iShoufz.station_start.integerValue/1000];
     self.textStationStartM.text=[NSString stringWithFormat:@"%03d",iShoufz.station_start.integerValue%1000];
