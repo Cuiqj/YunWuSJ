@@ -263,28 +263,43 @@ typedef enum {
 
 //根据伤亡人数，判断事故性质
 - (IBAction)textChanged:(id)sender {
-    //轻微事故：一次造成轻伤1-2人
-    //一般事故：指一次造成重伤1-2人或者轻伤3人及3人以上
-    //重大事故：指一次造成死亡1-2人或者重伤3-10人
-    //特大事故：指一次造成死亡3人以上，或重伤11人及11人以上或者死亡1人同时重伤8人以上；或者死亡2人同时重伤5人以上
+//    （一）特别重大事故，是指造成30人以上死亡，或者100人以上重伤（包括急性工业中毒，下同），或者1亿元以上直接经济损失的事故；
+//    （二）重大事故，是指造成10人以上30人以下死亡，或者50人以上100人以下重伤，或者5000万元以上1亿元以下直接经济损失的事故；
+//    （三）较大事故，是指造成3人以上10人以下死亡，或者10人以上50人以下重伤，或者1000万元以上5000万元以下直接经济损失的事故；
+//    （四）一般事故，是指造成3人以下死亡，或者10人以下重伤，或者1000万元以下直接经济损失的事故。
+//    （五）轻微事故，是指无人受伤，或造成轻伤。
+
     NSInteger deathNum=[_textdeath.text integerValue];
     NSInteger badwoundNum=[_textbadwound.text integerValue];
     NSInteger fleshwoundNum=[_textfleshwound.text integerValue];
-    if (fleshwoundNum>=0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
+    if (fleshwoundNum>=0 && badwoundNum==0 && deathNum==0) {
         _textCaseStyle.text= @"轻微事故";
-    } else if (badwoundNum<=2 && deathNum==0) {
-         _textCaseStyle.text = @"一般事故";
-    }  else if (fleshwoundNum>2 && badwoundNum==0 && deathNum==0) {
+    } else if (badwoundNum<10 && deathNum<3) {
         _textCaseStyle.text = @"一般事故";
-    } else if (badwoundNum<11 && deathNum==0) {
+    }  else if (badwoundNum<50 && deathNum<10) {
+        _textCaseStyle.text = @"较大事故";
+    } else if (badwoundNum<100 && deathNum<30) {
         _textCaseStyle.text = @"重大事故";
-    } else if (badwoundNum<8 && deathNum==1) {
-        _textCaseStyle.text = @"重大事故";
-    } else if (badwoundNum<5 && deathNum==2) {
-        _textCaseStyle.text = @"重大事故";
+    } else if (badwoundNum>=100 || deathNum>=30) {
+        _textCaseStyle.text = @"特别重大事故";
     } else {
-        _textCaseStyle.text = @"特大事故";
+        _textCaseStyle.text = @"";
     }
+//    if (fleshwoundNum>=0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
+//        _textCaseStyle.text= @"轻微事故";
+//    } else if (badwoundNum<=2 && deathNum==0) {
+//         _textCaseStyle.text = @"一般事故";
+//    }  else if (fleshwoundNum>2 && badwoundNum==0 && deathNum==0) {
+//        _textCaseStyle.text = @"一般事故";
+//    } else if (badwoundNum<11 && deathNum==0) {
+//        _textCaseStyle.text = @"重大事故";
+//    } else if (badwoundNum<8 && deathNum==1) {
+//        _textCaseStyle.text = @"重大事故";
+//    } else if (badwoundNum<5 && deathNum==2) {
+//        _textCaseStyle.text = @"重大事故";
+//    } else {
+//        _textCaseStyle.text = @"特大事故";
+//    }
 //    轻微事故：是指一次造成轻伤1至2人
 //    一般事故：是指一次造成重伤1至2人，或者轻伤3人以上，
 //    重大事故：是指一次造成死亡1至2人，或者重伤3人以上10人以下，

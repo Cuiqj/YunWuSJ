@@ -25,7 +25,8 @@ typedef enum {
     kStation,
     kDescription,
     kRoadType,
-    kStationCheckStatus
+    kStationCheckStatus,
+    kAdress
 }InspectionCheckState;
 
 @protocol InspectionPickerDelegate;

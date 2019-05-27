@@ -10,6 +10,7 @@
 #import "NewInspectionViewController.h"
 #import "UserInfo.h"
 #import "OrgInfo.h"
+#import "InspectionRecord.h"
 
 @interface NewInspectionViewController ()
 @property (nonatomic,retain) NSArray *itemArray;
@@ -170,7 +171,7 @@
 #pragma mark - IBActions
 - (IBAction)btnCancel:(UIBarButtonItem *)sender {
     [self.delegate popBackToMainView];
-    [self dismissModalViewControllerAnimated:NO];    
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (IBAction)btnSave:(UIBarButtonItem *)sender {
@@ -184,7 +185,7 @@
     }
     if (!isBlank) {
         Inspection *newInspection=[Inspection newDataObjectWithEntityName:@"Inspection"];
-        NSString *newInspectionID=newInspection.myid;
+        NSString * newInspectionID=newInspection.myid;
         NSString *last = [newInspection.yjzb substringFromIndex:newInspection.yjzb.length-1];
         if (![last isEqualToString:@"。"]) {
             newInspection.yjzb = [NSString stringWithFormat:@"%@。",newInspection.yjzb];
@@ -205,9 +206,9 @@
         OrgInfo *selectedorg = [OrgInfo orgInfoForSelected];
         newInspection.organization_id=  selectedorg.myid;
         
-        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-        NSString *currentUserName=[[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
-        NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
+        NSString * currentUserID = [[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+        NSString * currentUserName = [[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
+        NSArray * inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
         if (inspectorArray.count < 1) {
             newInspection.inspectionor_name = currentUserName;
         } else {
@@ -232,10 +233,38 @@
             newCheck.checkresult=checkItem.checkResult;
             [[AppDelegate App] saveContext];
         }
-        [self dismissModalViewControllerAnimated:YES];
+        [self initwithInspectionrecordwithdate:newInspection.time_start  addmyid:newInspection.myid];
+        [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate setInspectionDelegate:newInspectionID];
         [self.delegate addObserverToKeyBoard];
     }
+}
+
+- (void)initwithInspectionrecordwithdate:(NSDate *)date addmyid:(NSString *)inspectionid{
+    InspectionRecord * inspectionRecord=[InspectionRecord newDataObjectWithEntityName:@"InspectionRecord"];
+    inspectionRecord.roadsegment_id = @"00";//DynamicInfo.roadsegment_id;
+    inspectionRecord.fix            = @"";//DynamicInfo.fix;
+    inspectionRecord.inspection_id  = inspectionid;
+    inspectionRecord.relationid     = @"00";//DynamicInfo.myid;//@"0";
+    inspectionRecord.start_time     = date;
+    inspectionRecord.station        = 0;//DynamicInfo.station_start;
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setDateFormat:@"HH时mm分"];
+    NSString * banstyle = @"";
+    if([self.textWorkShift.text isEqualToString:@"晚班"]){
+        banstyle = @"中班";
+    }else if([self.textWorkShift.text isEqualToString:@"早班"]){
+        banstyle = @"晚班";
+    }else if ([self.textWorkShift.text isEqualToString:@"中班"]){
+        banstyle = @"早班";
+    }else{
+        banstyle = @"XX班";
+    }
+//    00时00分与中班人员在办公室进行交接班，检查巡查装备齐全完好，车况正常，开启粤W05682车载视频，视频清晰。
+    NSString *remark=[NSString stringWithFormat:@"%@与%@人员在%@进行交接班，检查巡查装备齐全完好，车况正常，开启%@车载视频，视频清晰。",[dateFormatter stringFromDate:date],banstyle,self.textadress.text,self.textAutoNumber.text];
+    inspectionRecord.remark = remark;
+    [[AppDelegate App] saveContext];
 }
 
 - (IBAction)btnOK:(UIBarButtonItem *)sender {
@@ -300,9 +329,16 @@
         case 103:
             [self pickerPresentPickerState:kWorkShifts fromRect:sender.frame];
             break;
+        case 104:
+            [self pickerPresentPickerState:kAdress fromRect:sender.frame];
+            break;
         default:
             break;
     }    
+}
+
+- (IBAction)changeadress:(id)sender {
+    [self.textadress becomeFirstResponder];
 }
 
 - (IBAction)checkDeliverText:(UIButton *)sender {
@@ -339,6 +375,9 @@
             break;
         case kWorkShifts:
             self.textWorkShift.text=checkText;
+            break;
+        case kAdress:
+            self.textadress.text=checkText;
             break;
         default:
             break;

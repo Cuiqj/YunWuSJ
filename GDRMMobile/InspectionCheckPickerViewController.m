@@ -62,6 +62,10 @@
             break;
         case kStationCheckStatus:
             self.data = [Systype typeValueForCodeName:@"过站状况"];
+            break;
+        case kAdress:
+            self.data = [Systype typeValueForCodeName:@"巡查交接班地址"];
+            break;
         default:
             break;
     }

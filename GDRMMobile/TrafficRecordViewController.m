@@ -987,24 +987,23 @@ enum kUISwitchTag {
     self.textcarType.text = @"";
 }
 
+//    判断事故性质
 - (IBAction)textChanged:(id)sender {
     NSInteger deathNum=[self.textdeath_sum.text integerValue];
     NSInteger badwoundNum=[self.textbadwound_sum.text integerValue];
     NSInteger fleshwoundNum=[self.textfleshwound_sum.text integerValue];
-    if (fleshwoundNum>=0 && fleshwoundNum<=2 && badwoundNum==0 && deathNum==0) {
-        self.textProperty.text = @"轻微事故";
-    } else if (badwoundNum<=2 && deathNum==0) {
+    if (fleshwoundNum>=0 && badwoundNum==0 && deathNum==0) {
+        self.textProperty.text= @"轻微事故";
+    } else if (badwoundNum<10 && deathNum<3) {
         self.textProperty.text = @"一般事故";
-    }  else if (fleshwoundNum>2 && badwoundNum==0 && deathNum==0) {
-        self.textProperty.text = @"一般事故";
-    } else if (badwoundNum<11 && deathNum==0) {
+    }  else if (badwoundNum<50 && deathNum<10) {
+        self.textProperty.text = @"较大事故";
+    } else if (badwoundNum<100 && deathNum<30) {
         self.textProperty.text = @"重大事故";
-    } else if (badwoundNum<8 && deathNum==1) {
-        self.textProperty.text = @"重大事故";
-    } else if (badwoundNum<5 && deathNum==2) {
-        self.textProperty.text = @"重大事故";
+    } else if (badwoundNum>=100 || deathNum>=30) {
+        self.textProperty.text = @"特别重大事故";
     } else {
-        self.textProperty.text = @"特大事故";
+        self.textProperty.text = @"";
     }
 }
 

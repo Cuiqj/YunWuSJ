@@ -23,6 +23,11 @@
 - (IBAction)btnOK:(UIBarButtonItem *)sender;
 - (IBAction)btnDismiss:(UIBarButtonItem *)sender;
 - (IBAction)textTouch:(UITextField *)sender;
+
+//交班地点
+@property (weak, nonatomic) IBOutlet UITextField *textadress;
+- (IBAction)changeadress:(id)sender;
+
 - (IBAction)checkDeliverText:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *inputView;
