@@ -74,9 +74,39 @@
     self.textpersonnel_class.tag = 555;
     self.textpersonnel_class.delegate = self;
     
+    
+//    self.textmileage_before_trans.delegate = self;
+//    self.textmileage_after_trans.delegate = self;
+//    监听不行，只要输入就会触发方法    比如 输入345 在输入3的时候会触发 4、5的时候也都会触发
+//    [self.textmileage_after_trans addTarget:self  action:@selector(textFieldafterDidChange:)
+//         forControlEvents:UIControlEventEditingChanged];
+//    [self.textmileage_before_trans addTarget:self  action:@selector(textFieldbeforeDidChange:)
+//                           forControlEvents:UIControlEventEditingChanged];
     self.inspectiontotal = [InspectionTotal InspectionTotalforinspectionid:self.inspectionID];
     [self btnShowDataforNSString:@"展示"];
+    //交班公里数测试    是否大于接班公里数
+//    [self.textmileage_after_trans addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+//}
+//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    if ([keyPath isEqualToString:@"text"] && object == self.textmileage_after_trans) {
+//        NSLog(@"textField3 - 输入框内容改变,当前内容为: %@",self.textmileage_after_trans.text);
+//    }else{
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
+//}
+//-(void)dealloc{
+//    [self.self.textmileage_after_trans removeObserver:self forKeyPath:@"text" context:nil];
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField == self.textmileage_after_trans || textField == self.textmileage_before_trans) {
+        if ([self.textmileage_after_trans.text intValue] <= [self.textmileage_before_trans.text intValue]) {
+            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"交班公里数必须大于接班公里数" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -85,6 +115,11 @@
 
 
 - (IBAction)BtnSaveClick:(id)sender {
+    if ([self.textmileage_after_trans.text intValue] <= [self.textmileage_before_trans.text intValue]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"交班公里数必须大于接班公里数,否则不能保存" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     self.inspectiontotal = [InspectionTotal InspectionTotalforinspectionid:self.inspectionID];
     if (self.inspectiontotal == nil) {
         self.inspectiontotal = [InspectionTotal newDataObjectWithEntityName:@"InspectionTotal"];
@@ -177,6 +212,15 @@
     }
     return YES;
 }
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+//    if (textField == self.textmileage_after_trans) {
+//        if(self.textmileage_before_trans.text.intValue >self.textmileage_after_trans.text.intValue){
+//            return NO;
+//        }
+//    }
+//    return YES;
+//}
+
 - (void)setSelectData:(NSString *)data{
     self.textpersonnel_class.text = data;
     self.inspectiontotal.personnel_class = data;

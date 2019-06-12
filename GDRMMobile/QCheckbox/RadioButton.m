@@ -33,8 +33,7 @@
 
 @implementation RadioButton
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
 		if(![[self allTargets] containsObject:self]) {
@@ -44,8 +43,7 @@
     return self;
 }
 
--(void) awakeFromNib
-{
+-(void) awakeFromNib{
 	if(![[self allTargets] containsObject:self]) {
 		[super addTarget:self action:@selector(onTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
 	}
