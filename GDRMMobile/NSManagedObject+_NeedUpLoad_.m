@@ -256,11 +256,17 @@
                 case NSDateAttributeType:{
                     if (obj) {
                         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//                        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//                        NSDate * needdate = [dateFormatter dateFromString:@"2019-08-05"];
+//                        if(needdate > obj){
+//                            return nil;
+//                        }
                         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
                         [dateFormatter setLocale:[NSLocale currentLocale]];
                         NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
                         [dateFormatter setTimeZone:timeZone];
                         elementString = [[NSString alloc] initWithFormat:@"<%@>%@</%@>\n",attriName,[dateFormatter stringFromDate:obj],attriName];
+//                        NSLog(@"%@",[dateFormatter stringFromDate:obj]);
                     }
                 }
                     break;
@@ -343,11 +349,28 @@
     
     NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath=[pathArray objectAtIndex:0];
-    NSString *photoPath=[NSString stringWithFormat:@"CasePhoto/%@",photo.proveinfo_id];
+    NSString *photoPath;
+    if(photo.proveinfo_id){
+        photoPath = [NSString stringWithFormat:@"CasePhoto/%@",photo.proveinfo_id];
+    }else{
+        photoPath = [NSString stringWithFormat:@"CasePhoto/%@",photo.project_id];
+    }
     photoPath=[documentPath stringByAppendingPathComponent:photoPath];
     
-    UIImage *image        = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
-    image=[UIImage imageWithContentsOfFile:photo.photopath];
+//    /var/mobile/Containers/Data/Application/ADD6AE2D-3112-4028-9608-390E6E6482B9/Documents/CasePhoto/190709130516087/1.jpg
+
+    UIImage * image        = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
+    if(image){
+        
+    }else{
+//        photoPath = [photoPath stringByReplacingOccurrencesOfString:@"CasePhoto/" withString:@"InspectionConstruction/"];
+        image= [UIImage imageWithContentsOfFile:[[photoPath stringByReplacingOccurrencesOfString:@"CasePhoto/" withString:@"InspectionConstruction/"] stringByAppendingPathComponent:photo.photo_name]];
+    }
+    if(image){
+        
+    }else{
+        image= [UIImage imageWithContentsOfFile:photo.photopath];
+    }
     NSData *data          = UIImageJPEGRepresentation(image, 0.5);// UIImageJPGRepresentation(image);
     NSString *stringImage = [NSString base64forData:data];
     casePhotoStr          = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
@@ -371,6 +394,11 @@
 //    UIImage *image        = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
 //    image=[UIImage imageWithContentsOfFile:photo.photopath];
     UIImage * image = [[UIImage alloc] initWithContentsOfFile:photoPath];
+    if(image){
+        
+    }else{
+        image= [UIImage imageWithContentsOfFile:photo.photopath];
+    }
     NSData *data          = UIImageJPEGRepresentation(image, 0.5);// UIImageJPGRepresentation(image);
     NSString *stringImage = [NSString base64forData:data];
     casePhotoStr          = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
@@ -388,8 +416,8 @@
     CasePhoto *photo  = (CasePhoto*)self;
     UIImage *image=[UIImage imageWithContentsOfFile:photo.photopath];
     NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
-    NSString*imageString=[NSString base64forData:imageData];
-    
+    NSString * imageString=[NSString base64forData:imageData];
+    return imageString;
 }
 + (NSDictionary *)replacedKeyFromPropertyName{
     return @{
@@ -400,7 +428,14 @@
              };
 }
 
-
++ (NSArray *)uploadAnyClassArrayOfObject{
+    NSManagedObjectContext *moc=  [[AppDelegate App] managedObjectContext];
+    NSEntityDescription *entity= [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:moc];
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    [request setEntity:entity];
+    [request setPredicate:nil];
+    return [moc executeFetchRequest:request error:nil];
+}
 
 
 @end

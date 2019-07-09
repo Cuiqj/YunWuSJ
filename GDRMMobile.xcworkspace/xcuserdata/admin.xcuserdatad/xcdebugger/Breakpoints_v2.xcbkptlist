@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/CaseViewController.m"
-            timestampString = "574738307.159533"
+            timestampString = "584350964.106648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1514"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/CaseViewController.m"
-            timestampString = "574738307.159732"
+            timestampString = "584350964.107079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1619"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/CaseViewController.m"
-            timestampString = "576468623.536137"
+            timestampString = "584350964.107522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1285"
@@ -448,6 +448,22 @@
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GDRMMobile/CaseViewController.m"
+            timestampString = "584350964.107905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1889"
+            endingLineNumber = "1889"
+            landmarkName = "-cachePhotoForIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

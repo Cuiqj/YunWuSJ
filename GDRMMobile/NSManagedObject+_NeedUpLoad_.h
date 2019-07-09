@@ -34,4 +34,10 @@
 -(NSString*)JSONStringForCasePhoto;
 
 -(NSString *)dataXMLStringForCasePhotoServiceManage_jpg;
+
+
+
+
+//上传所有写入数据
++ (NSArray *)uploadAnyClassArrayOfObject;
 @end

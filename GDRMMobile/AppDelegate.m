@@ -182,6 +182,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     UploadRecord *uploadCheck = [[UploadRecord alloc] init];
     [uploadCheck asyncDel];
+    //服务器地址
+    [AppDelegate App].serverAddress = @"http://124.172.189.177:8123/irmsdata_yw_ceshi";
 //    if([WebServiceHandler isServerReachable]) {
         [self hasUpdateVersion];
 //    }

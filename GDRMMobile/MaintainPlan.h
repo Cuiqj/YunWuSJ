@@ -18,11 +18,12 @@
 @property (nonatomic, retain) NSString * org_principal;
 @property (nonatomic, retain) NSDate * date_start;
 @property (nonatomic, retain) NSDate * date_end;
-@property (nonatomic, retain) NSDate * realy_end_time;
 @property (nonatomic, retain) NSString * project_address;
 @property (nonatomic, retain) NSString * close_desc;
 @property (nonatomic, retain) NSString * tel_number;
 @property (nonatomic, retain) NSString * remark;
+
+@property (nonatomic, retain) NSDate * realy_end_time;
 @property (nonatomic, retain) NSNumber * is_finish;
 @property (nonatomic, retain) NSNumber * station_start;
 @property (nonatomic, retain) NSNumber * station_end;

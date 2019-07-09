@@ -47,8 +47,7 @@
     NSString *libraryDirectory = [paths objectAtIndex:0];
     NSString *plistFileName = @"Settings.plist";
     NSString *plistPath = [libraryDirectory stringByAppendingPathComponent:plistFileName];
-    NSDictionary *serverSettingsDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: self.txtServer.text, self.txtFile.text, nil]
-                                                                   forKeys:[NSArray arrayWithObjects: @"server address", @"file address", nil]];
+    NSDictionary * serverSettingsDict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects: self.txtServer.text, self.txtFile.text, nil] forKeys:[NSArray arrayWithObjects: @"server address", @"file address", nil]];
     NSPropertyListFormat format;
     NSString *errorDesc = nil;
     NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
@@ -68,6 +67,8 @@
         }
     }
     [AppDelegate App].serverAddress=self.txtServer.text;
+    //服务器地址
+    [AppDelegate App].serverAddress = @"http://124.172.189.177:8123/irmsdata_yw_ceshi";
     [AppDelegate App].fileAddress=self.txtFile.text;
     [self dismissModalViewControllerAnimated:YES];
 }

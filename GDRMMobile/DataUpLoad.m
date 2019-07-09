@@ -314,7 +314,7 @@
 
 //所需上传的表名称
 //modify by lxm 2013.05.13
-static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotice",@"CaseDeformation",@"CaseInfo",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"InspectionConstruction",@"CasePhoto",@"MaintainCheckDaily",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceManage",@"ServiceManageDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeSpaceCheckSpecialB",@"BridgeSpaceCheckSpecial",@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily",@"RescueRecord",@"InspectionTotal"};
+static NSString *dataNameArray[UPLOADCOUNT]={@"InspectionConstruction",@"CaseInfo",@"CasePhoto",@"Task",@"AtonementNotice",@"CaseDeformation",@"",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"MaintainCheckDaily",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceManage",@"ServiceManageDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeSpaceCheckSpecialB",@"BridgeSpaceCheckSpecial",@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily",@"RescueRecord",@"InspectionTotal"};
 
 
 static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily"};
@@ -368,7 +368,8 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
     //上传数据
 - (void)uploadDataAtIndex:(NSInteger)index{
     NSString * currentDataName = dataNameArray[index];
-    NSArray *dataArray = [NSClassFromString(currentDataName) uploadArrayOfObject];
+//    NSArray *dataArray = [NSClassFromString(currentDataName) uploadArrayOfObject];
+    NSArray *dataArray = [NSClassFromString(currentDataName) uploadAnyClassArrayOfObject];
     if (dataArray.count > 0 ) {
         if ([currentDataName isEqualToString:@"CasePhoto"]) {
             NSString *dataXML = @"";

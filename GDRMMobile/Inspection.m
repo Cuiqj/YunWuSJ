@@ -98,4 +98,26 @@
  }
  }
  */
+//08:00   16:00   00:00
++(NSDate *)inspectionfortime_endsettingtimeyjsj:(NSDate *)time_end andtime_start:(NSDate *)time_start andclasse:(NSString *)classe{
+    NSDate * temp;
+    NSDateFormatter * matter = [[NSDateFormatter alloc] init];
+    [matter setDateFormat:@"yyyy年MM月dd日"];
+    NSString * timestring;
+    if([classe containsString:@"晚班"]){
+        temp = time_end;
+        timestring = [NSString stringWithFormat:@"%@08时00分",[matter stringFromDate:temp]];
+    }else if([classe containsString:@"早班"]){
+        temp = time_start;
+        timestring = [NSString stringWithFormat:@"%@16时00分",[matter stringFromDate:temp]];
+    }else if([classe containsString:@"中班"]){
+        temp = [NSDate dateWithTimeInterval:24*60*60 sinceDate:time_start];
+        timestring = [NSString stringWithFormat:@"%@00时00分",[matter stringFromDate:temp]];
+    }else{
+        return time_end;
+    }
+    [matter setDateFormat:@"yyyy年MM月dd日HH时mm分"];
+    return [matter dateFromString:timestring];
+}
+
 @end
