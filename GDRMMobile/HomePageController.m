@@ -141,6 +141,15 @@
 }
 //iOS7适配
 -(void)viewDidLoad{
+    NSString * obj;
+    if (obj.length<=0) {
+        NSLog(@"%@",obj);
+    }else{
+        NSLog(@"%@",obj);
+    }
+    
+    
+    
     //隐藏交通救援
 //    [self.TrafficRescueButton setHidden:YES];
     [self.YingJIBaoZhangButton setHidden:YES];

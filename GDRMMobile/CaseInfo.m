@@ -10,10 +10,11 @@
 #import "FileCode.h"
 #import "RoadSegment.h"
 
-NSString * const CaseTypeIDPei = @"11";
-NSString * const CaseTypeIDFa = @"12";
+NSString * const CaseTypeIDPei = @"11";     //案件
+NSString * const CaseTypeIDFa = @"12";      //违法
 NSString * const CaseTypeIDDefault = @"11";
-NSString * const CaseTypeIDBaoxian = @"20";
+NSString * const CaseTypeIDBaoxian = @"20";     //保险
+//案件 类型
 
 static NSString *lochus_code = @"";
 

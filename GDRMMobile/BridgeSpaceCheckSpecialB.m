@@ -10,6 +10,10 @@
 #import "OrgInfo.h"
 
 @implementation BridgeSpaceCheckSpecialB
+
+@dynamic recheck;
+@dynamic accept_date;
+@dynamic acceptor;
 @dynamic road_name;
 @dynamic org_id;
 @dynamic check_user;

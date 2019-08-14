@@ -124,6 +124,9 @@
     if (self.inspectiontotal == nil) {
         self.inspectiontotal = [InspectionTotal newDataObjectWithEntityName:@"InspectionTotal"];
         self.inspectiontotal.inspectionid = self.inspectionID;
+        if(self.inspectiontotal.inspectionid.length <= 0){
+            self.inspectiontotal.inspectionid = [[NSUserDefaults standardUserDefaults] valueForKey:INSPECTIONKEY];
+        }
         Inspection * inspection = [Inspection Inspectionforinspectionid:self.inspectionID];
         self.inspectiontotal.car_num = inspection.carcode;
         self.inspectiontotal.inspect_date = inspection.date_inspection;

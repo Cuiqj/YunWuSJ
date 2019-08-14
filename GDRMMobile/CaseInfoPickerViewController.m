@@ -51,8 +51,7 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload{
     [self setData:nil];
     [self setPickerPopover:nil];
     [self setDelegate:nil];

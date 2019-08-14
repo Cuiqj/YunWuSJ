@@ -185,13 +185,14 @@
     }
     if (!isBlank) {
         Inspection *newInspection=[Inspection newDataObjectWithEntityName:@"Inspection"];
-        NSString * newInspectionID=newInspection.myid;
+        NSString * newInspectionID = newInspection.myid;
         NSString *last = [newInspection.yjzb substringFromIndex:newInspection.yjzb.length-1];
         if (![last isEqualToString:@"。"]) {
             newInspection.yjzb = [NSString stringWithFormat:@"%@。",newInspection.yjzb];
         }
-        [[NSUserDefaults standardUserDefaults] setValue:newInspectionID forKey:INSPECTIONKEY];        
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setValue:newInspectionID forKey:INSPECTIONKEY];
+        [defaults synchronize];
         NSDateFormatter *formatter=[[NSDateFormatter alloc] init];
         [formatter setDateFormat:line_Date_version_yyyy];
         [formatter setLocale:[NSLocale currentLocale]];
@@ -233,7 +234,7 @@
             newCheck.checkresult=checkItem.checkResult;
             [[AppDelegate App] saveContext];
         }
-        [self initwithInspectionrecordwithdate:newInspection.time_start  addmyid:newInspection.myid];
+        [self initwithInspectionrecordwithdate:newInspection.time_start  addmyid:newInspectionID];
         [self dismissViewControllerAnimated:YES completion:nil];
         [self.delegate setInspectionDelegate:newInspectionID];
         [self.delegate addObserverToKeyBoard];

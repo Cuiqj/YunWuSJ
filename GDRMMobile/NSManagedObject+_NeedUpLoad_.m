@@ -54,7 +54,12 @@
     if ([obj respondsToSelector:@selector(organization_id)]) {
         NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
         NSString *orgID = [UserInfo userInfoForUserID:currentUserID].organization_id;
-        [obj setValue:orgID forKey:@"organization_id"];
+        NSString *currentOrgID=[[NSUserDefaults standardUserDefaults] stringForKey:ORGKEY];
+        if(currentOrgID.length >0){
+            [obj setValue:currentOrgID forKey:@"organization_id"];
+        }else{
+            [obj setValue:orgID forKey:@"organization_id"];
+        }
     }
     if ([entityName isEqualToString:@"CaseInfo"]) {
         CaseInfo *caseInfo    = (CaseInfo *)obj;
@@ -212,10 +217,17 @@
     return objArrayString;
 }
 - (NSString *)dataXMLString{
+    NSString *currentOrgID=[[NSUserDefaults standardUserDefaults] stringForKey:ORGKEY];
+    if (currentOrgID.length > 0) {
+        
+    }else{
+        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+        currentOrgID = [UserInfo userInfoForUserID:currentUserID].organization_id;
+    }
     NSString *dataXMLString  = @"";
     NSEntityDescription *entity=[self entity];
     NSDictionary *attributes = [entity attributesByName];
-    for (NSString *attriName in [attributes allKeys]) {
+    for (NSString * attriName in [attributes allKeys]) {
         if (![attriName isEqualToString:@"isuploaded"]) {
             NSAttributeDescription *attriDesc = [attributes objectForKey:attriName];
             NSString *elementString           = @"";
@@ -224,6 +236,15 @@
                 case NSStringAttributeType:{
                     if (obj == nil) {
                         obj = @"";
+                        if ([attriName isEqualToString:@"organization_id"]) {
+                            obj = currentOrgID;
+                        }
+                        if ([attriName isEqualToString:@"inspection_id"]) {
+                            obj = currentOrgID;
+                        }
+                        if ([attriName isEqualToString:@"inspectionid"]) {
+                            obj = currentOrgID;
+                        }
                     }
                     if (![attriName isEqualToString:@"maintainplan_id"]) {
                         if ([attriName isEqualToString:@"myid"]) {

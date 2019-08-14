@@ -9,6 +9,7 @@
 
 @implementation BridgeSpaceCheckSpecial
 
+@dynamic myid;
 @dynamic check_project;
 @dynamic check_content;
 @dynamic check_require;

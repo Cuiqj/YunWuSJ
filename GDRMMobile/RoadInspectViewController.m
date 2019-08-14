@@ -1323,6 +1323,9 @@ InspectionCheckState inspectionState;
     UIStoryboard *mainstoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     InspectionTotalViewController * InspectionTotalVC =[mainstoryboard instantiateViewControllerWithIdentifier:@"InspectionTotalVC"];
     InspectionTotalVC.inspectionID = self.inspectionID;
+    if(InspectionTotalVC.inspectionID.length <=0){
+        InspectionTotalVC.inspectionID = [[NSUserDefaults standardUserDefaults] valueForKey:INSPECTIONKEY];
+    }
     [self.navigationController pushViewController:InspectionTotalVC animated:YES];
 }
 @end

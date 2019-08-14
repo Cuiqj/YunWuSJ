@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/RoadInspectViewController.m"
-            timestampString = "577176923.8851939"
+            timestampString = "586662224.7858239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1126"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/RoadInspectViewController.m"
-            timestampString = "577176923.88547"
+            timestampString = "586662224.785934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1151"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/RoadInspectViewController.m"
-            timestampString = "577176923.885525"
+            timestampString = "586662224.7859941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1148"
@@ -223,22 +223,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1514"
             endingLineNumber = "1514"
-            landmarkName = "-saveCaseProveInfoForCase:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GDRMMobile/CaseViewController.m"
-            timestampString = "584350964.107079"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1619"
-            endingLineNumber = "1619"
             landmarkName = "-saveCaseProveInfoForCase:"
             landmarkType = "7">
          </BreakpointContent>
@@ -329,22 +313,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GDRMMobile/RoadSegmentPickerViewController.m"
-            timestampString = "573120289.982522"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewWillAppear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "GDRMMobile/ViewsController/AdministrativePenalty/CaseInfo/CaseMainInfo/AdministrativePenaltyViewController.m"
             timestampString = "576469080.435163"
             startingColumnNumber = "9223372036854775807"
@@ -426,23 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GDRMMobile/NewInspectionViewController.m"
-            timestampString = "577704304.805645"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GDRMMobile/NewInspectionViewController.m"
-            timestampString = "577704304.80617"
+            timestampString = "586662224.786298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"

@@ -30,14 +30,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
-- (void)viewDidUnload
-{
+- (void)viewDidUnload{
     [self setTxtServer:nil];
     [self setTxtFile:nil];
-
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -57,18 +54,15 @@
                                        format:&format
                                        errorDescription:&errorDesc] mutableCopy];
     [plistDict setObject:serverSettingsDict forKey:@"Server Settings"];
-    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
-                                                                   format:NSPropertyListXMLFormat_v1_0
-                                                         errorDescription:&error];
-    
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
     if ([[NSFileManager defaultManager] isWritableFileAtPath:plistPath]) {
         if(plistData) {
             [plistData writeToFile:plistPath atomically:YES];
         }
     }
     [AppDelegate App].serverAddress=self.txtServer.text;
-    //服务器地址
-    [AppDelegate App].serverAddress = @"http://124.172.189.177:8123/irmsdata_yw_ceshi";
+    //服务器地址       测试地址              真实地址http://124.172.189.177:8123/irmsdata_yw
+//    [AppDelegate App].serverAddress = @"http://124.172.189.177:8123/irmsdata_yw_ceshi";
     [AppDelegate App].fileAddress=self.txtFile.text;
     [self dismissModalViewControllerAnimated:YES];
 }

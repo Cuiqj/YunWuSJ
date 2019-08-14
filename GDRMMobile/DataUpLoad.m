@@ -310,7 +310,8 @@
 #import "CaseLawInfo.h"
 //#import "ServiceManage.h"
 //#import "ServiceManageDetail.h"
-#import "Inspection.h"
+//#import "Inspection.h"
+#import "UserInfo.h"
 
 //所需上传的表名称
 //modify by lxm 2013.05.13
@@ -368,8 +369,8 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
     //上传数据
 - (void)uploadDataAtIndex:(NSInteger)index{
     NSString * currentDataName = dataNameArray[index];
-//    NSArray *dataArray = [NSClassFromString(currentDataName) uploadArrayOfObject];
-    NSArray *dataArray = [NSClassFromString(currentDataName) uploadAnyClassArrayOfObject];
+    NSArray *dataArray = [NSClassFromString(currentDataName) uploadArrayOfObject];
+//    NSArray *dataArray = [NSClassFromString(currentDataName) uploadAnyClassArrayOfObject];
     if (dataArray.count > 0 ) {
         if ([currentDataName isEqualToString:@"CasePhoto"]) {
             NSString *dataXML = @"";
@@ -394,16 +395,9 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
             NSString * dataTypeString = [NSClassFromString(currentDataName) complexTypeString];
             NSString *dataXML = @"";
             for (id obj in dataArray) {
-//                if([currentDataName isEqualToString:@"Inspection"]){
-//     纠错广云    Inspection * inspection = (Inspection *)obj;
-//                    inspection.organization_id = @"13826";
-//                }
                 dataXML = [dataXML stringByAppendingString:[obj dataXMLString]];
                 [_uploadedRecord addUploadedRecord:currentDataName WitdData:obj];
             }
-            //    if ([currentDataName isEqualToString:@"InspectionConstruction"]) {
-            //        NSLog(@"%@",dataXML);    测试上传数据
-            //    }
             if (![dataXML isEmpty]) {
                 NSString *uploadXML = [[NSString alloc] initWithFormat:@"%@\n"
                                        "<diffgr:diffgram xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\" xmlns:diffgr=\"urn:schemas-microsoft-com:xml-diffgram-v1\">\n"

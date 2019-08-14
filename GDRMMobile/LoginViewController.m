@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+//MD5 加密    js自带
+#import "NSString+Base64.h"
 
 @interface LoginViewController ()
 @property (nonatomic,assign) NSInteger touchTextTag;
@@ -56,10 +58,11 @@
         UserInfo *userInfo = [UserInfo userInfoForUserID:self.loginUserID];
         NSString *password = [[userInfo.account stringByAppendingString:self.textPassword.text] encryptedString];
 //        NSString *password = [self.textPassword.text encryptedString];
+        NSString * passwordMD5 = [NSString md5:self.textPassword.text];
 #ifdef DEBUG
         if (password) {
 #else
-        if ([password isEqualToString:userInfo.password]) {
+        if ([password isEqualToString:userInfo.password] || [passwordMD5 isEqualToString:userInfo.password]) {
 #endif
             [[NSUserDefaults standardUserDefaults] setValue:self.loginUserID forKey:USERKEY];
             [self.delegate reloadUserLabel];
@@ -114,4 +117,5 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     return NO;
 }
+    
 @end
