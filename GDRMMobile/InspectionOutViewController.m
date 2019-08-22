@@ -171,14 +171,15 @@
             //[formatter setTimeZone:[NSTimeZone systemTimeZone]];
             inspection.time_end=[formatter dateFromString:self.textEndDate.text];
             if (!inspection.yjsj) {
-                inspection.yjsj = [Inspection inspectionfortime_endsettingtimeyjsj:inspection.time_end andtime_start:inspection.time_start andclasse:inspection.classe];
-                inspection.time_end = inspection.yjsj;
-                //如果是机动班或其他班不改变 巡查开始时间
-                if ([inspection.classe isEqualToString:@"早班"] || [inspection.classe isEqualToString:@"中班"] || [inspection.classe isEqualToString:@"晚班"]){
-                    inspection.time_start =[NSDate dateWithTimeInterval:-8*60*60 sinceDate:inspection.time_end];
-                }else{
-                    
-                }
+                inspection.yjsj = inspection.time_end;
+//                inspection.yjsj = [Inspection inspectionfortime_endsettingtimeyjsj:inspection.time_end andtime_start:inspection.time_start andclasse:inspection.classe];
+//                inspection.time_end = inspection.yjsj;
+//                //如果是机动班或其他班不改变 巡查开始时间
+//                if ([inspection.classe isEqualToString:@"早班"] || [inspection.classe isEqualToString:@"中班"] || [inspection.classe isEqualToString:@"晚班"]){
+//                    inspection.time_start =[NSDate dateWithTimeInterval:-8*60*60 sinceDate:inspection.time_end];
+//                }else{
+//
+//                }
             }
             inspection.inspection_milimetres=@(self.textMile.text.floatValue);
             

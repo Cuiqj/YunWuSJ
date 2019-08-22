@@ -130,7 +130,7 @@
         [self.textconstr_are2 setSelected:YES];
     }else if ([self.dailyCheck.constr_are isEqualToString:@"慢车道"]){
         [self.textconstr_are3 setSelected:YES];
-    }else if ([self.dailyCheck.constr_are isEqualToString:@"露肩"]){
+    }else if ([self.dailyCheck.constr_are isEqualToString:@"路肩"]){
         [self.textconstr_are4 setSelected:YES];
     }else if ([self.dailyCheck.constr_are isEqualToString:@"收费广场、匝道"]){
         [self.textconstr_are5 setSelected:YES];
@@ -362,7 +362,7 @@
     }else if([self.textconstr_are3 isSelected]){
         self.dailyCheck.constr_are = @"慢车道";
     }else if([self.textconstr_are4 isSelected]){
-        self.dailyCheck.constr_are = @"露肩";
+        self.dailyCheck.constr_are = @"路肩";
     }else if([self.textconstr_are5 isSelected]){
         self.dailyCheck.constr_are = @"收费广场、匝道";
     }           //施工内容
