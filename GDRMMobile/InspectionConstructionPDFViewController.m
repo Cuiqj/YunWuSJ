@@ -96,7 +96,11 @@
     }else{
         file = delegate.pdfFormatFileURL;
     }
-    file = [NSURL fileURLWithPath:self.pdfFilePath];
+    if (fileType == PDFWithTable) {
+        file = [NSURL fileURLWithPath:self.pdfFilePath];
+    }else{
+        file = [NSURL fileURLWithPath:self.pdfFormFilePath];
+    }
     if (file != nil) {
         self.selectedPDFType = fileType;
         if ([UIPrintInteractionController isPrintingAvailable]) {
@@ -104,7 +108,13 @@
             if ([UIPrintInteractionController canPrintURL:file]) {
                 [printer setDelegate:self];
                 UIPrintInfo *printInfo=[UIPrintInfo printInfo];
-                printInfo.jobName=self.pdfFilePath;
+                if ([self.pdfFilePath containsString:@"Construction"]) {
+                    printInfo.jobName = @"构造物检查";
+                }else if ([self.pdfFilePath containsString:@"Reform"]) {
+                    printInfo.jobName = @"施工/停工通知";
+                }else{
+                    printInfo.jobName=self.pdfFilePath;
+                }
                 printInfo.outputType=UIPrintInfoOutputPhoto;
                 printInfo.orientation = UIPrintInfoOrientationPortrait;
                 printInfo.duplex = UIPrintInfoDuplexNone;

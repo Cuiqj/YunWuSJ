@@ -126,7 +126,7 @@
     self.tableviewList.delegate = self;
     //     scrollview 滑动到下面
     self.scrollview.frame = CGRectMake(235, 0, 800, 600);
-    self.scrollview.contentSize = CGSizeMake(800, 720);
+    self.scrollview.contentSize = CGSizeMake(800, 760);
     self.dataarray = [MaintainCheckSpecial allMaintainCheckSpecialforMaintain_planid:self.planID withtype:@"1"];
     
     self.textdate.tag = 555;

@@ -46,7 +46,7 @@
         return @"";
     }
 }
-
+//查找巡查中的每一条记录
 + (NSArray *)recordsForInspection:(NSString *)inspectionID{
     NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
     NSEntityDescription *entity=[NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];

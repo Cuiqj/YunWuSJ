@@ -194,8 +194,8 @@
     NSDictionary *infoDic=[[NSBundle mainBundle] infoDictionary];
     NSString *currentBulidVersion = infoDic[@"CFBundleVersion"];
     
-    //蒲公英的apikey，appkey
-    NSDictionary *paramDic = @{@"_api_key":@"d98734ffcbcb99a86ff217e63c46ecfe",@"appKey":@"0dea9e824b4a259c5ae2079f821d72d3"};
+    //蒲公英的apikey，appkey。 d98734ffcbcb99a86ff217e63c46ecfe
+    NSDictionary *paramDic = @{@"_api_key":@"d98734ffcbcb99a86ff217e63c46ecfe",@"appKey":@"06ea853f4a10a041d2eba282b73b976f"};
     [self loadUpdateWithDic:paramDic success:^(id response) {
         NSLog(@"更新信息");
         if ([currentBulidVersion integerValue] < [response[@"data"][@"buildVersionNo"]integerValue]) {

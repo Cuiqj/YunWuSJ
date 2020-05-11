@@ -36,4 +36,15 @@
     return [rets lastObject];
 }
 
++ (FileCode *)fileCodeWithfile_code:(NSString *)filecode{
+    NSManagedObjectContext *context = [[AppDelegate App] managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = entity;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"file_name == %@", filecode];
+    request.predicate = predicate;
+    NSError *err = nil;
+    NSArray *rets = [context executeFetchRequest:request error:&err];
+    return [rets lastObject];
+}
 @end

@@ -317,6 +317,29 @@
         <attribute name="sendname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sendNO" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ConstructionReform" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="inspect_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isuploaded" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="items" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="org_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="project_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="re_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="recipient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="record_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="road" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serial_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_end" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_start" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trouble" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unit_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="FileCode" representedClassName="FileCode" syncable="YES">
         <attribute name="file_code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="file_name" optional="YES" attributeType="String" syncable="YES"/>
@@ -855,6 +878,16 @@
         <attribute name="sa_person" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="situation" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ResultReform" syncable="YES">
+        <attribute name="lastdirection" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastroad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="liushuihao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lochus_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_start_K" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_start_M" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="RoadAsset_Check_detail" representedClassName="RoadAsset_Check_detail" syncable="YES">
         <attribute name="banci" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="checkitem_id" optional="YES" attributeType="String" syncable="YES"/>
@@ -994,6 +1027,29 @@
         <attribute name="sfz_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="station_end" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="station_start" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ShutdownReform" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="direction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="inspect_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isuploaded" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="items" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="org_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="project_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="re_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="recipient" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="record_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="road" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serial_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_end" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="station_start" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trouble" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unit_id" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="StopNotice" representedClassName="StopNotice" syncable="YES">
         <attribute name="chinese_money" optional="YES" attributeType="String" syncable="YES"/>
@@ -1139,6 +1195,7 @@
         <element name="Citizen" positionX="0" positionY="0" width="128" height="555"/>
         <element name="CityCode" positionX="0" positionY="0" width="128" height="90"/>
         <element name="ConstructionChangeBack" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="ConstructionReform" positionX="81" positionY="153" width="128" height="360"/>
         <element name="FileCode" positionX="160" positionY="192" width="128" height="195"/>
         <element name="HelpWork" positionX="81" positionY="153" width="128" height="165"/>
         <element name="IconItems" positionX="0" positionY="0" width="128" height="135"/>
@@ -1176,6 +1233,7 @@
         <element name="Provinces" positionX="0" positionY="0" width="128" height="90"/>
         <element name="RectificationNotice" positionX="135" positionY="207" width="128" height="240"/>
         <element name="RescueRecord" positionX="81" positionY="153" width="128" height="270"/>
+        <element name="ResultReform" positionX="81" positionY="153" width="128" height="165"/>
         <element name="RoadAsset_Check_detail" positionX="99" positionY="171" width="128" height="300"/>
         <element name="RoadAsset_Check_Main" positionX="90" positionY="162" width="128" height="105"/>
         <element name="Roadasset_checkitem" positionX="81" positionY="153" width="128" height="180"/>
@@ -1188,6 +1246,7 @@
         <element name="ServiceManageDetail" positionX="108" positionY="180" width="128" height="195"/>
         <element name="ServiceOrg" positionX="90" positionY="162" width="128" height="105"/>
         <element name="Sfz" positionX="81" positionY="153" width="128" height="135"/>
+        <element name="ShutdownReform" positionX="90" positionY="162" width="128" height="360"/>
         <element name="StopNotice" positionX="81" positionY="153" width="128" height="225"/>
         <element name="Systype" positionX="0" positionY="0" width="128" height="120"/>
         <element name="Table101" positionX="81" positionY="153" width="128" height="150"/>

@@ -69,6 +69,9 @@
     [fetchRequest setPredicate:nil];
     return [context executeFetchRequest:fetchRequest error:nil];
 }
++ (NSArray *)allOrgInfoforname{
+    return [[self allOrgInfo] valueForKey:@"orgname"];
+}
 
 + (NSString *)orgInfoFororgshortname:(NSString *)orgID{
     NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
@@ -81,6 +84,21 @@
         id obj=[temp objectAtIndex:0];
         //return [obj name];
         return [obj valueForKey:@"orgshortname"];
+    } else {
+        return @"";
+    }
+}
++ (NSString *)orgInfoFororgOrgid:(NSString *)name{
+    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];
+    NSEntityDescription *entity=[NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:context];
+    NSFetchRequest *fetchRequest=[[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"orgname == %@",name]];
+    NSArray *temp=[context executeFetchRequest:fetchRequest error:nil];
+    if (temp.count>0) {
+        id obj=[temp objectAtIndex:0];
+        //return [obj name];
+        return [obj valueForKey:@"myid"];
     } else {
         return @"";
     }

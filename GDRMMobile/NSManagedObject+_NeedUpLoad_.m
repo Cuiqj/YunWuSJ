@@ -394,7 +394,24 @@
     }
     NSData *data          = UIImageJPEGRepresentation(image, 0.5);// UIImageJPGRepresentation(image);
     NSString *stringImage = [NSString base64forData:data];
-    casePhotoStr          = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
+//    photo.myid = @"200423110538259";
+//    photo.myid = [NSString stringWithFormat:@"%@.",photo.myid];
+//    if ([photo.myid containsString:@"."] || [photo.myid containsString:@"E"] || [photo.myid containsString:@"+"]) {
+//        NSArray * array = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
+//        NSString * name_id = @"";
+//        for (int i = 0 ; i<photo.photo_name.length; i++) {
+//            if ([photo.photo_name intValue] != 0) {
+//                for (int j = 0 ; j< [array count]; j++) {
+//                    if ([[photo.photo_name substringWithRange:NSMakeRange(i,1)] isEqualToString:array[j]]) {
+//                        name_id = [NSString stringWithFormat:@"%@%@",name_id,[photo.photo_name substringWithRange:NSMakeRange(i,1)]];
+//                    }
+//                }
+//            }
+//        }
+//        casePhotoStr = [NSString stringWithFormat:casePhotoStr,name_id?name_id:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
+//    }else{
+        casePhotoStr          = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];
+//    }
     return casePhotoStr;
 }
 

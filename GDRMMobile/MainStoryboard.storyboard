@@ -710,7 +710,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PJg-KM-2YC">
-                                <rect key="frame" x="48" y="556" width="189" height="69"/>
+                                <rect key="frame" x="572" y="631" width="189" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="车辆检查.png" backgroundImage="车辆检查.png">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -827,6 +827,14 @@
                                     <segue destination="eAu-aQ-1vW" kind="push" id="cpp-Vl-DSJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BNB-hI-1X1" userLabel="Reformbutton">
+                                <rect key="frame" x="48" y="556" width="189" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="施工整改.png" backgroundImage="施工整改.png"/>
+                                <connections>
+                                    <segue destination="BJA-DW-bUv" kind="push" id="QPE-9a-jlC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -860,7 +868,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVI-lu-sTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1665" y="24"/>
+            <point key="canvasLocation" x="-1679" y="-10"/>
         </scene>
         <!--养护施工作业控制区布置专项安全检查-->
         <scene sceneID="E4Q-LY-W2o">
@@ -2232,6 +2240,466 @@
             </objects>
             <point key="canvasLocation" x="-3925" y="-2004"/>
         </scene>
+        <!--Reform View Controller-->
+        <scene sceneID="tpg-ud-KUy">
+            <objects>
+                <viewController storyboardIdentifier="zhenggai" id="BJA-DW-bUv" customClass="ReformViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cYs-Nj-acO">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XcV-oc-odU">
+                                <rect key="frame" x="0.0" y="30" width="260" height="732"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="ReformCell" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ReformCell" textLabel="Lqr-ei-xUS" detailTextLabel="4kr-6e-mDi" style="IBUITableViewCellStyleSubtitle" id="aow-NI-F4P" customClass="InspectionConstructionCell">
+                                        <rect key="frame" x="0.0" y="28" width="260" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aow-NI-F4P" id="SVY-w4-uLz">
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lqr-ei-xUS">
+                                                    <rect key="frame" x="15" y="3" width="38.5" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4kr-6e-mDi">
+                                                    <rect key="frame" x="15" y="24.5" width="50" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cYs-Nj-acO" id="pVy-Pp-Xcj"/>
+                                    <outlet property="delegate" destination="BJA-DW-bUv" id="zcU-Do-gkg"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="PKb-ra-9Xo">
+                                <rect key="frame" x="0.0" y="2" width="260" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="施工整改"/>
+                                    <segment title="停工整改"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segueChange:" destination="BJA-DW-bUv" eventType="valueChanged" id="uhA-PA-5o2"/>
+                                </connections>
+                            </segmentedControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="HDa-10-rBP">
+                                <rect key="frame" x="260" y="0.0" width="760" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KDd-JB-r5h">
+                                        <rect key="frame" x="446" y="630" width="60" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="保存 "/>
+                                        <connections>
+                                            <action selector="BtnSaveClick:" destination="BJA-DW-bUv" eventType="touchUpInside" id="4Ej-ei-dRn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="项目名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xEn-qM-JY0">
+                                        <rect key="frame" x="20" y="20" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="s5G-zz-0QN">
+                                        <rect key="frame" x="100" y="20" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectproject_name:" destination="BJA-DW-bUv" eventType="touchDown" id="2to-iG-HyW"/>
+                                            <action selector="Selectproject_name:" destination="BJA-DW-bUv" eventType="touchUpInside" id="E0a-ZM-BUY"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="检查单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LT7-Fh-fGn">
+                                        <rect key="frame" x="20" y="65" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="dwW-iL-4hm">
+                                        <rect key="frame" x="100" y="65" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectorg_id:" destination="BJA-DW-bUv" eventType="touchDown" id="JFc-OM-tVZ"/>
+                                            <action selector="Selectorg_id:" destination="BJA-DW-bUv" eventType="touchUpInside" id="l75-5z-W4W"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="整改单位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vT7-0G-7CW">
+                                        <rect key="frame" x="20" y="110" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="cTc-pt-1pg">
+                                        <rect key="frame" x="100" y="110" width="340" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectunit_id:" destination="BJA-DW-bUv" eventType="touchDown" id="Fgq-p0-230"/>
+                                            <action selector="Selectunit_id:" destination="BJA-DW-bUv" eventType="touchUpInside" id="v1L-09-Cy9"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="检查人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BaQ-Xs-gA3">
+                                        <rect key="frame" x="460" y="65" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="U0X-vZ-PH1">
+                                        <rect key="frame" x="520" y="65" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectname:" destination="BJA-DW-bUv" eventType="touchUpInside" id="KUb-7r-v5X"/>
+                                            <action selector="Selectname:" destination="BJA-DW-bUv" eventType="touchDown" id="eJl-hz-721"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="发现日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJ4-bo-ya4">
+                                        <rect key="frame" x="22" y="155" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="222" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="e9m-UI-etc">
+                                        <rect key="frame" x="102" y="155" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchUpInside" id="LHj-0z-zHE"/>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchDown" id="VCB-AY-PvK"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="路段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yd2-mv-yRa">
+                                        <rect key="frame" x="315" y="155" width="40" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="0cO-wf-kcB">
+                                        <rect key="frame" x="355" y="155" width="180" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="selectoad:" destination="BJA-DW-bUv" eventType="touchDown" id="Biu-Ox-rbI"/>
+                                            <action selector="selectoad:" destination="BJA-DW-bUv" eventType="touchDragInside" id="MuM-wG-ycs"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="方向" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sL5-FI-pLa">
+                                        <rect key="frame" x="20" y="200" width="40" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="d0o-lf-sSM">
+                                        <rect key="frame" x="80" y="200" width="180" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdirection:" destination="BJA-DW-bUv" eventType="touchDown" id="66B-Mr-yJZ"/>
+                                            <action selector="Selectdirection:" destination="BJA-DW-bUv" eventType="touchUpInside" id="RD4-De-6sV"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="开始桩号  K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="992-sl-Nj1">
+                                        <rect key="frame" x="300" y="200" width="100" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="67" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Sw7-J1-8Lm">
+                                        <rect key="frame" x="400" y="200" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ntb-o8-2nZ">
+                                        <rect key="frame" x="465" y="198" width="20" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="68" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="u9R-Gd-Kcv">
+                                        <rect key="frame" x="484" y="200" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="结束桩号  K" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B0B-oc-MxK">
+                                        <rect key="frame" x="900" y="155" width="100" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Mbi-O6-iRa">
+                                        <rect key="frame" x="900" y="155" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XG7-HM-GG4">
+                                        <rect key="frame" x="900" y="155" width="20" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Xxw-a7-oi5">
+                                        <rect key="frame" x="900" y="155" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="uSm-M5-Gfb">
+                                        <rect key="frame" x="70" y="245" width="670" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="隐患情况" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ddP-Ui-VEP">
+                                        <rect key="frame" x="20" y="255" width="40" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="截止时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DIX-aP-71h">
+                                        <rect key="frame" x="20" y="360" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="223" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="hub-ha-X4L">
+                                        <rect key="frame" x="100" y="360" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchUpInside" id="9aU-Ol-T5h"/>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchDown" id="ymv-bA-sLu"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="签收时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z1v-U2-8gU">
+                                        <rect key="frame" x="20" y="405" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="224" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="uPs-fY-tFo">
+                                        <rect key="frame" x="100" y="405" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchUpInside" id="DuG-I0-7ya"/>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchDown" id="hBO-9s-a1i"/>
+                                        </connections>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="rjv-3E-gat">
+                                        <rect key="frame" x="70" y="450" width="670" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="整改结果" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GqS-3h-sAY">
+                                        <rect key="frame" x="20" y="460" width="40" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="整改状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ixn-45-oFT">
+                                        <rect key="frame" x="350" y="405" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="3jP-zv-9c9">
+                                        <rect key="frame" x="430" y="405" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectstatus:" destination="BJA-DW-bUv" eventType="touchDown" id="zIy-57-7Tc"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xQB-Hv-aAM">
+                                        <rect key="frame" x="620" y="630" width="60" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="打印"/>
+                                        <connections>
+                                            <action selector="printClick:" destination="BJA-DW-bUv" eventType="touchUpInside" id="UYu-8U-1IS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2tL-Bd-Dco">
+                                        <rect key="frame" x="100" y="630" width="60" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="附件 "/>
+                                        <connections>
+                                            <action selector="fujianBtnClick:" destination="BJA-DW-bUv" eventType="touchUpInside" id="ApN-Rn-HnX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="签收人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GlS-lG-8nR">
+                                        <rect key="frame" x="365" y="360" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="69" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="7ez-jF-VyT">
+                                        <rect key="frame" x="430" y="360" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="记录时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Np-9y-fR3">
+                                        <rect key="frame" x="20" y="565" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="226" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="PdM-DK-VmF">
+                                        <rect key="frame" x="100" y="565" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchDown" id="4Ip-lR-oKH"/>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchUpInside" id="daF-eI-hEZ"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="流水号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AG3-lG-IOw">
+                                        <rect key="frame" x="460" y="20" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="66" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="cKn-52-0iR">
+                                        <rect key="frame" x="520" y="20" width="220" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="77G-BI-khm">
+                                        <rect key="frame" x="273" y="630" width="60" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="新增"/>
+                                        <connections>
+                                            <action selector="addReform:" destination="BJA-DW-bUv" eventType="touchUpInside" id="9Pe-yN-xor"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="检查时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qdb-uN-Zdc">
+                                        <rect key="frame" x="460" y="110" width="80" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" tag="225" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="073-6W-cc7">
+                                        <rect key="frame" x="540" y="110" width="200" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchUpInside" id="5Gw-Xw-ph1"/>
+                                            <action selector="Selectdate:" destination="BJA-DW-bUv" eventType="touchDown" id="6uE-Lj-vtS"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9A9-K8-sbL"/>
+                    <connections>
+                        <outlet property="ReformtableView" destination="XcV-oc-odU" id="c7T-xa-tLK"/>
+                        <outlet property="labelend_time" destination="DIX-aP-71h" id="C8M-pL-OCJ"/>
+                        <outlet property="labelrecipient" destination="GlS-lG-8nR" id="22R-a9-6IZ"/>
+                        <outlet property="myscrollview" destination="HDa-10-rBP" id="D7W-Z9-oUU"/>
+                        <outlet property="segueController" destination="PKb-ra-9Xo" id="qca-9e-62A"/>
+                        <outlet property="textdate" destination="e9m-UI-etc" id="Gsy-wr-Rrs"/>
+                        <outlet property="textdirection" destination="d0o-lf-sSM" id="grK-Be-CXF"/>
+                        <outlet property="textend_time" destination="hub-ha-X4L" id="nYZ-LJ-SMU"/>
+                        <outlet property="textinspect_time" destination="073-6W-cc7" id="FyX-eI-dDr"/>
+                        <outlet property="textkstation_end" destination="Mbi-O6-iRa" id="q7k-iK-7xq"/>
+                        <outlet property="textkstation_start" destination="Sw7-J1-8Lm" id="sVW-uc-77B"/>
+                        <outlet property="textmstation_end" destination="Xxw-a7-oi5" id="nNy-IW-r36"/>
+                        <outlet property="textmstation_start" destination="u9R-Gd-Kcv" id="HH3-zW-xgq"/>
+                        <outlet property="textname" destination="U0X-vZ-PH1" id="XKI-ar-yEH"/>
+                        <outlet property="textorg_id" destination="dwW-iL-4hm" id="52U-7y-udM"/>
+                        <outlet property="textproject_name" destination="s5G-zz-0QN" id="rtG-Z4-rsG"/>
+                        <outlet property="textre_time" destination="uPs-fY-tFo" id="rWl-KX-D5m"/>
+                        <outlet property="textrecipient" destination="7ez-jF-VyT" id="tcv-xj-Hht"/>
+                        <outlet property="textrecord_date" destination="PdM-DK-VmF" id="ebV-73-dAV"/>
+                        <outlet property="textresult" destination="rjv-3E-gat" id="pHN-47-Sui"/>
+                        <outlet property="textroad" destination="0cO-wf-kcB" id="xyl-jd-caC"/>
+                        <outlet property="textserial_number" destination="cKn-52-0iR" id="oCT-5W-QG8"/>
+                        <outlet property="textstatus" destination="3jP-zv-9c9" id="UXn-9l-HzE"/>
+                        <outlet property="texttrouble" destination="uSm-M5-Gfb" id="3E0-Il-64L"/>
+                        <outlet property="textunit_id" destination="cTc-pt-1pg" id="w6W-2I-cB7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dnI-za-TTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2679" y="-2802"/>
+        </scene>
         <!--施工日常检查-->
         <scene sceneID="zv9-uK-qc3">
             <objects>
@@ -2277,14 +2745,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="方向" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ru1-oM-qZR">
-                                <rect key="frame" x="540" y="45" width="40" height="30"/>
+                                <rect key="frame" x="550" y="45" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="检查人员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qnq-WO-gf1">
-                                <rect key="frame" x="680" y="45" width="80" height="30"/>
+                                <rect key="frame" x="690" y="45" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -2712,7 +3180,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vDg-SQ-dbA">
-                                <rect key="frame" x="900" y="410" width="60" height="30"/>
+                                <rect key="frame" x="890" y="380" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="新增"/>
@@ -2721,7 +3189,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FoA-wh-QVu">
-                                <rect key="frame" x="900" y="500" width="60" height="30"/>
+                                <rect key="frame" x="890" y="450" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="保存"/>
@@ -2917,7 +3385,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="LbS-mo-KvL">
-                                <rect key="frame" x="750" y="45" width="190" height="30"/>
+                                <rect key="frame" x="760" y="45" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2929,14 +3397,14 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="a04-uM-Hjk">
-                                <rect key="frame" x="580" y="45" width="90" height="30"/>
+                                <rect key="frame" x="590" y="45" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="V9c-Dg-9zw">
-                                <rect key="frame" x="345" y="45" width="190" height="30"/>
+                                <rect key="frame" x="345" y="45" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3126,7 +3594,7 @@
                                 <state key="selected" image="checked.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6PO-6G-T7i">
-                                <rect key="frame" x="899" y="320" width="60" height="30"/>
+                                <rect key="frame" x="890" y="520" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="附件"/>
@@ -3135,11 +3603,26 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WS7-Io-YOl">
-                                <rect key="frame" x="950" y="45" width="40" height="30"/>
+                                <rect key="frame" x="960" y="45" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="清空"/>
                                 <connections>
                                     <action selector="deleteUser:" destination="BUe-BF-RUX" eventType="touchUpInside" id="wWu-GD-C1g"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Rh2-k6-Pf5">
+                                <rect key="frame" x="880" y="310" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="停工整改"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T8q-DX-KYR">
+                                <rect key="frame" x="880" y="240" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="施工整改"/>
+                                <connections>
+                                    <segue destination="BJA-DW-bUv" kind="push" id="6oz-QQ-GwT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -5170,7 +5653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvD-J1-WpB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-713" y="3201"/>
+            <point key="canvasLocation" x="-583" y="3398"/>
         </scene>
         <!--Case Construction Change Back View Controller-->
         <scene sceneID="i3I-fY-6mH">
@@ -6026,7 +6509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39B-oK-lcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-867" y="3831"/>
+            <point key="canvasLocation" x="-742" y="4361"/>
         </scene>
         <!--System Type List View Controller-->
         <scene sceneID="DCd-cm-3db">
@@ -6111,7 +6594,7 @@
             <objects>
                 <viewController title="出行前检查" id="ubn-AR-JCk" customClass="NewInspectionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mrQ-5Q-vth">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="awo-4j-taJ">
@@ -6165,15 +6648,15 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z9M-Zr-tkB">
-                                <rect key="frame" x="20" y="230" width="984" height="370"/>
+                                <rect key="frame" x="20" y="230" width="500" height="370"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CheckItemCell" textLabel="tdE-Eh-IzC" detailTextLabel="1S6-SA-rYW" style="IBUITableViewCellStyleValue1" id="LaG-2u-6yx">
-                                        <rect key="frame" x="0.0" y="22" width="984" height="39"/>
+                                        <rect key="frame" x="0.0" y="22" width="500" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LaG-2u-6yx" id="Vwi-57-s9o">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="38.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="38.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tdE-Eh-IzC">
@@ -6184,7 +6667,7 @@
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1S6-SA-rYW">
-                                                    <rect key="frame" x="925" y="9" width="44" height="20.5"/>
+                                                    <rect key="frame" x="441" y="9" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -6233,7 +6716,7 @@
                                 </connections>
                             </textField>
                             <navigationBar contentMode="scaleToFill" id="hfU-XQ-Zg0">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="出行前检查" id="IEq-iS-VNK">
@@ -6327,6 +6810,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="inputView" destination="SIR-fS-tgw" id="wdj-j3-5S5"/>
                         <outlet property="pickerCheckItemDetails" destination="B43-Dr-OPZ" id="mQU-1P-OBa"/>
@@ -6349,11 +6833,11 @@
             <objects>
                 <viewController title="巡查交班" id="U12-zV-BrE" customClass="InspectionOutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yK5-5p-Dc4">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" id="vGr-wT-Gm5">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="巡查交班" id="5pO-GP-Xml">
@@ -6506,6 +6990,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="KmLabel" destination="lXh-L1-YLc" id="fcB-sF-1Vx"/>
                         <outlet property="RoadLabel" destination="F37-2Y-43R" id="yT2-uO-kOJ"/>
@@ -6811,11 +7296,11 @@
             <objects>
                 <viewController storyboardIdentifier="OrgSyncVC" id="uJc-wr-xBW" customClass="OrgSyncViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZvD-Cz-PD6">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="framebg.png" id="qV0-h0-9kB">
-                                <rect key="frame" x="0.0" y="44" width="540" height="724"/>
+                                <rect key="frame" x="0.0" y="44" width="540" height="576"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
@@ -6834,7 +7319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GdS-ha-dF6">
-                                <rect key="frame" x="0.0" y="44" width="1031" height="729"/>
+                                <rect key="frame" x="0.0" y="44" width="547" height="581"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -6843,7 +7328,7 @@
                                 </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" id="L6v-XS-rjr">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="基本数据下载" id="abO-d5-Gk7">
@@ -6864,6 +7349,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="tableOrgList" destination="GdS-ha-dF6" id="eIa-5s-Can"/>
                         <outlet property="textServerAddress" destination="c3o-9K-XTC" id="TgK-Vq-i0m"/>
@@ -10481,11 +10967,11 @@
             <objects>
                 <viewController title="勘验草图文字备注" modalPresentationStyle="formSheet" id="JKg-gA-agZ" customClass="PaintRemarkTextViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OVm-yi-fAG">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="YDx-cy-9E4">
-                                <rect key="frame" x="20" y="167" width="984" height="581"/>
+                                <rect key="frame" x="20" y="167" width="500" height="433"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -10495,7 +10981,7 @@
                                 </connections>
                             </textView>
                             <navigationBar contentMode="scaleToFill" id="I5j-YD-p5k">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="文字备注" id="h9X-Jg-RUB">
@@ -10573,6 +11059,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="btnGetDefault" destination="sWf-dv-zWu" id="uu8-me-5rg"/>
                         <outlet property="remarkTextView" destination="YDx-cy-9E4" id="8VW-cK-IWd"/>
@@ -11495,7 +11982,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqm-3P-SOA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4933" y="30"/>
+            <point key="canvasLocation" x="-4941" y="-35"/>
         </scene>
         <!--询问笔录信息-->
         <scene sceneID="QlO-71-vqL">
@@ -12738,7 +13225,7 @@
             <objects>
                 <viewController modalPresentationStyle="formSheet" id="y6T-va-YmQ" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i1o-ae-APX">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="framebg.png" id="and-Bn-rbS">
@@ -12746,7 +13233,7 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <navigationBar contentMode="scaleToFill" id="OgK-ZV-lEa">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="操作员及执法人员登录" id="O9T-jO-WKL">
@@ -12839,6 +13326,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="textInspector1" destination="hke-fA-Dh7" id="r4e-cg-2UF"/>
                         <outlet property="textInspector2" destination="sws-Ny-3Ip" id="HYJ-i7-dfU"/>
@@ -12903,7 +13391,7 @@
             <objects>
                 <viewController title="添加新巡查记录" id="tk9-Hz-oiw" customClass="AddNewInspectRecordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D5k-oP-4we">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="nHM-79-mQN" userLabel="无异常情况">
@@ -12996,7 +13484,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" delaysContentTouches="NO" id="VbV-gH-3c8">
-                                <rect key="frame" x="0.0" y="192" width="540" height="506"/>
+                                <rect key="frame" x="0.0" y="44" width="540" height="506"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="S47-fe-c8k">
@@ -13184,7 +13672,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" id="ctv-IC-7ba">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="新增巡查记录" id="NN3-C9-l4F">
@@ -13508,7 +13996,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="768"/>
+                    <size key="freeformSize" width="540" height="620"/>
                     <connections>
                         <outlet property="YZDNView" destination="t4O-ob-wRK" id="h2L-JO-sXB"/>
                         <outlet property="contentView" destination="VbV-gH-3c8" id="GED-x8-3bP"/>
@@ -15636,7 +16124,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTX-Te-9Is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="4840"/>
+            <point key="canvasLocation" x="-1104" y="4967"/>
         </scene>
         <!--应急保障-->
         <scene sceneID="lFd-Zl-SCg">
@@ -17374,7 +17862,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ny9-UY-emR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2170" y="2349"/>
+            <point key="canvasLocation" x="-1524" y="2564"/>
         </scene>
         <!--养护施工完成后专项安全检查-->
         <scene sceneID="sU6-2g-09x">
@@ -18153,6 +18641,87 @@
             </objects>
             <point key="canvasLocation" x="-6202" y="84"/>
         </scene>
+        <!--施工/停工-->
+        <scene sceneID="tDg-GX-W66">
+            <objects>
+                <viewController storyboardIdentifier="ReformPDFViewController" title="施工/停工" id="XXM-qe-l3E" customClass="ReformPDFViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BVv-tH-W2S">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="文书打印-bg.png" id="epX-VY-2t0">
+                                <rect key="frame" x="0.0" y="-1" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8as-Dw-Mvi">
+                                <rect key="frame" x="601" y="639" width="136" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="删除当前文书">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDeleteDoc:" destination="XXM-qe-l3E" eventType="touchUpInside" id="qM4-pK-Pnh"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" id="26e-80-kFv">
+                                <rect key="frame" x="40" y="33" width="946" height="602"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XXM-qe-l3E" id="6No-Tu-Per"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6wt-vR-O9F">
+                                <rect key="frame" x="886" y="639" width="100" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="套    打">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPrintFormedPDF:" destination="XXM-qe-l3E" eventType="touchUpInside" id="pc3-Fa-XjL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="l0v-4p-9Yg">
+                                <rect key="frame" x="765" y="639" width="100" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="打    印">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPrintFullPDF:" destination="XXM-qe-l3E" eventType="touchUpInside" id="qdQ-tW-9oe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sHz-uO-8vV"/>
+                    <connections>
+                        <outlet property="pdfView" destination="26e-80-kFv" id="ze6-lV-fpv"/>
+                        <outlet property="uiButtonDeleteDoc" destination="8as-Dw-Mvi" id="Tfw-fV-zfB"/>
+                        <outlet property="uiButtonPrintForm" destination="l0v-4p-9Yg" id="skO-Xg-lve"/>
+                        <outlet property="uiButtonPrintFull" destination="6wt-vR-O9F" id="AGZ-xm-LxG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsf-EE-Zjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2273" y="2268"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg1.png" width="1024" height="748"/>
@@ -18175,6 +18744,7 @@
         <image name="应急保障事件.png" width="189" height="69"/>
         <image name="拍摄照片.png" width="140" height="30"/>
         <image name="文书打印-bg.png" width="1024" height="704"/>
+        <image name="施工整改.png" width="189" height="69"/>
         <image name="施工检查1.png" width="189" height="69"/>
         <image name="构造物检查.png" width="189" height="69"/>
         <image name="案件信息-bg.png" width="1024" height="704"/>
@@ -18187,20 +18757,21 @@
         <image name="违法登记.png" width="189" height="69"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="igo-Ui-LX5"/>
-        <segue reference="6lk-Nl-vz9"/>
+        <segue reference="nsa-p9-XQO"/>
+        <segue reference="Nlb-lU-TKd"/>
         <segue reference="CBw-Kr-1du"/>
         <segue reference="0Ek-I7-xpQ"/>
         <segue reference="tFF-tV-z37"/>
         <segue reference="vQ0-4d-GPt"/>
         <segue reference="RB0-Vc-zey"/>
         <segue reference="LH0-e5-T0o"/>
-        <segue reference="HAB-gn-8eY"/>
+        <segue reference="eon-yW-bpX"/>
         <segue reference="B55-m9-xva"/>
-        <segue reference="JLY-dB-ghi"/>
-        <segue reference="byz-V4-8Qu"/>
-        <segue reference="Oku-Sd-2QN"/>
-        <segue reference="RIr-Pz-GWT"/>
-        <segue reference="YD9-lU-M6O"/>
+        <segue reference="KjK-zT-h01"/>
+        <segue reference="8OW-OQ-xnw"/>
+        <segue reference="CIm-gV-nba"/>
+        <segue reference="UL8-xp-Il7"/>
+        <segue reference="6oz-QQ-GwT"/>
+        <segue reference="Fl6-7H-frt"/>
     </inferredMetricsTieBreakers>
 </document>

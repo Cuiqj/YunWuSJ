@@ -25,4 +25,6 @@
 
 + (FileCode *)fileCodeWithPredicateFormat:(NSString *)predicateStr;
 
++ (FileCode *)fileCodeWithfile_code:(NSString *)filecode;
+
 @end

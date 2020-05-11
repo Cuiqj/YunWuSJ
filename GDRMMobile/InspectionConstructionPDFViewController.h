@@ -12,6 +12,7 @@
 typedef enum {
     PDFWithTable=0,
     PDFWithoutTable,
+    
 } PDFType;
 @interface InspectionConstructionPDFViewController : UIViewController<UIPrintInteractionControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView * pdfView;
@@ -19,6 +20,8 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *uiButtonPrintForm;
 @property (weak, nonatomic) IBOutlet UIButton *uiButtonPrintFull;
 @property (nonatomic,retain) NSString *pdfFilePath;
+@property (nonatomic,retain) NSString *pdfFormFilePath;
+
 @property (nonatomic,retain) NSString * inspectionConstructionPDFID;
 @property (nonatomic,weak) InspectionConstructionViewController *delegate;
 @property (nonatomic) PDFType selectedPDFType;

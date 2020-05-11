@@ -28,6 +28,7 @@
 @dynamic project_direction;
 @dynamic org_id;
 
+
 +(NSArray *)allMaintainPlan{
     NSManagedObjectContext *moc=  [[AppDelegate App] managedObjectContext];
     NSEntityDescription *entity= [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:moc];

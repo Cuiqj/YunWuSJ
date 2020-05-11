@@ -117,5 +117,10 @@
     }
     self.textFileName.text = [NSString stringWithFormat:@"《%@》",serviceFileName] ;
 }
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.preferredContentSize = CGSizeMake(520, 640);
+}
+
 
 @end

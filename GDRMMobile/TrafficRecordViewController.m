@@ -742,7 +742,6 @@ enum kUISwitchTag {
     listPicker.data     = data;
     self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:listPicker];
     CGRect rect         = sender.frame;
-    
     if(sender.tag == 557){          //事故原因显示不全
         rect.size.width = 30;
     }

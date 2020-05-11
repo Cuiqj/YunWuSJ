@@ -437,6 +437,7 @@ static NSString *PASSWORD=@"Xinlu:Admin";
     [self executeWebService:@"uploadDataSet" serviceParm:soapMessage];
 }
 
+//上传图片
 - (void)uploadPhotot:(NSString *)xmlDataFile updatedObject:(id)updatedObject{
     NSString *soapMessage = [[NSString alloc] initWithFormat:@" <UploadPhoto xmlns=\"http://tempuri.org/IrmsData/MobileData\"> \n"
                              "  <key>%@</key> \n"

@@ -1278,6 +1278,7 @@ BOOL _wasKeyboardManagerEnabled;
 
 #pragma mark - RoadPickerDelegate
 - (void)setRoadSegment:(NSString *)aRoadSegmentID roadName:(NSString *)roadName{
+    //选择的地点第一个
     self.roadSegmentID        = aRoadSegmentID;
     self.textRoadSegment.text = roadName;
 }

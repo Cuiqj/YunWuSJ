@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConstructionReformTable>
+    <!--所有尺寸单位以mm计算-->
+    <!--定义纸张尺寸-->
+    <Paper size="A4" width="595" height="842">
+<!--    <Paper size="A4" width="842" height="1000">-->
+        <!--定义纸张边距，上，左，右，下-->
+        <Margin top="0"  left="0" right="0" bottom="3" />
+        <orientation isPortrait="No" />
+    </Paper>
+    <!--所有缺省设置元素，default*之类均必不可少-->
+    <!--固定表格-->
+    <StaticTable>
+        <Lines>
+            <!--默认线宽-->
+            <defaultLineWidth>0.4</defaultLineWidth>
+            <!--       横线     -->
+            <line x1="24" y1="34" x2="169.5" y2="34" lineWidth="0.6"/>
+            <line x1="24" y1="218" x2="169.5" y2="218" lineWidth="0.6"/>
+            <line x1="24" y1="250" x2="169.5" y2="250" lineWidth="0.6"/>
+            <!--       竖线     -->
+            <line x1="24" y1="34" x2="24" y2="250" lineWidth="0.6"/>
+            <line x1="169.5" y1="34" x2="169.5" y2="250" lineWidth="0.6"/>
+            <!--       填空 整改单位    -->
+            <line x1="25.5" y1="55.3" x2="64" y2="55.3" lineWidth="0.6"/>
+            <!--       填空 巡查人员 第一行   -->
+            <line x1="61.8" y1="60.5" x2="93" y2="60.5" lineWidth="0.6"/>
+            <line x1="96.3" y1="60.5" x2="107" y2="60.5" lineWidth="0.6"/>
+            <line x1="110" y1="60.5" x2="118" y2="60.5" lineWidth="0.6"/>
+            <line x1="121" y1="60.5" x2="128.5" y2="60.5" lineWidth="0.6"/>
+            <line x1="132" y1="60.5" x2="139.7" y2="60.5" lineWidth="0.6"/>
+            <line x1="143.5" y1="60.5" x2="150.2" y2="60.5" lineWidth="0.6"/>
+            <!--       填空 地点 桩号  项目 第二行   -->
+            <line x1="29.5" y1="66" x2="40" y2="66"  lineWidth="0.6"/>
+            <line x1="45.5" y1="66" x2="54.5" y2="66"  lineWidth="0.6"/>
+            <line x1="65.2" y1="66" x2="77.7" y2="66"  lineWidth="0.6"/>
+            <line x1="79.5" y1="66" x2="90.5" y2="66"  lineWidth="0.6"/>
+            <line x1="93.5" y1="66" x2="164.5" y2="66"  lineWidth="0.6"/>
+            <!--       填空   现责令你单位于   年   月   日    -->
+            <line x1="59" y1="185.2" x2="69.5" y2="185.2" lineWidth="0.6"/>
+            <line x1="73.7" y1="185.2" x2="80.7" y2="185.2" lineWidth="0.6"/>
+            <line x1="84.7" y1="185.2" x2="91.7" y2="185.2" lineWidth="0.6"/>
+            <line x1="95.7" y1="185.2" x2="102.7" y2="185.2" lineWidth="0.6"/>
+            <!--       填空   NO:___-20__——__  -->
+            <line x1="129.5" y1="49.5" x2="136.5" y2="49.5" lineWidth="0.5"/>
+            <line x1="144" y1="49.5" x2="151" y2="49.5" lineWidth="0.5"/>
+            <line x1="156" y1="49.5" x2="167.5" y2="49.5" lineWidth="0.5"/>
+            <!--      横线      -->
+            <line x1="151.5" y1="47" x2="156" y2="47" lineWidth="0.5"/>
+        </Lines>
+        <Texts>
+            <defaultFontSize>19</defaultFontSize>
+            <!--标题:-->
+            <Text>
+                <text>广东省路桥建设发展有限公司云梧分公司</text>
+                <fontSize>15</fontSize>
+                <isBold>YES</isBold>
+                <origin x="0" y="38" />
+                <size width="540" height="6" />
+                <alignment>center</alignment>
+            </Text>
+            <Text>
+                <fontSize>15</fontSize>
+                <text>施工整改通知书</text>
+                <isBold>YES</isBold>
+                <origin x="80" y="46" />
+                <size width="120" height="6" />
+            </Text>
+            <Text>
+                <fontSize>13</fontSize>
+                <text>NO:</text>
+                <isBold>YES</isBold>
+                <origin x="123.5" y="46.3" />
+                <size width="160" height="6" />
+            </Text>
+            <Text>
+                <fontSize>13</fontSize>
+                <text>-20</text>
+                <isBold>YES</isBold>
+                <origin x="137" y="46.3" />
+                <size width="160" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>:</text>
+                <origin x="65" y="52" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>我队路政巡查人员</text>
+                <origin x="32.5" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>于</text>
+                <origin x="93" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>年</text>
+                <origin x="107" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>月</text>
+                <origin x="118" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>日</text>
+                <origin x="128.5" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>时</text>
+                <origin x="140" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>分对你单位</text>
+                <origin x="150.2" y="57.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>在</text>
+                <origin x="25.5" y="63" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>往</text>
+                <origin x="40.5" y="63" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>方向 K</text>
+                <origin x="54.5" y="63" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>+</text>
+                <origin x="77.5" y="63" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>M</text>
+                <origin x="90.5" y="63" />
+                <size width="120" height="5" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>施</text>
+                <origin x="164.5" y="63" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>工现场进行施工安全检查时，发现该施工现场存在以下安全隐患或不符合《公路养护安全作</text>
+                <origin x="25.5" y="68.8" />
+                <size width="450" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>业规程》规定:</text>
+                <origin x="25.5" y="74.2" />
+                <size width="150" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>现责令你单位于</text>
+                <origin x="32.5" y="182.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>年</text>
+                <origin x="69.5" y="182.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>月</text>
+                <origin x="81" y="182.5" />
+                <size width="120" height="5" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>日</text>
+                <origin x="92" y="182.5" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>时前就上述问题依法依规进行整改，并将</text>
+                <origin x="103" y="182.5" />
+                <size width="240" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>整改情况在回执联填写后上报我队。</text>
+                <origin x="25.5" y="189" />
+                <size width="190" height="5" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>收件人:                  收件日期:      年   月   日   时</text>
+                <origin x="32.5" y="195" />
+                <size width="450" height="6" />
+            </Text>
+           
+            <Text>
+                <fontSize>10</fontSize>
+                <text>（单位印章）</text>
+                <origin x="144" y="207" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>年   月   日</text>
+                <origin x="145" y="214" />
+                <size width="150" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>整改结果:</text>
+                <origin x="33" y="221" />
+                <size width="120" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>检 查 人:</text>
+                <origin x="100" y="236" />
+                <size width="100" height="6" />
+            </Text>
+            <Text>
+                <fontSize>10</fontSize>
+                <text>检查时间:       年   月   日   时</text>
+                <origin x="100" y="244" />
+                <size width="300" height="6" />
+            </Text>
+        </Texts>
+    </StaticTable>
+    <DataTable>
+        <!--设置默认字体-->
+        <DefaultFontSize>10</DefaultFontSize>
+        <!--NO:____-20___———____-->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="130" y="44.5" />
+            <size width="6" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>lochus_code</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="144.5" y="44.5" />
+            <size width="6" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>year</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="156" y="44.5" />
+            <size width="11.5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>liushuihao</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--   整改单位     -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="26" y="49.8" />
+            <size width="150" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>unit_id</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--    巡查人员    -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="62" y="55.2" />
+            <size width="31" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>name</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!-- 发现时间     年     -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="96.5" y="55.2" />
+            <size width="10" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>date</attributeName>
+                    <mode>y</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    月   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="111" y="55.2" />
+            <size width="6" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>date</attributeName>
+                    <mode>MM</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    日   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="121.5" y="55.2" />
+            <size width="6.5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>date</attributeName>
+                    <mode>dd</mode>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="132.4" y="55.2" />
+            <size width="7" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>date</attributeName>
+                    <mode>HH</mode>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="143.6" y="55.2" />
+            <size width="6.5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>date</attributeName>
+                    <mode>mm</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    路段    -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="30.5" y="61" />
+            <size width="9.5" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>lastroad</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--    方向   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="45.5" y="61" />
+            <size width="9" height = "6"/>
+            <content>
+                <data>
+                    <attributeName>lastdirection</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--     桩号    -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="65.5" y="61" />
+            <size width="11.5" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>station_start_K</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--   桩号   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="80" y="61" />
+            <size width="10" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>station_start_M</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="94" y="59.8" />
+            <size width="70" height = "8"/>
+            <content>
+                <data>
+                    <attributeName>project_name</attributeName>
+                </data>
+            </content>
+        </UITextField>
+        <!--    隐患情况    -->
+        <UITextView>
+            <fontSize>11</fontSize>
+            <origin x="27.5" y="80" />
+            <size width="138" height="100" />
+            <leftOffSet>0</leftOffSet>
+            <lineHeight>20</lineHeight>
+            <content>
+                <data>
+                    <attributeName>trouble</attributeName>
+                </data>
+            </content>
+        </UITextView>
+        <!--        截止时间       -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="59.5" y="180.5" />
+            <size width="10" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>end_time</attributeName>
+                    <mode>y</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    月   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="74" y="180.5" />
+            <size width="7" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>end_time</attributeName>
+                    <mode>MM</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    日   -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="85" y="180.5" />
+            <size width="7" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>end_time</attributeName>
+                    <mode>dd</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--    时  -->
+        <UITextField>
+            <fontSize>10</fontSize>
+            <origin x="96" y="180.5" />
+            <size width="7" height = "6"/>
+            <alignment>center</alignment>
+            <content>
+                <data>
+                    <attributeName>end_time</attributeName>
+                    <mode>HH</mode>
+                </data>
+            </content>
+        </UITextField>
+    </DataTable>
+</ConstructionReformTable>

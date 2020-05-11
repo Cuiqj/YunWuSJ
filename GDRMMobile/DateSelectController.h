@@ -23,7 +23,7 @@
 //时间选择器类型标识，为0时只选择日期，为1时可选择日期和具体时间
 @property (assign,nonatomic) NSInteger pickerType;
 @property (nonatomic, strong) NSDate* pastDate;
-@property (nonatomic, assign) int textFieldTag;
+@property (nonatomic, assign) NSInteger textFieldTag;
 @end
 
 @protocol DatetimePickerHandler <NSObject>

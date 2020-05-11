@@ -34,7 +34,7 @@
 #import "WebServiceHandler.h"
 #import "NSManagedObject+_NeedUpLoad_.h"
 
-#define UPLOADCOUNT 45
+#define UPLOADCOUNT 47
 
 //#define UPLOADCOUNT 1
 

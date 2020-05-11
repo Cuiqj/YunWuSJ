@@ -43,8 +43,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *secondView;
 @property (weak, nonatomic) IBOutlet UIView *firstView;
-@property (retain, nonatomic) NSURL *pdfFormatFileURL;
-@property (retain, nonatomic) NSURL *pdfFileURL;
+@property (retain, nonatomic) NSURL * pdfFormatFileURL;
+@property (retain, nonatomic) NSURL * pdfFileURL;
 
 
 @property (nonatomic, strong) RoadInspectViewController * roadVC;

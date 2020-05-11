@@ -261,7 +261,7 @@ static NSString * xmlName = @"CaseCountTable";
 //        }
 //        [[AppDelegate App] saveContext];
 //        self.caseCount = nil;
-//        [self.data removeAllObjects];
+//      [self.data removeAllObjects];
 //    }
 }
 @end

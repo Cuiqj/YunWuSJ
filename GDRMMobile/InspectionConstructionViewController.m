@@ -645,7 +645,6 @@ typedef enum {
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     id page2 = segue.destinationViewController;
-    
     //将值透过Storyboard Segue带给页面2的string变数
     [page2 setValue:self.constructionID forKey:@"constructionId"];
 }
@@ -742,8 +741,6 @@ typedef enum {
     }
     return pdfFormatFileURL;
 }
-
-
 
 -(void)selectFirstRow:(NSIndexPath *)indexPath{
     //当UITableView没有内容的时候，选择第一行会报错

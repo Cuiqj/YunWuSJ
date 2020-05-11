@@ -37,7 +37,10 @@
 + (OrgInfo *)orgInfoForOrgID:(NSString *)orgID;
 + (OrgInfo *)orgInfoForSelected;
 + (NSArray *)allOrgInfo;
-
-
+//所有name的集合
++ (NSArray *)allOrgInfoforname;
+//通过orgid 获取orgshortname
 + (NSString *)orgInfoFororgshortname:(NSString *)orgID;
+
++ (NSString *)orgInfoFororgOrgid:(NSString *)name;
 @end

@@ -315,8 +315,7 @@
 
 //所需上传的表名称
 //modify by lxm 2013.05.13
-static NSString *dataNameArray[UPLOADCOUNT]={@"InspectionConstruction",@"CaseInfo",@"CasePhoto",@"Task",@"AtonementNotice",@"CaseDeformation",@"",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"MaintainCheckDaily",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceManage",@"ServiceManageDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeSpaceCheckSpecialB",@"BridgeSpaceCheckSpecial",@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily",@"RescueRecord",@"InspectionTotal"};
-
+static NSString *dataNameArray[UPLOADCOUNT]={@"CasePhoto",@"ConstructionReform",@"ShutdownReform",@"InspectionConstruction",@"CaseInfo",@"Task",@"AtonementNotice",@"CaseDeformation",@"",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"MaintainCheckDaily",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceManage",@"ServiceManageDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeSpaceCheckSpecialB",@"BridgeSpaceCheckSpecial",@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily",@"RescueRecord",@"InspectionTotal"};
 
 static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecialScence",@"MaintainCheckSpecialTrafficSecurityFacility",@"MaintainCheckSpecialFinish",@"MaintainCheckSpecialControlArea",@"MaintainCheckSpecialJob",@"MaintainCheckDaily"};
 //static NSString *dataNameArray[UPLOADCOUNT]={@"CaseMap"};
@@ -371,6 +370,9 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
     NSString * currentDataName = dataNameArray[index];
     NSArray *dataArray = [NSClassFromString(currentDataName) uploadArrayOfObject];
 //    NSArray *dataArray = [NSClassFromString(currentDataName) uploadAnyClassArrayOfObject];
+    if(index>1){
+        NSLog(@"");
+    }
     if (dataArray.count > 0 ) {
         if ([currentDataName isEqualToString:@"CasePhoto"]) {
             NSString *dataXML = @"";
@@ -394,6 +396,7 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
         }else{
             NSString * dataTypeString = [NSClassFromString(currentDataName) complexTypeString];
             NSString *dataXML = @"";
+            
             for (id obj in dataArray) {
                 dataXML = [dataXML stringByAppendingString:[obj dataXMLString]];
                 [_uploadedRecord addUploadedRecord:currentDataName WitdData:obj];
@@ -466,9 +469,7 @@ static NSString *UpLoadArray[7] = {@"MaintainCheckSpecial",@"MaintainCheckSpecia
                 [obj setValue:@(NO) forKey:@"isuploaded"];
             }
         }
-        // obj.isuploaded=YES;
         [[AppDelegate App] saveContext];
-        //[obj setBool:YES forKey:@"isuploaded"];
     }
     self.currentWorkIndex += 1;
     

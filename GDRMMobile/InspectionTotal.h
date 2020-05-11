@@ -12,7 +12,6 @@
 
 //关联了Inspection的日期
 @property (nonatomic,retain) NSDate * inspect_date;
-
 //记录编号
 @property (nonatomic,retain) NSString * myid;
 //巡查编号

@@ -333,7 +333,16 @@
 		840F05DE212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F05DD212A57FC0099AAF9 /* BridgeSpaceCheckSpecial.m */; };
 		8415CD962224CC160020C4A3 /* InitRoadSegmentDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415CD952224CC160020C4A3 /* InitRoadSegmentDirection.m */; };
 		8415CD992224CD6C0020C4A3 /* RoadSegmentDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8415CD982224CD6C0020C4A3 /* RoadSegmentDirection.m */; };
+		841AC8402446AA1F008F9348 /* ConstructionReformTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 841AC83E2446AA1E008F9348 /* ConstructionReformTable.xml */; };
+		841AC8412446AA1F008F9348 /* ShutdownReformTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 841AC83F2446AA1E008F9348 /* ShutdownReformTable.xml */; };
+		841DDF622448282E00CACB8A /* ResultReform.m in Sources */ = {isa = PBXBuildFile; fileRef = 841DDF612448282E00CACB8A /* ResultReform.m */; };
+		84209B0324440AFF0051A6CD /* Reform.m in Sources */ = {isa = PBXBuildFile; fileRef = 84209B0224440AFF0051A6CD /* Reform.m */; };
+		8430016524404D92008E454C /* 施工整改.png in Resources */ = {isa = PBXBuildFile; fileRef = 8430016424404D92008E454C /* 施工整改.png */; };
 		843A515C200C90EF00279362 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A515B200C90EF00279362 /* AipOcrSdk.framework */; };
+		843CECD3243C2BAD00B7F4AB /* ReformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CECD2243C2BAD00B7F4AB /* ReformViewController.m */; };
+		843CECD8243C2CCF00B7F4AB /* ReformPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CECD7243C2CCF00B7F4AB /* ReformPDFViewController.m */; };
+		843CECDC243C6BB000B7F4AB /* ConstructionReform.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CECDB243C6BB000B7F4AB /* ConstructionReform.m */; };
+		843CECDF243C6BD000B7F4AB /* ShutdownReform.m in Sources */ = {isa = PBXBuildFile; fileRef = 843CECDE243C6BD000B7F4AB /* ShutdownReform.m */; };
 		8449A909204E3150009612BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8449A908204E3150009612BC /* Images.xcassets */; };
 		8457305C2192986000DF8D44 /* MaintainCheckSpecial.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457305B2192986000DF8D44 /* MaintainCheckSpecial.m */; };
 		8457305F219298D900DF8D44 /* MaintainCheckSpecialJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457305E219298D900DF8D44 /* MaintainCheckSpecialJob.m */; };
@@ -1029,7 +1038,22 @@
 		8415CD952224CC160020C4A3 /* InitRoadSegmentDirection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitRoadSegmentDirection.m; sourceTree = "<group>"; };
 		8415CD972224CD6C0020C4A3 /* RoadSegmentDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoadSegmentDirection.h; sourceTree = "<group>"; };
 		8415CD982224CD6C0020C4A3 /* RoadSegmentDirection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoadSegmentDirection.m; sourceTree = "<group>"; };
+		841AC83E2446AA1E008F9348 /* ConstructionReformTable.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ConstructionReformTable.xml; sourceTree = "<group>"; };
+		841AC83F2446AA1E008F9348 /* ShutdownReformTable.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ShutdownReformTable.xml; sourceTree = "<group>"; };
+		841DDF602448282E00CACB8A /* ResultReform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultReform.h; sourceTree = "<group>"; };
+		841DDF612448282E00CACB8A /* ResultReform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultReform.m; sourceTree = "<group>"; };
+		84209B0124440AFF0051A6CD /* Reform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reform.h; sourceTree = "<group>"; };
+		84209B0224440AFF0051A6CD /* Reform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reform.m; sourceTree = "<group>"; };
+		8430016424404D92008E454C /* 施工整改.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "施工整改.png"; sourceTree = "<group>"; };
 		843A515B200C90EF00279362 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipOcrSdk.framework; path = "../../Library/Developer/Xcode/DerivedData/GDRMMobile-ccubgkldojoojqegcfvsqeccobth/Build/Products/Debug-iphonesimulator/AipOcrSdk.framework"; sourceTree = "<group>"; };
+		843CECD1243C2BAD00B7F4AB /* ReformViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReformViewController.h; sourceTree = "<group>"; };
+		843CECD2243C2BAD00B7F4AB /* ReformViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReformViewController.m; sourceTree = "<group>"; };
+		843CECD6243C2CCF00B7F4AB /* ReformPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReformPDFViewController.h; sourceTree = "<group>"; };
+		843CECD7243C2CCF00B7F4AB /* ReformPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReformPDFViewController.m; sourceTree = "<group>"; };
+		843CECDA243C6BB000B7F4AB /* ConstructionReform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstructionReform.h; sourceTree = "<group>"; };
+		843CECDB243C6BB000B7F4AB /* ConstructionReform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConstructionReform.m; sourceTree = "<group>"; };
+		843CECDD243C6BD000B7F4AB /* ShutdownReform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShutdownReform.h; sourceTree = "<group>"; };
+		843CECDE243C6BD000B7F4AB /* ShutdownReform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShutdownReform.m; sourceTree = "<group>"; };
 		8449A908204E3150009612BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = YUNWUMobile/Images.xcassets; sourceTree = "<group>"; };
 		8457305A2192986000DF8D44 /* MaintainCheckSpecial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaintainCheckSpecial.h; sourceTree = "<group>"; };
 		8457305B2192986000DF8D44 /* MaintainCheckSpecial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaintainCheckSpecial.m; sourceTree = "<group>"; };
@@ -1883,6 +1907,7 @@
 				330AD2B21E56D16600913004 /* 交通事故登记.png */,
 				330AD2B31E56D16600913004 /* 违法登记.png */,
 				332A4BBB1E4C54AD00CEA4ED /* 施工检查1.png */,
+				8430016424404D92008E454C /* 施工整改.png */,
 				8480E5C721211825000F97DF /* 桥涵检查.png */,
 				331E21AC1E276112004E78C2 /* 施工监管.png */,
 				330159181A3838DD00F641C5 /* login-btn-违章.png */,
@@ -1951,6 +1976,14 @@
 				67CAEBEF178AF569000BF8A7 /* FileCode.m */,
 				CCA0BA26178AA3A300F03873 /* TrafficRecord.h */,
 				CCA0BA27178AA3A300F03873 /* TrafficRecord.m */,
+				84209B0124440AFF0051A6CD /* Reform.h */,
+				84209B0224440AFF0051A6CD /* Reform.m */,
+				841DDF602448282E00CACB8A /* ResultReform.h */,
+				841DDF612448282E00CACB8A /* ResultReform.m */,
+				843CECDA243C6BB000B7F4AB /* ConstructionReform.h */,
+				843CECDB243C6BB000B7F4AB /* ConstructionReform.m */,
+				843CECDD243C6BD000B7F4AB /* ShutdownReform.h */,
+				843CECDE243C6BD000B7F4AB /* ShutdownReform.m */,
 				846ABFA8219A9FD90005A422 /* RescueRecord.h */,
 				846ABFA9219A9FD90005A422 /* RescueRecord.m */,
 				335B9F6D16669AF600A94D65 /* CaseProveInfo.h */,
@@ -2299,6 +2332,8 @@
 				33268B491A397AC600445E03 /* AdministrativePenaltyInquireTable2_new.xml */,
 				334C74A31A392D9800CB0CC6 /* AdministrativePenaltyProveInfoTable.xml */,
 				334E456419BEF39700E1D14B /* InspectionConstructionTable.xml */,
+				841AC83E2446AA1E008F9348 /* ConstructionReformTable.xml */,
+				841AC83F2446AA1E008F9348 /* ShutdownReformTable.xml */,
 				BDB32E071889FEAB00586EF6 /* GYCaseCountTable.xml */,
 				BDB32E051889FEA300586EF6 /* GYAtonementNoticeTable.xml */,
 				80D2080B180722FD00D17F47 /* AtonementNoticeTable.xml */,
@@ -2422,6 +2457,17 @@
 			path = initDataDown;
 			sourceTree = "<group>";
 		};
+		843CECD5243C2C8800B7F4AB /* 施工及停工整改 */ = {
+			isa = PBXGroup;
+			children = (
+				843CECD1243C2BAD00B7F4AB /* ReformViewController.h */,
+				843CECD2243C2BAD00B7F4AB /* ReformViewController.m */,
+				843CECD6243C2CCF00B7F4AB /* ReformPDFViewController.h */,
+				843CECD7243C2CCF00B7F4AB /* ReformPDFViewController.m */,
+			);
+			path = "施工及停工整改";
+			sourceTree = "<group>";
+		};
 		8460230A21941C6500310C15 /* 巡查汇总 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2434,10 +2480,11 @@
 		84636D55218AA3F0000E7929 /* 施工检查 */ = {
 			isa = PBXGroup;
 			children = (
-				84636D56218AA460000E7929 /* DailyRoadWorkViewController.h */,
-				84636D57218AA460000E7929 /* DailyRoadWorkViewController.m */,
 				84636D59218AE7D9000E7929 /* ShiGongCheckViewController.h */,
 				84636D5A218AE7D9000E7929 /* ShiGongCheckViewController.m */,
+				84636D56218AA460000E7929 /* DailyRoadWorkViewController.h */,
+				84636D57218AA460000E7929 /* DailyRoadWorkViewController.m */,
+				843CECD5243C2C8800B7F4AB /* 施工及停工整改 */,
 				8466DCC22191807F00CEA797 /* MaintainCheckSpecialJobVC.h */,
 				8466DCC32191808000CEA797 /* MaintainCheckSpecialJobVC.m */,
 				84573063219305F200DF8D44 /* MaintainCheckSpecialControlAreaVC.h */,
@@ -2795,6 +2842,7 @@
 				33FF24881F13569C00E67567 /* 车辆检查.png in Resources */,
 				8477DB821FD68EFA00CC8241 /* FSActionSheet_cancel@2x.png in Resources */,
 				33A09AFC14FB12090096BA1D /* login-btn-案件.png in Resources */,
+				841AC8412446AA1F008F9348 /* ShutdownReformTable.xml in Resources */,
 				33A09AFD14FB12090096BA1D /* login-btn-信息.png in Resources */,
 				33A09AFE14FB12090096BA1D /* login-btn-许可.png in Resources */,
 				33A09AFF14FB12090096BA1D /* login-btn-巡查.png in Resources */,
@@ -2818,6 +2866,7 @@
 				33A9032D14FDD7F9006587A7 /* outer-icon.png in Resources */,
 				84E5EC4320298B1100A4AE44 /* JAPTakeMainVC.xib in Resources */,
 				84E5ECC2202C2CBE00A4AE44 /* TrafficAssistVC.xib in Resources */,
+				841AC8402446AA1F008F9348 /* ConstructionReformTable.xml in Resources */,
 				332FB44715B7E7DB007CC89F /* 案件信息-bg.png in Resources */,
 				332FB44815B7E7DB007CC89F /* 服务器参数设置 -bg.png in Resources */,
 				332FB44915B7E7DB007CC89F /* 勘验图文字备注-bg.png in Resources */,
@@ -2838,6 +2887,7 @@
 				339166FF15E7623100C16B91 /* 拍摄照片.png in Resources */,
 				337918571650DD3900500483 /* 从照片库选取@2x.png in Resources */,
 				8449A909204E3150009612BC /* Images.xcassets in Resources */,
+				8430016524404D92008E454C /* 施工整改.png in Resources */,
 				337918581650DD3900500483 /* 拍摄照片@2x.png in Resources */,
 				331E21AD1E276112004E78C2 /* 施工监管.png in Resources */,
 				B30D427316552939009F62A2 /* InfoPlist.strings in Resources */,
@@ -3031,6 +3081,7 @@
 				8477DB891FD68EFA00CC8241 /* XLProgressView.m in Sources */,
 				3386EE691546943C0089D0EB /* InquireInfoViewController.m in Sources */,
 				3386EE6C154694710089D0EB /* InquireInfoBriefViewController.m in Sources */,
+				841DDF622448282E00CACB8A /* ResultReform.m in Sources */,
 				847EDAB4219C1B1200CDC739 /* PersonnelClass.m in Sources */,
 				8477DB871FD68EFA00CC8241 /* TAPageControl.m in Sources */,
 				3386EE6F15469D270089D0EB /* PaintBriefViewController.m in Sources */,
@@ -3057,6 +3108,7 @@
 				33AFFAFE1548DEC400DB27D2 /* RoadAssetAcceptanceViewController.m in Sources */,
 				3316730A1EB9AA6C0090EDE7 /* ServiceOrg.m in Sources */,
 				84636D5B218AE7D9000E7929 /* ShiGongCheckViewController.m in Sources */,
+				843CECDC243C6BB000B7F4AB /* ConstructionReform.m in Sources */,
 				33AFFB021548DF8700DB27D2 /* RoadAssetDamageListViewController.m in Sources */,
 				33AFFB0C1549244A00DB27D2 /* AddNewInspectRecordViewController.m in Sources */,
 				33A09019155378040096E5B1 /* CaseViewController.m in Sources */,
@@ -3105,6 +3157,7 @@
 				8477DB7D1FD68EFA00CC8241 /* UIView+XLExtension.m in Sources */,
 				33268B1115F99DB2003D8A2C /* CheckItems.m in Sources */,
 				33268B1415F99DC0003D8A2C /* CheckItemDetails.m in Sources */,
+				843CECD8243C2CCF00B7F4AB /* ReformPDFViewController.m in Sources */,
 				8477DB861FD68EFA00CC8241 /* TADotView.m in Sources */,
 				33D07F4115FD96090034B287 /* InitSystype.m in Sources */,
 				33D07F4715FDB9820034B287 /* Systype.m in Sources */,
@@ -3196,6 +3249,7 @@
 				3365B34E169AAF8400E9D039 /* NSAttributedString+DrawMethod.m in Sources */,
 				33BA3DDA169D2C170006BAE6 /* Model.xcdatamodeld in Sources */,
 				33DA750716BF92C60048A5CC /* CaseServiceReceiptViewController.m in Sources */,
+				84209B0324440AFF0051A6CD /* Reform.m in Sources */,
 				84E5EC732029A56B00A4AE44 /* IQPreviousNextView.m in Sources */,
 				33DA750816BF92C60048A5CC /* ServiceFileEditorViewController.m in Sources */,
 				33DA750916BF92C60048A5CC /* ServiceFileCell.m in Sources */,
@@ -3214,6 +3268,7 @@
 				67CAEBF0178AF569000BF8A7 /* FileCode.m in Sources */,
 				67CAEBF3178BE1AF000BF8A7 /* CaseConstructionChangeBackViewController.m in Sources */,
 				8457306B2193062D00DF8D44 /* MaintainCheckSpecialTrafficSecurityFacilityVC.m in Sources */,
+				843CECD3243C2BAD00B7F4AB /* ReformViewController.m in Sources */,
 				67CAEBF8178C4D1F000BF8A7 /* TrafficRecordViewController.m in Sources */,
 				67CAEBFB178C6F73000BF8A7 /* SystemTypeListViewController.m in Sources */,
 				33697B671E0A1F1E007EC957 /* BridgePickerViewController.m in Sources */,
@@ -3223,6 +3278,7 @@
 				84BDFB8C20045FEF006F0193 /* VersionUpdate.m in Sources */,
 				67CAEC04178D6E21000BF8A7 /* ConstructionChangeBack.m in Sources */,
 				67F43AE9178E75E500A7BD8C /* UploadedRecordList.m in Sources */,
+				843CECDF243C6BD000B7F4AB /* ShutdownReform.m in Sources */,
 				8466DCC42191808000CEA797 /* MaintainCheckSpecialJobVC.m in Sources */,
 				677B3359179133DD0066BE89 /* ListSelectViewController.m in Sources */,
 				8477DB8A1FD68EFA00CC8241 /* XLZoomingScrollView.m in Sources */,

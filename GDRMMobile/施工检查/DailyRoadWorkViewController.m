@@ -453,7 +453,10 @@
 }
 - (IBAction)fujianBtnClick:(id)sender {
     if(self.dailyCheck.myid.length >0){
-        
+        UIStoryboard *board            = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        AttachmentViewController *next = [board instantiateViewControllerWithIdentifier:@"AttachmentViewController"];
+        [next setValue:self.dailyCheck.myid forKey:@"constructionId"];
+        [self.navigationController pushViewController:next animated:YES];
     }else{
         __weak typeof(self)weakself = self;
         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择检查记录，再选择附件"  preferredStyle:UIAlertControllerStyleAlert];
@@ -462,10 +465,6 @@
         [weakself.navigationController presentViewController:ac animated:YES completion:nil];
         return;
     }
-    UIStoryboard *board            = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    AttachmentViewController *next = [board instantiateViewControllerWithIdentifier:@"AttachmentViewController"];
-    [next setValue:self.dailyCheck.myid forKey:@"constructionId"];
-    [self.navigationController pushViewController:next animated:YES];
 }
 - (IBAction)selectDate:(id)sender {
     UITextField * textfield = (UITextField *)sender;
