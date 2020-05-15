@@ -198,7 +198,12 @@
         <attribute name="party" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="party_org_duty" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="prover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prover_position1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prover_position2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prover1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prover2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recorder" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recorder_position" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remark" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="secondProver" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start_date_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -1182,7 +1187,7 @@
         <element name="CaseLawInfo" positionX="81" positionY="153" width="128" height="225"/>
         <element name="CaseMap" positionX="160" positionY="192" width="128" height="165"/>
         <element name="CasePhoto" positionX="0" positionY="0" width="128" height="165"/>
-        <element name="CaseProveInfo" positionX="0" positionY="0" width="128" height="345"/>
+        <element name="CaseProveInfo" positionX="0" positionY="0" width="128" height="420"/>
         <element name="CaseServiceFiles" positionX="0" positionY="0" width="128" height="165"/>
         <element name="CaseServiceReceipt" positionX="0" positionY="0" width="128" height="165"/>
         <element name="CheckHandle" positionX="0" positionY="0" width="128" height="90"/>

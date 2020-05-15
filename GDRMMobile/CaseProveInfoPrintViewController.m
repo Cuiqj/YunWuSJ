@@ -292,11 +292,16 @@ static NSString * const xmlName = @"ProveInfoTable";
     //self.caseProveInfo.recorder_org_duty = self.textrecorder_duty.text;
     //勘验情况及结果
     self.caseProveInfo.event_desc = self.textevent_desc.text;
-    
     // 更新
     CaseInfo* caseInfo = [CaseInfo caseInfoForID:self.caseID];
     caseInfo.happen_date = self.caseProveInfo.start_date_time;
     
+    
+    self.caseProveInfo.prover_position1 = self.textprover1_duty.text;
+    self.caseProveInfo.prover_position2 = self.textprover2_duty.text;
+    self.caseProveInfo.prover1 = self.textprover1.text;
+    self.caseProveInfo.prover2 = self.textprover2.text;
+    self.caseProveInfo.recorder_position = self.textrecorder_duty.text;
     [[AppDelegate App] saveContext];
     
 }

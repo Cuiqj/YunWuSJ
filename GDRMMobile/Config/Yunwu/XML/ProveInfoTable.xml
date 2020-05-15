@@ -323,7 +323,7 @@
             <content>
                 <!--$F{prover1_duty}-->
                 <data>
-                    <attributeName>prover1_org_duty</attributeName>
+                    <attributeName>prover_position1</attributeName>
                 </data>
             </content>
         </UITextField>
@@ -333,12 +333,9 @@
             <origin x="53" y="72" />
             <size width="14" height="6" />
             <content>
-                
                 <data>
                     <attributeName>prover2</attributeName>
-                    
                 </data>
-                
             </content>
         </UITextField>
         
@@ -347,14 +344,11 @@
             <origin x="97" y="72" />
             <size width="87" height="6" />
             <content>
-                
                 <data>
-                    <attributeName>prover2_org_duty</attributeName>
-                    
+                    <attributeName>prover_position2</attributeName>
                 </data>
             </content>
         </UITextField>
-        
         <UITextField>
             <fontSize>12</fontSize>
             <origin x="53" y="78" />
@@ -446,7 +440,7 @@
             <content>
                 <!--记录人 单位职务-->
                 <data>
-                    <attributeName>recorder_org_duty</attributeName>
+                    <attributeName>recorder_position</attributeName>
                 </data>
             </content>
         </UITextField>

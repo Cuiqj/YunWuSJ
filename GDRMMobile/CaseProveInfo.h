@@ -33,6 +33,12 @@
 //@property (nonatomic, retain) NSString * recorder_org_duty;
 @property (nonatomic, retain) NSDate * start_date_time;
 @property (nonatomic, retain) NSString * remark;
+@property (nonatomic, retain) NSString * prover_position1;
+@property (nonatomic, retain) NSString * prover_position2;
+@property (nonatomic, retain) NSString * prover1;
+@property (nonatomic, retain) NSString * prover2;
+@property (nonatomic, retain) NSString * recorder_position;
+
 
 //读取案号对应的勘验记录
 +(CaseProveInfo *)proveInfoForCase:(NSString *)caseID;

@@ -41,6 +41,12 @@
 @dynamic remark;
 @dynamic secondProver;
 @dynamic case_long_desc;
+@dynamic prover_position1;
+@dynamic prover_position2;
+@dynamic prover1;
+@dynamic prover2;
+@dynamic recorder_position;
+
 
 @synthesize _caseInfo;
 
