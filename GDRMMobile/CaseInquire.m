@@ -27,6 +27,9 @@
 @dynamic recorder_name;
 @dynamic relation;
 @dynamic sex;
+@dynamic prover_lawno;
+@dynamic recorder_lawno;
+
 
 - (NSString *) signStr{
     if (![self.proveinfo_id isEmpty]) {
@@ -66,4 +69,5 @@
         return nil;
     }
 }
+
 @end

@@ -342,6 +342,7 @@ Boolean isSelectMuban;
         self.textParty.text = aAnswererName;
         if (aAnswererName != nil && ![aAnswererName isEmpty] ) {
             self.inquireTextView.text = [self generateCommonInquireText];
+            
         }
         
         self.textLocality.text = localityString;
@@ -437,7 +438,9 @@ Boolean isSelectMuban;
     
     caseInquire.inquirer_name = self.textFieldInquirer.text;
     caseInquire.recorder_name = self.textFieldRecorder.text;
-    
+    //添加执法证号
+    caseInquire.recorder_lawno = [UserInfo exelawIDForUserName:caseInquire.recorder_name];
+    caseInquire.prover_lawno = [UserInfo exelawIDForUserName:caseInquire.inquirer_name];
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[NSLocale currentLocale]];
     [dateFormatter setDateFormat:line_Date_version_yyyy];
@@ -936,8 +939,6 @@ Boolean isSelectMuban;
     // return;
     // }
     //  popoverContent.pickerPopover = self.listSelectPopover;
-    
-    
     if(self.listSelectPopover){
         if([self.listSelectPopover isPopoverVisible]){
             [self.listSelectPopover setContentViewController:popoverContent];

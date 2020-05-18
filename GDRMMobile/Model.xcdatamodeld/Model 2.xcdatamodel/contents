@@ -143,6 +143,8 @@
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postalcode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="proveinfo_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prover_lawno" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recorder_lawno" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recorder_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="relation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
@@ -1183,7 +1185,7 @@
         <element name="CaseDeformation" positionX="0" positionY="0" width="128" height="225"/>
         <element name="CaseDocuments" positionX="0" positionY="0" width="128" height="90"/>
         <element name="CaseInfo" positionX="0" positionY="0" width="128" height="585"/>
-        <element name="CaseInquire" positionX="0" positionY="0" width="128" height="285"/>
+        <element name="CaseInquire" positionX="0" positionY="0" width="128" height="315"/>
         <element name="CaseLawInfo" positionX="81" positionY="153" width="128" height="225"/>
         <element name="CaseMap" positionX="160" positionY="192" width="128" height="165"/>
         <element name="CasePhoto" positionX="0" positionY="0" width="128" height="165"/>

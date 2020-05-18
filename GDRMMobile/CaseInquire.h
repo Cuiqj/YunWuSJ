@@ -29,6 +29,9 @@
 @property (nonatomic, retain) NSString * relation;
 @property (nonatomic, retain) NSString * sex;
 
+@property (nonatomic, retain) NSString * prover_lawno;
+@property (nonatomic, retain) NSString * recorder_lawno;
+
 +(CaseInquire *)inquireForCase:(NSString *)caseID;
 +(CaseInquire *)inquireForCase:(NSString *)caseID andRelation:(NSString *)relation;
 @end

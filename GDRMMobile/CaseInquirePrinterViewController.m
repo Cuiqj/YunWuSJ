@@ -64,6 +64,9 @@ enum kPageInfo {
     citizen.postalcode = self.textpostalcode.text;
     self.caseInquire.postalcode = self.textpostalcode.text;
     self.caseInquire.inquiry_note = self.textinquiry_note.text;
+    
+    self.caseInquire.prover_lawno = [UserInfo exelawIDForUserName:self.textinquirer_name.text];
+    self.caseInquire.recorder_lawno = [UserInfo exelawIDForUserName:self.textrecorder_name.text];
     [[AppDelegate App] saveContext];
 }
 
